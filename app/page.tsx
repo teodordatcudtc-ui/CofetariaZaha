@@ -115,7 +115,7 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5" />
         
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:items-start">
             {/* Linie separatoare vizuală */}
             <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
             <motion.div
@@ -177,7 +177,7 @@ const HomePage = () => {
               </motion.p>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -198,7 +198,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex items-center space-x-8 text-sm text-gray-500"
+                className="flex items-center space-x-8 text-sm text-gray-500 mb-8"
               >
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -213,13 +213,16 @@ const HomePage = () => {
                   <span>1000+ clienți mulțumiți</span>
                 </div>
               </motion.div>
+
+              {/* Linie separatoare orizontală */}
+              <div className="hidden lg:block w-24 h-px bg-gradient-to-r from-primary/30 to-transparent mb-8"></div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative lg:pl-12"
+              className="relative lg:pl-12 lg:pt-16"
             >
               {/* Background subtil pentru secțiunea telefon */}
               <div className="hidden lg:block absolute inset-0 bg-primary/5 rounded-2xl -m-4"></div>

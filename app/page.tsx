@@ -93,7 +93,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center hero-bg overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center hero-bg overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
         
         {/* Elemente decorative îmbunătățite */}
@@ -114,8 +114,8 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/8" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5" />
         
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:items-start">
+        <div className="container-custom relative z-10 px-4 lg:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 lg:items-start">
             {/* Linie separatoare vizuală */}
             <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
             <motion.div
@@ -164,7 +164,7 @@ const HomePage = () => {
               </motion.div>
               
               <motion.p 
-                className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
+                className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}

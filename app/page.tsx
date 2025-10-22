@@ -115,12 +115,12 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5" />
         
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center lg:text-left"
+              className="text-center lg:text-left lg:pr-8"
             >
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -215,7 +215,7 @@ const HomePage = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
+              className="relative lg:pl-8"
             >
               <div className="relative">
                 <div className="w-full h-[600px] bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">

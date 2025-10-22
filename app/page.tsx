@@ -115,13 +115,17 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5" />
         
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Linie separatoare vizuală */}
+            <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-3/4 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center lg:text-left lg:pr-8"
+              className="text-center lg:text-left lg:pr-12 relative"
             >
+              {/* Background subtil pentru secțiunea text */}
+              <div className="hidden lg:block absolute inset-0 bg-white/5 rounded-2xl -m-4"></div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -215,8 +219,10 @@ const HomePage = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative lg:pl-8"
+              className="relative lg:pl-12"
             >
+              {/* Background subtil pentru secțiunea telefon */}
+              <div className="hidden lg:block absolute inset-0 bg-primary/5 rounded-2xl -m-4"></div>
               <div className="relative">
                 <div className="w-full h-[600px] bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
                   {/* Pattern decorative */}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Pagina principală -->
+  <url>
+    <loc>https://cofetaria-zaha.ro/</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Pagina Despre Noi -->
+  <url>
+    <loc>https://cofetaria-zaha.ro/despre</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pagina Produse -->
+  <url>
+    <loc>https://cofetaria-zaha.ro/produse</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pagina Galerie -->
+  <url>
+    <loc>https://cofetaria-zaha.ro/galerie</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pagina Contact -->
+  <url>
+    <loc>https://cofetaria-zaha.ro/contact</loc>
+    <lastmod>2024-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

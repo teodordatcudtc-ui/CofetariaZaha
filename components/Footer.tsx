@@ -30,7 +30,7 @@ const Footer = () => {
     },
     {
       name: 'Instagram',
-      href: 'https://instagram.com/cofetariazaha',
+      href: 'https://www.instagram.com/cofetariazaha',
       icon: Instagram,
     },
   ]

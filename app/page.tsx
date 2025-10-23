@@ -212,7 +212,7 @@ const HomePage = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                          <span>1000+ clienți mulțumiți</span>
+                          <span>Ridicare din magazin</span>
                         </div>
               </motion.div>
 
@@ -562,7 +562,7 @@ const HomePage = () => {
               Contactează-ne astăzi pentru tortul perfect 
               pentru evenimentul tău special sau pentru a comanda prăjiturile 
               preferate ale familiei tale.               Cofetăria Zaha București oferă 
-              servicii complete de cofetărie cu livrare la domiciliu și consultanță 
+              servicii complete de cofetărie cu ridicare din magazin și consultanță 
               personalizată pentru fiecare eveniment special.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

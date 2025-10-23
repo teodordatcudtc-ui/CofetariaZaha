@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://cofetaria-zaha.ro'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://cofetaria-zaha.ro',
   },
   openGraph: {
     title: 'Cofetăria Zaha București | Torturi Personalizate & Prăjituri',

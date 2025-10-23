@@ -162,7 +162,7 @@ const ContactPage = () => {
                     <p className="text-xl text-gray-600 leading-relaxed">
                       Plasează comanda pentru tortul perfect sau prăjiturile preferate. 
                       Oferim servicii complete de comandă online, programare pentru evenimente 
-                      și livrare la domiciliu în București.
+                      și ridicare din magazin în București.
                     </p>
           </motion.div>
         </div>

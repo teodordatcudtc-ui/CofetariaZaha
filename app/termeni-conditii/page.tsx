@@ -17,24 +17,24 @@ export default function TermsConditionsPage() {
           <h2>2. Servicii oferite</h2>
           <p>
             Cofetăria Zaha București oferă servicii de cofetărie, inclusiv torturi 
-            personalizate, prăjituri artizanale și dulciuri de casă, cu livrare la domiciliu.
+            personalizate, prăjituri artizanale și dulciuri de casă, cu ridicare din magazin.
           </p>
 
           <h2>3. Comenzi și plăți</h2>
           <p>
             Toate comenzile sunt supuse confirmării disponibilității. Plățile se efectuează 
-            la livrare sau prin transfer bancar, conform acordului cu clientul.
+            la ridicare sau prin transfer bancar, conform acordului cu clientul.
           </p>
 
-          <h2>4. Livrare</h2>
+          <h2>4. Ridicare din magazin</h2>
           <p>
-            Livrarea se efectuează în București și împrejurimi. Timpul de livrare este 
-            stabilit în funcție de complexitatea comenzii și disponibilitatea noastră.
+            Ridicarea se efectuează din magazinul nostru din București. Timpul de pregătire 
+            este stabilit în funcție de complexitatea comenzii și disponibilitatea noastră.
           </p>
 
           <h2>5. Anularea comenzilor</h2>
           <p>
-            Comenzile pot fi anulate cu cel puțin 24 de ore înainte de data livrării. 
+            Comenzile pot fi anulate cu cel puțin 24 de ore înainte de data ridicării. 
             Pentru anulări în ultimul moment, se poate aplica o taxă de anulare.
           </p>
 

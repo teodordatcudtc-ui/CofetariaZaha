@@ -34,24 +34,24 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: 'Tort de Nuntă Sector 2',
-      description: 'Tort elegant cu fondant și decorațiuni personalizate pentru nuntă în București',
+      name: 'Tort de Nuntă Clasic',
+      description: 'Tort elegant cu fondant și decorațiuni personalizate pentru nuntă, creat cu ingrediente de calitate superioară și atenție la detalii',
       price: 'De la 500 RON',
       category: 'Torturi',
       icon: Cake
     },
     {
       id: 2,
-      name: 'Prăjituri Artizanale București',
-      description: 'Selecție de prăjituri preparate zilnic cu ingrediente proaspete în Sector 2',
+      name: 'Prăjituri Artizanale',
+      description: 'Selecție de prăjituri preparate zilnic cu ingrediente proaspete și rețete tradiționale românești',
       price: 'De la 15 RON',
       category: 'Prăjituri',
       icon: Heart
     },
     {
       id: 3,
-      name: 'Dulciuri de Casă Românești',
-      description: 'Dulciuri tradiționale românești preparate după rețete de familie în București',
+      name: 'Dulciuri de Casă',
+      description: 'Dulciuri tradiționale românești preparate după rețete de familie, cu gust autentic și ingrediente naturale',
       price: 'De la 8 RON',
       category: 'Dulciuri',
       icon: Star
@@ -62,32 +62,32 @@ const HomePage = () => {
   const services = [
     {
       icon: Cake,
-      title: 'Torturi Personalizate Sector 2',
-      description: 'Creăm torturi unice pentru nuntă, botez și aniversare în București'
+      title: 'Torturi Personalizate',
+      description: 'Creăm torturi unice pentru nuntă, botez și aniversare cu design personalizat și ingrediente de calitate'
     },
     {
       icon: Heart,
       title: 'Ingrediente de Calitate Superioară',
-      description: 'Folosim doar ingrediente naturale și de cea mai bună calitate'
+      description: 'Folosim doar ingrediente naturale și de cea mai bună calitate pentru a oferi gusturi autentice'
     },
     {
       icon: Users,
-      title: 'Experiență 15+ Ani București',
-      description: 'Peste 15 ani de experiență în prepararea dulciurilor în Sector 2'
+      title: 'Experiență de 15+ Ani',
+      description: 'Peste 15 ani de experiență în prepararea dulciurilor și satisfacerea clienților'
     },
     {
       icon: Award,
-      title: 'Recenzii Excelente București',
-      description: 'Mii de clienți mulțumiți din Sector 2 și recenzii de 5 stele'
+      title: 'Recenzii Excelente',
+      description: 'Mii de clienți mulțumiți și recenzii de 5 stele pentru calitatea produselor noastre'
     }
   ]
 
   // Date pentru statistici
   const stats = [
-    { number: '5000+', label: 'Torturi București' },
-    { number: '15+', label: 'Ani Sector 2' },
-    { number: '1000+', label: 'Clienți Sector 2' },
-    { number: '50+', label: 'Produse București' }
+    { number: '5000+', label: 'Torturi Realizate' },
+    { number: '15+', label: 'Ani de Experiență' },
+    { number: '1000+', label: 'Clienți Mulțumiți' },
+    { number: '50+', label: 'Tipuri de Produse' }
   ]
 
   return (
@@ -173,7 +173,9 @@ const HomePage = () => {
                 <span className="font-semibold text-primary">torturi personalizate</span>, 
                 <span className="font-semibold text-primary"> prăjituri artizanale</span> și 
                 <span className="font-semibold text-primary"> dulciuri de casă</span> preparate cu pasiune 
-                și ingrediente de calitate superioară.
+                și ingrediente de calitate superioară. De peste 15 ani, Cofetăria Zaha din București 
+                este alegerea perfectă pentru torturi de nuntă, botez și aniversare, prăjituri tradiționale 
+                românești și dulciuri de casă preparate după rețete de familie.
               </motion.p>
               
               <motion.div 
@@ -290,7 +292,9 @@ const HomePage = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Oferim servicii de cofetărie de excepție cu atenție la detalii, 
-              ingrediente de calitate și pasiune pentru ceea ce facem.
+              ingrediente de calitate și pasiune pentru ceea ce facem. Cofetăria Zaha 
+              din București este specializată în torturi personalizate pentru toate ocaziile 
+              speciale, prăjituri artizanale preparate zilnic și dulciuri de casă tradiționale.
             </p>
           </motion.div>
 
@@ -340,7 +344,9 @@ const HomePage = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Descoperă selecția noastră de torturi, prăjituri și dulciuri 
-              preparate cu ingrediente de calitate superioară.
+              preparate cu ingrediente de calitate superioară. Fiecare produs 
+              din Cofetăria Zaha este creat cu atenție la detalii și respectă 
+              tradițiile culinare românești, oferind gusturi autentice și memorabile.
             </p>
           </motion.div>
 
@@ -479,8 +485,9 @@ const HomePage = () => {
               Ce Spun <span className="text-gradient">Clienții Noștri</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Mii de familii ne-au ales pentru momentele lor speciale. 
-              Descoperă experiențele lor.
+              Mii de familii din București ne-au ales pentru momentele lor speciale. 
+              Descoperă experiențele lor și de ce Cofetăria Zaha este alegerea 
+              preferată pentru torturi de nuntă, botez și aniversare în București.
             </p>
           </motion.div>
 
@@ -554,7 +561,9 @@ const HomePage = () => {
             <p className="text-xl text-primary-100 mb-8 leading-relaxed">
               Contactează-ne astăzi pentru tortul perfect 
               pentru evenimentul tău special sau pentru a comanda prăjiturile 
-              preferate ale familiei tale.
+              preferate ale familiei tale. Cofetăria Zaha din București oferă 
+              servicii complete de cofetărie cu livrare la domiciliu și consultanță 
+              personalizată pentru fiecare eveniment special.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center">

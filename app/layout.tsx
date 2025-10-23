@@ -24,8 +24,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Cofetăria Zaha Sector 2 București | Torturi Personalizate & Prăjituri Artizanale',
-  description: 'Cofetăria Zaha din Sector 2 București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă, catering evenimente. Șoseaua Ștefan cel Mare 12. Comandă online!',
+  title: 'Cofetăria Zaha București | Torturi Personalizate & Prăjituri',
+  description: 'Cofetăria Zaha București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă. Șoseaua Ștefan cel Mare 12. Comandă online!',
   keywords: 'cofetărie Sector 2 București, torturi personalizate București, prăjituri artizanale Sector 2, dulciuri de casă București, tort de nuntă București, tort de botez Sector 2, catering evenimente București, Cofetăria Zaha, Șoseaua Ștefan cel Mare, comandă tort online București, prăjituri tradiționale românești, torturi cu fondant București, ecler București, tiramisu Sector 2, papanași București, clătite cu dulceață, comandă online cofetărie București',
   authors: [{ name: 'Cofetăria Zaha Sector 2' }],
   creator: 'Cofetăria Zaha',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Cofetăria Zaha Sector 2 București | Torturi Personalizate & Prăjituri Artizanale',
-    description: 'Cofetăria Zaha din Sector 2 București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă, catering evenimente. Comandă online!',
+    title: 'Cofetăria Zaha București | Torturi Personalizate & Prăjituri',
+    description: 'Cofetăria Zaha București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă. Comandă online!',
     url: 'https://cofetaria-zaha.ro',
     siteName: 'Cofetăria Zaha Sector 2',
     images: [
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cofetăria Zaha Sector 2 București | Torturi Personalizate',
-    description: 'Cofetăria Zaha din Sector 2 București - torturi personalizate, prăjituri artizanale, dulciuri de casă. Comandă online!',
+    title: 'Cofetăria Zaha București | Torturi Personalizate',
+    description: 'Cofetăria Zaha București - torturi personalizate, prăjituri artizanale, dulciuri de casă. Comandă online!',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -97,7 +97,6 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#05ddf4" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
               <body className={`${inter.className} antialiased`}>
                 {/* Structured Data for Local Business */}

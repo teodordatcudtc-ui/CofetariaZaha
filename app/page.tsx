@@ -138,7 +138,7 @@ const HomePage = () => {
               </motion.div>
               
               <motion.h1 
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -157,17 +157,35 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mb-8"
               >
-                <h2 className="text-2xl lg:text-3xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 mb-4">
                   Unde fiecare tort spune o poveste
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-400 rounded-full mx-auto lg:mx-0"></div>
               </motion.div>
-              
-              <motion.p 
-                className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-2xl"
+
+              {/* Butoanele pe mobile - sub titlu, înainte de descriere */}
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 lg:hidden"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Link href="/produse" className="btn-primary inline-flex items-center justify-center group relative overflow-hidden">
+                  <span className="relative z-10">Vezi Produsele Noastre</span>
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Link>
+                <Link href="/contact" className="btn-secondary inline-flex items-center justify-center group relative overflow-hidden">
+                  <span className="relative z-10">Contactează-ne</span>
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Link>
+              </motion.div>
+              
+              <motion.p 
+                className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-2xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               >
                 Creăm momente dulci și memorabile prin{' '}
                 <span className="font-semibold text-primary">torturi personalizate</span>, 
@@ -178,8 +196,9 @@ const HomePage = () => {
                 românești și dulciuri de casă preparate după rețete de familie.
               </motion.p>
               
+              {/* Butoanele pe desktop - după descriere */}
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
+                className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}

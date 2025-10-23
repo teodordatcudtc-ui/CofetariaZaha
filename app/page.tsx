@@ -146,7 +146,7 @@ const HomePage = () => {
                 <span className="block">Torturi Personalizate</span>
                 <span className="block">
                   <span className="text-gradient bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent animate-pulse">
-                    Cofetăria Zaha
+                    Cofetăria Zaha București
                   </span>
                 </span>
               </motion.h1>
@@ -173,7 +173,7 @@ const HomePage = () => {
                 <span className="font-semibold text-primary">torturi personalizate</span>, 
                 <span className="font-semibold text-primary"> prăjituri artizanale</span> și 
                 <span className="font-semibold text-primary"> dulciuri de casă</span> preparate cu pasiune 
-                și ingrediente de calitate superioară. De peste 15 ani, Cofetăria Zaha din București 
+                și ingrediente de calitate superioară. De peste 15 ani, Cofetăria Zaha București 
                 este alegerea perfectă pentru torturi de nuntă, botez și aniversare, prăjituri tradiționale 
                 românești și dulciuri de casă preparate după rețete de familie.
               </motion.p>
@@ -292,8 +292,8 @@ const HomePage = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Oferim servicii de cofetărie de excepție cu atenție la detalii, 
-              ingrediente de calitate și pasiune pentru ceea ce facem. Cofetăria Zaha 
-              din București este specializată în torturi personalizate pentru toate ocaziile 
+              ingrediente de calitate și pasiune pentru ceea ce facem. Cofetăria Zaha București 
+              este specializată în torturi personalizate pentru toate ocaziile 
               speciale, prăjituri artizanale preparate zilnic și dulciuri de casă tradiționale.
             </p>
           </motion.div>
@@ -344,8 +344,8 @@ const HomePage = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Descoperă selecția noastră de torturi, prăjituri și dulciuri 
-              preparate cu ingrediente de calitate superioară. Fiecare produs 
-              din Cofetăria Zaha este creat cu atenție la detalii și respectă 
+              preparate cu ingrediente de calitate superioară.               Fiecare produs 
+              din Cofetăria Zaha București este creat cu atenție la detalii și respectă 
               tradițiile culinare românești, oferind gusturi autentice și memorabile.
             </p>
           </motion.div>
@@ -486,7 +486,7 @@ const HomePage = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Mii de familii din București ne-au ales pentru momentele lor speciale. 
-              Descoperă experiențele lor și de ce Cofetăria Zaha este alegerea 
+              Descoperă experiențele lor și de ce Cofetăria Zaha București este alegerea 
               preferată pentru torturi de nuntă, botez și aniversare în București.
             </p>
           </motion.div>
@@ -561,7 +561,7 @@ const HomePage = () => {
             <p className="text-xl text-primary-100 mb-8 leading-relaxed">
               Contactează-ne astăzi pentru tortul perfect 
               pentru evenimentul tău special sau pentru a comanda prăjiturile 
-              preferate ale familiei tale. Cofetăria Zaha din București oferă 
+              preferate ale familiei tale.               Cofetăria Zaha București oferă 
               servicii complete de cofetărie cu livrare la domiciliu și consultanță 
               personalizată pentru fiecare eveniment special.
             </p>

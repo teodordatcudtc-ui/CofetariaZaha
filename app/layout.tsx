@@ -25,7 +25,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Cofetăria Zaha București | Torturi Personalizate & Prăjituri',
-  description: 'Cofetăria Zaha București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă. Șoseaua Ștefan cel Mare 12. Comandă online!',
+  description: 'Cofetăria Zaha București - torturi personalizate pentru nuntă, botez, aniversare. Prăjituri artizanale, dulciuri de casă. Comandă online!',
   keywords: 'cofetărie Sector 2 București, torturi personalizate București, prăjituri artizanale Sector 2, dulciuri de casă București, tort de nuntă București, tort de botez Sector 2, catering evenimente București, Cofetăria Zaha, Șoseaua Ștefan cel Mare, comandă tort online București, prăjituri tradiționale românești, torturi cu fondant București, ecler București, tiramisu Sector 2, papanași București, clătite cu dulceață, comandă online cofetărie București',
   authors: [{ name: 'Cofetăria Zaha Sector 2' }],
   creator: 'Cofetăria Zaha',

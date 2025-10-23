@@ -261,88 +261,50 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Linia de timp */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/20 hidden lg:block" />
-            
-            <div className="space-y-16">
-              {timeline.map((event, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="flex items-start">
-                    {/* Chenarul pe stânga pentru index par */}
-                    {index % 2 === 0 && (
-                      <>
-                        <div className="w-full lg:w-1/2 lg:pr-12">
-                          <div className="card relative">
-                            <div className="flex items-center mb-4">
-                              <div className="w-4 h-4 bg-primary rounded-full mr-4 flex-shrink-0" />
-                              <span className="text-2xl font-bold text-primary">
-                                {event.year}
-                              </span>
-                            </div>
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                              {event.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed">
-                              {event.description}
-                            </p>
-                          </div>
-                        </div>
-                        
-                        {/* Punctul de pe linia de timp - centrat perfect */}
-                        <div className="hidden lg:flex w-1/2 justify-center items-start pt-6">
-                          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center relative z-10 shadow-lg">
-                            <div className="w-4 h-4 bg-white rounded-full" />
-                          </div>
-                        </div>
-                        
-                        {/* Spațiu gol pe dreapta */}
-                        <div className="w-full lg:w-1/2" />
-                      </>
-                    )}
-                    
-                    {/* Chenarul pe dreapta pentru index impar */}
-                    {index % 2 === 1 && (
-                      <>
-                        {/* Spațiu gol pe stânga */}
-                        <div className="w-full lg:w-1/2" />
-                        
-                        {/* Punctul de pe linia de timp - centrat perfect */}
-                        <div className="hidden lg:flex w-1/2 justify-center items-start pt-6">
-                          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center relative z-10 shadow-lg">
-                            <div className="w-4 h-4 bg-white rounded-full" />
-                          </div>
-                        </div>
-                        
-                        <div className="w-full lg:w-1/2 lg:pl-12">
-                          <div className="card relative">
-                            <div className="flex items-center mb-4">
-                              <div className="w-4 h-4 bg-primary rounded-full mr-4 flex-shrink-0" />
-                              <span className="text-2xl font-bold text-primary">
-                                {event.year}
-                              </span>
-                            </div>
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                              {event.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed">
-                              {event.description}
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {timeline.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="card h-full group-hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-2xl font-bold text-primary">
+                          {index + 1}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-3xl font-bold text-primary block">
+                          {event.year}
+                        </span>
+                        <div className="w-16 h-1 bg-primary rounded-full mt-1"></div>
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200">
+                    {event.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    {event.description}
+                  </p>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+                      <span>Milestone {index + 1}</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

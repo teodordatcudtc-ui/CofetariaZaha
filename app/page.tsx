@@ -138,7 +138,7 @@ const HomePage = () => {
               </motion.div>
               
               <motion.h1 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-5xl sm:text-6xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -157,7 +157,7 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mb-8"
               >
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl sm:text-2xl lg:text-2xl font-semibold text-gray-700 mb-4">
                   Unde fiecare tort spune o poveste
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-400 rounded-full mx-auto lg:mx-0"></div>
@@ -182,7 +182,7 @@ const HomePage = () => {
               </motion.div>
               
               <motion.p 
-                className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed max-w-2xl"
+                className="text-lg sm:text-xl lg:text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}

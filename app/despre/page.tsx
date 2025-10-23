@@ -265,7 +265,7 @@ const AboutPage = () => {
             {/* Linia de timp */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/20 hidden lg:block" />
             
-            <div className="space-y-12">
+            <div className="space-y-16">
               {timeline.map((event, index) => (
                 <motion.div
                   key={index}
@@ -275,12 +275,12 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="flex items-center lg:items-start">
+                  <div className="flex items-start">
                     {/* Chenarul pe stânga pentru index par */}
                     {index % 2 === 0 && (
                       <>
-                        <div className="w-full lg:w-1/2 lg:pr-8">
-                          <div className="card">
+                        <div className="w-full lg:w-1/2 lg:pr-12">
+                          <div className="card relative">
                             <div className="flex items-center mb-4">
                               <div className="w-4 h-4 bg-primary rounded-full mr-4 flex-shrink-0" />
                               <span className="text-2xl font-bold text-primary">
@@ -297,7 +297,7 @@ const AboutPage = () => {
                         </div>
                         
                         {/* Punctul de pe linia de timp - centrat perfect */}
-                        <div className="hidden lg:flex w-1/2 justify-center items-center">
+                        <div className="hidden lg:flex w-1/2 justify-center items-start pt-6">
                           <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center relative z-10 shadow-lg">
                             <div className="w-4 h-4 bg-white rounded-full" />
                           </div>
@@ -315,14 +315,14 @@ const AboutPage = () => {
                         <div className="w-full lg:w-1/2" />
                         
                         {/* Punctul de pe linia de timp - centrat perfect */}
-                        <div className="hidden lg:flex w-1/2 justify-center items-center">
+                        <div className="hidden lg:flex w-1/2 justify-center items-start pt-6">
                           <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center relative z-10 shadow-lg">
                             <div className="w-4 h-4 bg-white rounded-full" />
                           </div>
                         </div>
                         
-                        <div className="w-full lg:w-1/2 lg:pl-8">
-                          <div className="card">
+                        <div className="w-full lg:w-1/2 lg:pl-12">
+                          <div className="card relative">
                             <div className="flex items-center mb-4">
                               <div className="w-4 h-4 bg-primary rounded-full mr-4 flex-shrink-0" />
                               <span className="text-2xl font-bold text-primary">

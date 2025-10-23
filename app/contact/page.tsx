@@ -94,24 +94,24 @@ const ContactPage = () => {
 
   // Servicii de comandă
   const orderServices = [
-    {
-      icon: ShoppingCart,
-      title: 'Comandă Online',
-      description: 'Plasează comanda direct din site',
-      action: 'Comandă Acum'
-    },
-    {
-      icon: Calendar,
-      title: 'Programare Eveniment',
-      description: 'Planifică tortul pentru evenimentul tău',
-      action: 'Programează'
-    },
-    {
-      icon: CreditCard,
-      title: 'Plată Online',
-      description: 'Plătește sigur cu cardul',
-      action: 'Plătește'
-    }
+            {
+              icon: ShoppingCart,
+              title: 'Comandă Online',
+              description: 'Plasează comanda direct din site',
+              action: 'Comandă Acum'
+            },
+            {
+              icon: Calendar,
+              title: 'Programare Eveniment',
+              description: 'Planifică tortul pentru evenimentul tău',
+              action: 'Programează'
+            },
+            {
+              icon: CreditCard,
+              title: 'Plată Online',
+              description: 'Plătește sigur cu cardul',
+              action: 'Plătește'
+            }
   ]
 
   // Gestionare formular
@@ -156,14 +156,14 @@ const ContactPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Comandă <span className="text-gradient">Acum</span>
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Plasează comanda pentru tortul perfect sau prăjiturile preferate. 
-              Oferim servicii complete de comandă online, programare pentru evenimente 
-              și livrare la domiciliu în București.
-            </p>
+                    <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                      Comandă <span className="text-gradient">Acum</span>
+                    </h1>
+                    <p className="text-xl text-gray-600 leading-relaxed">
+                      Plasează comanda pentru tortul perfect sau prăjiturile preferate. 
+                      Oferim servicii complete de comandă online, programare pentru evenimente 
+                      și livrare la domiciliu în București.
+                    </p>
           </motion.div>
         </div>
       </section>
@@ -227,12 +227,12 @@ const ContactPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Servicii de <span className="text-gradient">Comandă</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Alege modalitatea care îți convine pentru a plasa comanda
-            </p>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                      Servicii de <span className="text-gradient">Comandă</span>
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      Alege modalitatea care îți convine pentru a plasa comanda
+                    </p>
           </motion.div>
 
           <motion.div

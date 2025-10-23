@@ -34,24 +34,24 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: 'Tort de Nuntă Clasic',
-      description: 'Tort elegant cu fondant și decorațiuni personalizate',
+      name: 'Tort de Nuntă Sector 2',
+      description: 'Tort elegant cu fondant și decorațiuni personalizate pentru nuntă în București',
       price: 'De la 500 RON',
       category: 'Torturi',
       icon: Cake
     },
     {
       id: 2,
-      name: 'Prăjituri Artizanale',
-      description: 'Selecție de prăjituri preparate zilnic cu ingrediente proaspete',
+      name: 'Prăjituri Artizanale București',
+      description: 'Selecție de prăjituri preparate zilnic cu ingrediente proaspete în Sector 2',
       price: 'De la 15 RON',
       category: 'Prăjituri',
       icon: Heart
     },
     {
       id: 3,
-      name: 'Dulciuri de Casă',
-      description: 'Dulciuri tradiționale românești preparate după rețete de familie',
+      name: 'Dulciuri de Casă Românești',
+      description: 'Dulciuri tradiționale românești preparate după rețete de familie în București',
       price: 'De la 8 RON',
       category: 'Dulciuri',
       icon: Star
@@ -62,32 +62,32 @@ const HomePage = () => {
   const services = [
     {
       icon: Cake,
-      title: 'Torturi Personalizate',
-      description: 'Creăm torturi unice pentru toate ocaziile speciale'
+      title: 'Torturi Personalizate Sector 2',
+      description: 'Creăm torturi unice pentru nuntă, botez și aniversare în București'
     },
     {
       icon: Heart,
-      title: 'Ingrediente de Calitate',
+      title: 'Ingrediente de Calitate Superioară',
       description: 'Folosim doar ingrediente naturale și de cea mai bună calitate'
     },
     {
       icon: Users,
-      title: 'Experiență de 15+ Ani',
-      description: 'Peste 15 ani de experiență în prepararea dulciurilor'
+      title: 'Experiență 15+ Ani București',
+      description: 'Peste 15 ani de experiență în prepararea dulciurilor în Sector 2'
     },
     {
       icon: Award,
-      title: 'Recenzii Excelente',
-      description: 'Mii de clienți mulțumiți și recenzii de 5 stele'
+      title: 'Recenzii Excelente București',
+      description: 'Mii de clienți mulțumiți din Sector 2 și recenzii de 5 stele'
     }
   ]
 
   // Date pentru statistici
   const stats = [
-    { number: '5000+', label: 'Torturi Realizate' },
-    { number: '15+', label: 'Ani de Experiență' },
-    { number: '1000+', label: 'Clienți Mulțumiți' },
-    { number: '50+', label: 'Tipuri de Produse' }
+    { number: '5000+', label: 'Torturi București' },
+    { number: '15+', label: 'Ani Sector 2' },
+    { number: '1000+', label: 'Clienți Sector 2' },
+    { number: '50+', label: 'Produse București' }
   ]
 
   return (
@@ -133,7 +133,7 @@ const HomePage = () => {
                 className="mb-4"
               >
                 <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
-                  ✨ Delicii Artizanale din 2008
+                  ✨ Cofetărie Sector 2 București din 2008
                 </span>
               </motion.div>
               
@@ -143,7 +143,7 @@ const HomePage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="block">Bun venit la</span>
+                <span className="block">Torturi Personalizate</span>
                 <span className="block">
                   <span className="text-gradient bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent animate-pulse">
                     Cofetăria Zaha
@@ -200,18 +200,18 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="flex items-center space-x-8 text-sm text-gray-500 mb-8"
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <span>15+ ani experiență</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  <span>5000+ torturi realizate</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <span>1000+ clienți mulțumiți</span>
-                </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                          <span>15+ ani experiență</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                          <span>5000+ torturi realizate</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                          <span>1000+ clienți mulțumiți</span>
+                        </div>
               </motion.div>
 
               {/* Linie separatoare orizontală */}
@@ -289,8 +289,8 @@ const HomePage = () => {
               De ce să alegi <span className="text-gradient">Cofetăria Zaha</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Oferim servicii de cofetărie de excepție cu atenție la detalii 
-              și pasiune pentru ceea ce facem.
+              Oferim servicii de cofetărie de excepție cu atenție la detalii, 
+              ingrediente de calitate și pasiune pentru ceea ce facem.
             </p>
           </motion.div>
 
@@ -479,7 +479,7 @@ const HomePage = () => {
               Ce Spun <span className="text-gradient">Clienții Noștri</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Mii de familii din București ne-au ales pentru momentele lor speciale. 
+              Mii de familii ne-au ales pentru momentele lor speciale. 
               Descoperă experiențele lor.
             </p>
           </motion.div>
@@ -552,7 +552,7 @@ const HomePage = () => {
               Pregătește-te pentru o Experiență <span className="text-white">Dulce</span>
             </h2>
             <p className="text-xl text-primary-100 mb-8 leading-relaxed">
-              Contactează-ne astăzi pentru a discuta despre tortul perfect 
+              Contactează-ne astăzi pentru tortul perfect 
               pentru evenimentul tău special sau pentru a comanda prăjiturile 
               preferate ale familiei tale.
             </p>

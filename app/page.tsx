@@ -221,7 +221,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-20">
+      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
 
         {/* Elemente decorative îmbunătățite */}
@@ -287,7 +287,7 @@ const HomePage = () => {
               </motion.div>
 
               <motion.h1
-                className="text-5xl sm:text-6xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -306,7 +306,7 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mb-8"
               >
-                <h2 className="text-xl sm:text-2xl lg:text-2xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-700 mb-4">
                   Unde fiecare tort spune o poveste
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-400 rounded-full mx-auto lg:mx-0"></div>
@@ -314,22 +314,22 @@ const HomePage = () => {
 
               {/* Butoanele pe mobile - sub titlu, înainte de descriere */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 lg:hidden"
+                className="flex flex-row gap-3 justify-center lg:justify-start mb-6 lg:hidden"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <Link
                   href="/produse"
-                  className="btn-primary inline-flex items-center justify-center group relative overflow-hidden"
+                  className="btn-primary inline-flex items-center justify-center group relative overflow-hidden text-sm px-4 py-2"
                 >
-                  <span className="relative z-10">Vezi Produsele Noastre</span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200 relative z-10" />
+                  <span className="relative z-10">Vezi Produsele</span>
+                  <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform duration-200 relative z-10" />
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
                 <Link
                   href="/contact"
-                  className="btn-secondary inline-flex items-center justify-center group relative overflow-hidden"
+                  className="btn-secondary inline-flex items-center justify-center group relative overflow-hidden text-sm px-4 py-2"
                 >
                   <span className="relative z-10">Contactează-ne</span>
                   <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

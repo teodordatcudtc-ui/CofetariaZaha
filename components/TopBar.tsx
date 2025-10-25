@@ -5,7 +5,7 @@ import { Clock, Facebook, Instagram } from 'lucide-react'
 const TopBar = () => {
   return (
     <div className="bg-primary text-white py-2 px-4">
-      <div className="container-custom flex items-center justify-between text-sm">
+      <div className="container-custom flex items-center justify-center sm:justify-between text-sm">
         {/* Program */}
         <div className="flex items-center space-x-2">
           <Clock className="h-4 w-4 text-white flex-shrink-0" />

@@ -402,7 +402,7 @@ const ProductsPage = () => {
               <Link key={`${product.id}-${selectedCategory}`} href={`/produse/${product.slug}`}>
                 <motion.div
                   variants={fadeInUp}
-                  className="card group overflow-hidden cursor-pointer"
+                  className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg"
                 >
                 <div className="relative overflow-hidden rounded-t-lg h-48">
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
@@ -423,15 +423,11 @@ const ProductsPage = () => {
                     </motion.div>
                   </div>
                 </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200">
-                      {product.name}
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200">
+                    {product.name}
+                  </h3>
+                  <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-primary">
                       {product.price}
                     </span>

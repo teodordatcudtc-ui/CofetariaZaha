@@ -14,6 +14,7 @@ import {
   ArrowRight,
   CheckCircle,
   Phone,
+  Cookie,
 } from "lucide-react"
 
 const HomePage = () => {
@@ -62,67 +63,67 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "Tort de Nuntă Clasic",
-      price: "De la 500 RON",
-      category: "Torturi",
-      icon: Cake,
-      slug: "tort-nunta-clasic",
+      name: "Găluști cu prune",
+      price: "19 RON",
+      category: "dulciuri",
+      icon: Heart,
+      slug: "galusti-cu-prune",
     },
     {
       id: 2,
-      name: "Prăjituri Artizanale",
-      price: "De la 15 RON",
-      category: "Prăjituri",
-      icon: Heart,
-      slug: "prajituri-artizanale",
+      name: "Caserolă mini prăjituri",
+      price: "88 RON",
+      category: "prajituri",
+      icon: Cookie,
+      slug: "caserola-mini-prajituri",
     },
     {
       id: 3,
-      name: "Dulciuri de Casă",
-      price: "De la 8 RON",
-      category: "Dulciuri",
+      name: "Platou mini prăjituri 1kg",
+      price: "296 RON/kg",
+      category: "prajituri",
       icon: Star,
-      slug: "dulciuri-casa",
+      slug: "platou-mini-prajituri-1kg",
     },
     {
       id: 4,
-      name: "Tort de Botez",
-      price: "De la 300 RON",
-      category: "Torturi",
-      icon: Cake,
-      slug: "tort-botez",
+      name: "Amestec fursecuri",
+      price: "127 RON",
+      category: "dulciuri",
+      icon: Heart,
+      slug: "amestec-fursecuri",
     },
     {
       id: 5,
-      name: "Cheesecake cu Fructe",
-      price: "De la 25 RON",
-      category: "Prăjituri",
-      icon: Heart,
-      slug: "cheesecake-fructe",
+      name: "Tort Maria 1kg",
+      price: "266 RON",
+      category: "torturi",
+      icon: Cake,
+      slug: "tort-maria-1kg",
     },
     {
       id: 6,
-      name: "Tiramisu Clasic",
-      price: "De la 20 RON",
-      category: "Dulciuri",
-      icon: Star,
-      slug: "tiramisu-clasic",
+      name: "Cozonac traditional",
+      price: "198 RON",
+      category: "dulciuri",
+      icon: Heart,
+      slug: "cozonac-traditional",
     },
     {
       id: 7,
-      name: "Tort de Aniversare",
-      price: "De la 200 RON",
-      category: "Torturi",
-      icon: Cake,
-      slug: "tort-aniversare",
+      name: "Pavlova 100g",
+      price: "35 RON",
+      category: "prajituri",
+      icon: Star,
+      slug: "pavlova-100g",
     },
     {
       id: 8,
-      name: "Eclere cu Creme",
-      price: "De la 12 RON",
-      category: "Prăjituri",
+      name: "Gelato 500g",
+      price: "115 RON",
+      category: "dulciuri",
       icon: Heart,
-      slug: "eclere-creme",
+      slug: "gelato-500g",
     },
   ]
 
@@ -572,7 +573,8 @@ const HomePage = () => {
                   const ProductIcon = product.icon
                   return (
                     <motion.div key={product.id} className="flex-shrink-0 w-72" whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.3 }}>
-                      <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
+                      <Link href={`/produse/${product.slug}`} className="block">
+                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
                         <div className="relative overflow-hidden rounded-t-lg h-48">
                           <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
@@ -594,7 +596,8 @@ const HomePage = () => {
                             <span className="text-lg font-bold text-primary">{product.price}</span>
                           </div>
                         </div>
-                      </div>
+                        </div>
+                      </Link>
                     </motion.div>
                   )
                 })}

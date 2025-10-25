@@ -217,7 +217,7 @@ const ProductsPage = () => {
   ]
 
   // Funcție de sortare
-  const sortProducts = (products: typeof products) => {
+  const sortProducts = (products: any[]) => {
     return [...products].sort((a, b) => {
       let aValue, bValue
       

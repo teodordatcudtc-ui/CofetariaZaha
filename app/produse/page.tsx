@@ -265,7 +265,7 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-12 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section className="relative py-6 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -273,10 +273,10 @@ const ProductsPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
               Produsele Noastre <span className="text-gradient">Speciale</span>
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base text-gray-600 leading-relaxed">
               Descoperă selecția noastră de torturi personalizate, prăjituri artizanale 
               și dulciuri de casă preparate cu ingrediente de cea mai bună calitate.
             </p>
@@ -300,7 +300,7 @@ const ProductsPage = () => {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <div className="flex flex-row gap-4 items-center">
               {/* Filtrare */}
               <div className="relative filter-dropdown">
                 <button
@@ -399,11 +399,11 @@ const ProductsPage = () => {
             className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
           >
             {filteredProducts.map((product, index) => (
-              <motion.div
-                key={`${product.id}-${selectedCategory}`}
-                variants={fadeInUp}
-                className="card group overflow-hidden"
-              >
+              <Link key={`${product.id}-${selectedCategory}`} href={`/produse/${product.slug}`}>
+                <motion.div
+                  variants={fadeInUp}
+                  className="card group overflow-hidden cursor-pointer"
+                >
                 <div className="relative overflow-hidden rounded-lg mb-6">
                   <div className="w-full h-48 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                     {/* Pattern decorative */}
@@ -425,12 +425,6 @@ const ProductsPage = () => {
                   <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                     {categories.find(cat => cat.id === product.category)?.name}
                   </div>
-                  <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-medium text-gray-700">
-                      {product.rating}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="space-y-4">
@@ -441,19 +435,13 @@ const ProductsPage = () => {
                   </div>
 
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <span className="text-2xl font-bold text-primary">
+                    <span className="text-lg font-bold text-primary">
                       {product.price}
                     </span>
-                    <Link
-                      href={`/produse/${product.slug}`}
-                      className="flex items-center space-x-1 text-primary hover:text-primary/80 font-medium group-hover:translate-x-1 transition-transform duration-200"
-                    >
-                      <span>Vezi detalii</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </motion.div>
 

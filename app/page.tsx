@@ -459,30 +459,31 @@ const HomePage = () => {
             className="relative flex justify-center"
           >
             {/* Carusel container pentru mobile */}
-            <div className="relative overflow-hidden" style={{ width: 'calc(2 * 288px + 1 * 16px)' }}>
+            <div className="relative overflow-hidden" style={{ width: 'calc(2 * 160px + 1 * 8px)' }}>
               <motion.div
                 className="flex space-x-4"
                 animate={{
-                  x: -currentProductIndex * (288 + 16), // 288px produs + 16px spațiu
+                  x: -currentProductIndex * (160 + 8), // 160px produs + 8px spațiu
                 }}
                 transition={{
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                style={{ width: `${featuredProducts.length * (288 + 16)}px` }}
+                style={{ width: `${featuredProducts.length * (160 + 8)}px` }}
               >
                 {featuredProducts.map((product, index) => {
                   const ProductIcon = product.icon
                   return (
                     <motion.div
                       key={product.id}
-                      className="flex-shrink-0 w-72"
+                      className="flex-shrink-0 w-40"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="card group overflow-hidden h-full">
+                      <Link href={`/produse/${product.slug}`} className="block">
+                        <div className="card group overflow-hidden h-full">
                         <div className="relative overflow-hidden rounded-lg mb-4">
-                          <div className="w-full h-32 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
+                          <div className="w-full h-24 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
                             <div className="absolute inset-0 opacity-10">
                               <div className="absolute top-2 left-2 w-8 h-8 border-2 border-primary/30 rounded-full"></div>
@@ -492,7 +493,7 @@ const HomePage = () => {
 
                             {/* Iconița principală */}
                             <motion.div className="relative z-10" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
-                              <ProductIcon className="h-8 w-8 text-primary" />
+                              <ProductIcon className="h-6 w-6 text-primary" />
                             </motion.div>
                           </div>
                           <div className="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
@@ -506,14 +507,11 @@ const HomePage = () => {
                           </h3>
 
                           <div className="flex items-center justify-between">
-                            <span className="text-lg font-bold text-primary">{product.price}</span>
-                            <Link href={`/produse/${product.slug}`} className="text-primary hover:text-primary/80 font-medium text-xs flex items-center group-hover:translate-x-1 transition-transform duration-200">
-                              Vezi
-                              <ArrowRight className="ml-1 h-3 w-3" />
-                            </Link>
+                            <span className="text-sm font-bold text-primary">{product.price}</span>
                           </div>
                         </div>
                       </div>
+                      </Link>
                     </motion.div>
                   )
                 })}

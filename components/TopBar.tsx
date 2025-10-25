@@ -8,12 +8,12 @@ const TopBar = () => {
       <div className="container-custom flex items-center justify-between text-sm">
         {/* Program */}
         <div className="flex items-center space-x-2">
-          <Clock className="h-4 w-4 text-white" />
-          <span>Luni - Sâmbătă: 08:00 - 20:00 | Duminică: 09:00 - 18:00</span>
+          <Clock className="h-4 w-4 text-white flex-shrink-0" />
+          <span className="text-xs sm:text-sm">Luni - Sâmbătă: 08:00 - 20:00 | Duminică: 09:00 - 18:00</span>
         </div>
 
         {/* Social Media Links */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <a
             href="https://www.facebook.com/profile.php?id=100058296618834"
             target="_blank"

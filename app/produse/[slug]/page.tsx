@@ -376,7 +376,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             className="space-y-4"
           >
             {/* Imaginea principală */}
-            <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden mx-4">
+                <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden mx-4 h-64 sm:h-auto">
               {/* Placeholder pentru imagine */}
               <div className="text-center">
                 <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -392,17 +392,38 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6 px-4"
+            className="space-y-4 sm:space-y-6 px-4"
           >
             {/* Titlu și preț */}
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
-              <div className="flex items-center space-x-4 mb-6">
-                <span className="text-3xl font-bold text-primary">{product.price} RON</span>
+              <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{product.name}</h1>
+              <div className="flex items-center space-x-4 mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-3xl font-bold text-primary">{product.price} RON</span>
                 {product.originalPrice && (
-                  <span className="text-xl text-gray-500 line-through">{product.originalPrice} RON</span>
+                  <span className="text-lg sm:text-xl text-gray-500 line-through">{product.originalPrice} RON</span>
                 )}
               </div>
+            </div>
+
+            {/* Butoane acțiune */}
+            <div className="space-y-4">
+              <div className="flex space-x-4">
+                <button 
+                  onClick={handleAddToCart}
+                  className="flex-1 border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200"
+                >
+                  Adaugă în coș
+                </button>
+                <button 
+                  onClick={handleBuyNow}
+                  className="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Cumpără acum
+                </button>
+              </div>
+              <p className="text-sm text-gray-500 text-center">
+                Mai multe opțiuni de plată
+              </p>
             </div>
 
             {/* Descriere */}
@@ -531,26 +552,6 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               </div>
             </div>
 
-            {/* Butoane acțiune */}
-            <div className="space-y-4">
-              <div className="flex space-x-4">
-                <button 
-                  onClick={handleAddToCart}
-                  className="flex-1 border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200"
-                >
-                  Adaugă în coș
-                </button>
-                <button 
-                  onClick={handleBuyNow}
-                  className="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
-                >
-                  Cumpără acum
-                </button>
-              </div>
-              <p className="text-sm text-gray-500 text-center">
-                Mai multe opțiuni de plată
-              </p>
-            </div>
 
             {/* Taxe și transport */}
             <div className="text-sm text-gray-500">

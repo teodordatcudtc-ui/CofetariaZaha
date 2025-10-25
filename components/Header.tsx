@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Cake, ChevronDown, Heart, Star, Coffee, Gift, ShoppingCart } from 'lucide-react'
+import { Menu, X, Cake, ChevronDown, Heart, Star, Coffee, Gift, ShoppingCart, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCart } from '@/contexts/CartContext'
 
@@ -12,8 +12,17 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false)
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const pathname = usePathname()
   const { getTotalItems } = useCart()
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      window.location.href = `/produse?search=${encodeURIComponent(searchQuery.trim())}`
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +32,20 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      
+      if (isSearchOpen && !target.closest('.search-dropdown') && !target.closest('button[aria-label="Search"]')) {
+        setIsSearchOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isSearchOpen])
 
   const navigation = [
     { name: 'Acasă', href: '/' },
@@ -200,7 +223,7 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Contact Info & Cart - Desktop */}
+          {/* Contact Info, Search & Cart - Desktop */}
           <div className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
             <a 
               href="tel:0731195126" 
@@ -209,6 +232,15 @@ const Header = () => {
               <span>📞</span>
               <span>0731 195 126</span>
             </a>
+            
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="flex items-center space-x-1 hover:text-primary transition-colors duration-200"
+            >
+              <Search className="h-5 w-5" />
+              <span>Caută</span>
+            </button>
             
             {/* Cart Button */}
             <Link
@@ -229,12 +261,41 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
-            aria-label="Toggle menu"
-          >
+          {/* Mobile buttons */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Search Button - Mobile */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+            
+            {/* Cart Button - Mobile */}
+            <Link
+              href="/cos"
+              className="relative p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Shopping cart"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {getTotalItems() > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-4 w-4 flex items-center justify-center font-medium"
+                >
+                  {getTotalItems()}
+                </motion.span>
+              )}
+            </Link>
+            
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
                 <motion.div
@@ -259,6 +320,7 @@ const Header = () => {
               )}
             </AnimatePresence>
           </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -393,6 +455,38 @@ const Header = () => {
                     <span>0731 195 126</span>
                   </a>
                 </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Search Dropdown */}
+        <AnimatePresence>
+          {isSearchOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 search-dropdown"
+            >
+              <div className="p-4">
+                <form onSubmit={handleSearch} className="flex space-x-2">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Caută produse..."
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    autoFocus
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                  >
+                    Caută
+                  </button>
+                </form>
               </div>
             </motion.div>
           )}

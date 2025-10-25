@@ -221,7 +221,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-12 sm:pt-16">
+      <section className="relative h-[45vh] sm:h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-10 sm:pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
 
         {/* Elemente decorative îmbunătățite */}
@@ -480,7 +480,7 @@ const HomePage = () => {
       </section>
 
       {/* Produse pentru Mobile - Carusel cu swipe */}
-      <section className="section-padding bg-gray-50 md:hidden">
+      <section className="py-6 md:py-16 bg-gray-50 md:hidden">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -552,7 +552,7 @@ const HomePage = () => {
       </section>
 
       {/* Produse Featured Section - Hidden on mobile */}
-      <section className="section-padding bg-gray-50 hidden md:block">
+      <section className="py-8 md:py-16 bg-gray-50 hidden md:block">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="relative flex justify-center">
             {/* Carusel container */}

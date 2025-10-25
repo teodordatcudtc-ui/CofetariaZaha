@@ -75,9 +75,9 @@ const CartPage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-12 sm:pt-16">
       {/* Hero Section */}
-      <section className="relative py-12 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section className="relative py-4 sm:py-8 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,15 +85,15 @@ const CartPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Coșul de cumpărături</h1>
-            <p className="text-xl text-gray-600">
+            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Coșul de cumpărături</h1>
+            <p className="text-sm sm:text-xl text-gray-600">
               {getTotalItems()} {getTotalItems() === 1 ? 'produs' : 'produse'} în coș
             </p>
           </motion.div>
         </div>
       </section>
 
-      <div className="container-custom py-8">
+      <div className="container-custom py-6 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Lista produselor */}
           <div className="lg:col-span-2">

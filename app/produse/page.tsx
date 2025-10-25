@@ -30,14 +30,21 @@ const ProductsPage = () => {
   const [showSortDropdown, setShowSortDropdown] = useState(false)
   const [showFilterDropdown, setShowFilterDropdown] = useState(false)
 
-  // Initialize category from URL params
+  // Initialize category and search from URL params
   useEffect(() => {
     const category = searchParams.get('category')
+    const search = searchParams.get('search')
+    
     if (category) {
       setSelectedCategory(category)
     } else {
-      // If no category in URL, reset to 'all'
       setSelectedCategory('all')
+    }
+    
+    if (search) {
+      setSearchTerm(search)
+    } else {
+      setSearchTerm('')
     }
   }, [searchParams])
 
@@ -263,9 +270,9 @@ const ProductsPage = () => {
   )
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-12 sm:pt-16">
       {/* Hero Section */}
-      <section className="relative py-4 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section className="relative py-2 sm:py-4 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -273,10 +280,10 @@ const ProductsPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Produsele Noastre <span className="text-gradient">Speciale</span>
             </h1>
-            <p className="text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               Descoperă selecția noastră de torturi personalizate, prăjituri artizanale 
               și dulciuri de casă preparate cu ingrediente de cea mai bună calitate.
             </p>

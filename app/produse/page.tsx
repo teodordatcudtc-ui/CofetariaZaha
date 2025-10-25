@@ -139,7 +139,7 @@ const ProductsPage = () => {
     {
       id: 4,
       name: 'Ecler cu Cremă de Vanilie',
-      price: '8 RON/buc',
+      price: '8 RON',
       priceValue: 8,
       category: 'prajituri',
       rating: 5,
@@ -152,7 +152,7 @@ const ProductsPage = () => {
     {
       id: 5,
       name: 'Profiterol cu Ciocolată',
-      price: '10 RON/buc',
+      price: '10 RON',
       priceValue: 10,
       category: 'prajituri',
       rating: 5,
@@ -165,7 +165,7 @@ const ProductsPage = () => {
     {
       id: 6,
       name: 'Tiramisu Clasic',
-      price: '12 RON/buc',
+      price: '12 RON',
       priceValue: 12,
       category: 'prajituri',
       rating: 5,
@@ -178,7 +178,7 @@ const ProductsPage = () => {
     {
       id: 7,
       name: 'Papanași cu Smântână',
-      price: '15 RON/porție',
+      price: '15 RON',
       priceValue: 15,
       category: 'dulciuri',
       rating: 5,
@@ -191,7 +191,7 @@ const ProductsPage = () => {
     {
       id: 8,
       name: 'Clătite cu Dulceață',
-      price: '12 RON/porție',
+      price: '12 RON',
       priceValue: 12,
       category: 'dulciuri',
       rating: 5,
@@ -204,7 +204,7 @@ const ProductsPage = () => {
     {
       id: 9,
       name: 'Catering Evenimente',
-      price: 'De la 50 RON/persoană',
+      price: 'De la 50 RON',
       priceValue: 50,
       category: 'evenimente',
       rating: 5,
@@ -263,9 +263,9 @@ const ProductsPage = () => {
   )
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-6 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section className="relative py-4 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -404,7 +404,7 @@ const ProductsPage = () => {
                   variants={fadeInUp}
                   className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col"
                 >
-                <div className="relative overflow-hidden rounded-t-lg h-48">
+                <div className="relative overflow-hidden rounded-t-lg h-56">
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                     {/* Pattern decorative */}
                     <div className="absolute inset-0 opacity-10">
@@ -424,11 +424,11 @@ const ProductsPage = () => {
                   </div>
                 </div>
                 <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200 flex-grow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-200 flex-grow">
                     {product.name}
                   </h3>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-lg font-bold text-primary">
+                    <span className="text-base font-bold text-primary">
                       {product.price}
                     </span>
                   </div>

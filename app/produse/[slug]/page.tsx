@@ -20,7 +20,9 @@ import {
   Leaf,
   Lock,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Minus,
+  Plus
 } from 'lucide-react'
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
@@ -474,22 +476,29 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                     </div>
 
                     <div className="grid grid-cols-7 gap-1">
-                      {getCalendarDays().map((day, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleDateSelect(day)}
-                          disabled={!day || day < new Date()}
-                          className={`p-2 text-sm rounded-lg transition-colors duration-200 ${
-                            day && day.toDateString() === selectedDate?.toDateString()
-                              ? 'bg-primary text-white'
-                              : day && day >= new Date()
-                              ? 'hover:bg-primary/10 text-gray-900'
-                              : 'text-gray-300 cursor-not-allowed'
-                          }`}
-                        >
-                          {day?.getDate()}
-                        </button>
-                      ))}
+                      {getDaysInMonth(currentMonth).map((day, index) => {
+                        const isDisabled = isDateDisabled(day.date)
+                        const isSelected = isDateSelected(day.date)
+                        const isToday = day.date.toDateString() === new Date().toDateString()
+                        
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => !isDisabled && handleDateSelect(day.date)}
+                            disabled={isDisabled}
+                            className={`
+                              h-10 w-10 rounded-lg text-sm font-medium transition-all duration-200
+                              ${!day.isCurrentMonth ? 'text-gray-300' : 'text-gray-900'}
+                              ${isDisabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-primary/10 cursor-pointer'}
+                              ${isSelected ? 'bg-primary text-white shadow-lg' : ''}
+                              ${isToday && !isSelected ? 'bg-primary/20 text-primary font-semibold' : ''}
+                              ${!isDisabled && !isSelected && day.isCurrentMonth ? 'hover:bg-primary/5' : ''}
+                            `}
+                          >
+                            {day.date.getDate()}
+                          </button>
+                        )
+                      })}
                     </div>
                   </motion.div>
                 )}

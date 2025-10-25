@@ -75,13 +75,13 @@ const ContactPage = () => {
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com/cofetaria-zaha',
+      url: 'https://www.facebook.com/profile.php?id=100058296618834',
       color: 'hover:text-blue-600'
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/cofetaria-zaha',
+      url: 'https://www.instagram.com/cofetariazaha',
       color: 'hover:text-pink-600'
     },
     {

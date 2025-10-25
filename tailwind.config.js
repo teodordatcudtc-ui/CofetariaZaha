@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#05ddf4',
-        secondary: '#05ddf4',
+        primary: '#8cdef5',
+        secondary: '#8cdef5',
       },
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],

@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter, Poppins } from 'next/font/google'
+import { Playfair_Display, Inter, Poppins, Dancing_Script } from 'next/font/google'
 import './globals.css'
+import TopBar from '@/components/TopBar'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { CartProvider } from '@/contexts/CartContext'
+import { NotificationProvider } from '@/contexts/NotificationContext'
+import { CookieProvider } from '@/contexts/CookieContext'
+import CookieBanner from '@/components/CookieBanner'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -20,6 +25,13 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
+  display: 'swap',
+})
+
+const dancingScript = Dancing_Script({ 
+  subsets: ['latin'],
+  variable: '--font-dancing',
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -96,62 +108,70 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#05ddf4" />
+        <meta name="theme-color" content="#8cdef5" />
       </head>
-              <body className={`${inter.className} antialiased`}>
-                {/* Structured Data for Local Business */}
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                      "@context": "https://schema.org",
-                      "@type": "Bakery",
-                      "name": "Cofetăria Zaha",
-                      "description": "Cofetărie Sector 2 București - torturi personalizate, prăjituri artizanale și dulciuri de casă",
-                      "url": "https://cofetaria-zaha.ro",
-                      "telephone": "+40731195126",
-                      "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Șoseaua Ștefan cel Mare 12",
-                        "addressLocality": "București",
-                        "addressRegion": "Sector 2",
-                        "postalCode": "020141",
-                        "addressCountry": "RO"
-                      },
-                      "geo": {
-                        "@type": "GeoCoordinates",
-                        "latitude": "44.4268",
-                        "longitude": "26.1025"
-                      },
-                      "openingHours": "Mo-Sa 08:00-20:00",
-                      "priceRange": "$$",
-                      "servedCuisine": "Romanian Pastry",
-                      "hasMap": "https://maps.google.com/?q=44.4268,26.1025",
-                      "sameAs": [
-                        "https://www.facebook.com/cofetariazaha",
-                        "https://www.instagram.com/cofetariazaha"
-                      ],
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "4.9",
-                        "reviewCount": "150"
-                      },
-                      "areaServed": {
-                        "@type": "City",
-                        "name": "București",
-                        "containedInPlace": {
-                          "@type": "AdministrativeArea",
-                          "name": "Sector 2"
+              <body className={`${inter.className} ${dancingScript.variable} antialiased`}>
+                <CookieProvider>
+                  <CartProvider>
+                    <NotificationProvider>
+                    {/* Structured Data for Local Business */}
+                  <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Bakery",
+                        "name": "Cofetăria Zaha",
+                        "description": "Cofetărie Sector 2 București - torturi personalizate, prăjituri artizanale și dulciuri de casă",
+                        "url": "https://cofetaria-zaha.ro",
+                        "telephone": "+40731195126",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "Șoseaua Ștefan cel Mare 12",
+                          "addressLocality": "București",
+                          "addressRegion": "Sector 2",
+                          "postalCode": "020141",
+                          "addressCountry": "RO"
+                        },
+                        "geo": {
+                          "@type": "GeoCoordinates",
+                          "latitude": "44.4268",
+                          "longitude": "26.1025"
+                        },
+                        "openingHours": "Mo-Sa 08:00-20:00",
+                        "priceRange": "$$",
+                        "servedCuisine": "Romanian Pastry",
+                        "hasMap": "https://maps.google.com/?q=44.4268,26.1025",
+                        "sameAs": [
+                          "https://www.facebook.com/profile.php?id=100058296618834",
+                          "https://www.instagram.com/cofetariazaha"
+                        ],
+                        "aggregateRating": {
+                          "@type": "AggregateRating",
+                          "ratingValue": "4.9",
+                          "reviewCount": "150"
+                        },
+                        "areaServed": {
+                          "@type": "City",
+                          "name": "București",
+                          "containedInPlace": {
+                            "@type": "AdministrativeArea",
+                            "name": "Sector 2"
+                          }
                         }
-                      }
-                    })
-                  }}
-                />
-                <Header />
-                <main className="min-h-screen">
-                  {children}
-                </main>
-                <Footer />
+                      })
+                    }}
+                  />
+                    <TopBar />
+                    <Header />
+                    <main className="min-h-screen pt-24">
+                      {children}
+                    </main>
+                    <Footer />
+                    <CookieBanner />
+                    </NotificationProvider>
+                  </CartProvider>
+                </CookieProvider>
               </body>
     </html>
   )

@@ -25,7 +25,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'Facebook',
-      href: 'https://facebook.com/cofetaria-zaha',
+      href: 'https://www.facebook.com/profile.php?id=100058296618834',
       icon: Facebook,
     },
     {
@@ -65,7 +65,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Creăm momente dulci și memorabile prin torturi personalizate, 
+              Cofetăria Zaha București - torturi personalizate, 
               prăjituri artizanale și dulciuri de casă preparate cu pasiune 
               și ingrediente de calitate superioară.
             </p>
@@ -185,7 +185,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © {currentYear} Cofetăria Zaha. Toate drepturile rezervate.
             </p>
-            <div className="flex space-x-6 text-sm">
+            <div className="flex flex-wrap gap-4 md:gap-6 text-sm">
               <Link
                 href="/politica-confidentialitate"
                 className="text-gray-400 hover:text-primary transition-colors duration-200"
@@ -197,6 +197,12 @@ const Footer = () => {
                 className="text-gray-400 hover:text-primary transition-colors duration-200"
               >
                 Termeni și Condiții
+              </Link>
+              <Link
+                href="/politica-cookie-uri"
+                className="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                Politica de Cookie-uri
               </Link>
             </div>
           </div>

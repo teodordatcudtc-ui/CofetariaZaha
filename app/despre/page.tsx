@@ -56,27 +56,27 @@ const AboutPage = () => {
   // Istoricul cofetăriei
   const timeline = [
     {
-      year: '2008',
+      year: '2021',
       title: 'Începuturile',
       description: 'Cofetăria Zaha a fost înființată cu visul de a aduce dulciuri autentice în București'
     },
     {
-      year: '2012',
+      year: '2022',
       title: 'Prima Extindere',
       description: 'Am extins meniul cu torturi personalizate și am introdus servicii de catering'
     },
     {
-      year: '2016',
+      year: '2023',
       title: 'Recunoaștere Locală',
       description: 'Am câștigat primul premiu pentru cel mai bun tort de nuntă din București'
     },
     {
-      year: '2020',
+      year: '2024',
       title: 'Adaptare Digitală',
       description: 'Am implementat comenzi online și livrare la domiciliu pentru a servi clienții în siguranță'
     },
     {
-      year: '2023',
+      year: '2024',
       title: 'Prezent',
       description: 'Continuăm să creăm momente dulci pentru peste 1000 de familii din București'
     }
@@ -119,7 +119,7 @@ const AboutPage = () => {
               Despre <span className="text-gradient">Cofetăria Zaha</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              De peste 15 ani, Cofetăria Zaha este sinonimul calității și pasiunii 
+              De peste 3 ani, Cofetăria Zaha este sinonimul calității și pasiunii 
               în lumea dulciurilor din București. Creăm momente memorabile prin 
               torturi personalizate, prăjituri artizanale și dulciuri de casă 
               preparate cu ingrediente de cea mai bună calitate.
@@ -256,56 +256,129 @@ const AboutPage = () => {
               Istoricul Nostru
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              O călătorie de peste 15 ani în lumea dulciurilor, 
+              O călătorie de peste 3 ani în lumea dulciurilor, 
               plină de momente frumoase și realizări importante.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {timeline.map((event, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="card h-full group-hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                        <span className="text-2xl font-bold text-primary">
-                          {index + 1}
-                        </span>
+          {/* Timeline vertical cu design modern */}
+          <div className="relative">
+            {/* Linia verticală centrală */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-primary/60 to-primary/30 hidden lg:block"></div>
+            
+            <div className="space-y-12">
+              {timeline.map((event, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className={`relative flex items-center ${
+                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  } flex-col lg:flex-row`}
+                >
+                  {/* Conținutul evenimentului */}
+                  <div className={`w-full lg:w-5/12 ${
+                    index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
+                  }`}>
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ duration: 0.3 }}
+                      className="card group relative overflow-hidden"
+                    >
+                      {/* Background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Elemente decorative */}
+                      <div className="absolute top-4 right-4 w-16 h-16 bg-primary/10 rounded-full opacity-20"></div>
+                      <div className="absolute bottom-4 left-4 w-8 h-8 bg-primary/20 rounded-full opacity-30"></div>
+                      
+                      <div className="relative z-10">
+                        {/* Anul și indicatorul */}
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="flex items-center space-x-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
+                              <span className="text-2xl font-bold text-white">
+                                {event.year}
+                              </span>
+                            </div>
+                            <div className="w-12 h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm text-primary font-medium">Milestone {index + 1}</div>
+                            <div className="text-xs text-gray-500">Anul {event.year}</div>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200">
+                          {event.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 leading-relaxed text-lg">
+                          {event.description}
+                        </p>
+                        
+                        {/* Indicator de progres */}
+                        <div className="mt-6 flex items-center space-x-2">
+                          <div className="flex space-x-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div
+                                key={i}
+                                className={`w-2 h-2 rounded-full ${
+                                  i <= index ? 'bg-primary' : 'bg-gray-300'
+                                }`}
+                              ></div>
+                            ))}
+                          </div>
+                          <span className="text-sm text-gray-500 ml-2">
+                            {Math.round(((index + 1) / timeline.length) * 100)}% din călătorie
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-3xl font-bold text-primary block">
-                          {event.year}
-                        </span>
-                        <div className="w-16 h-1 bg-primary rounded-full mt-1"></div>
-                      </div>
-                    </div>
+                    </motion.div>
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-200">
-                    {event.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {event.description}
-                  </p>
-                  
-                  <div className="mt-6 pt-4 border-t border-gray-100">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
-                      <span>Milestone {index + 1}</span>
-                    </div>
+                  {/* Punctul central pe linia de timp */}
+                  <div className="hidden lg:flex w-2/12 justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg relative z-10"
+                    >
+                      <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
+                    </motion.div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  
+                  {/* Spațiu pentru alinierea alternativă */}
+                  <div className="w-full lg:w-5/12"></div>
+                </motion.div>
+              ))}
+            </div>
           </div>
+          
+          {/* Statistici finale */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-8"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-bold text-primary mb-2">3+</div>
+                <div className="text-gray-600">Ani de experiență</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-primary mb-2">1000+</div>
+                <div className="text-gray-600">Familii fericite</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-primary mb-2">5000+</div>
+                <div className="text-gray-600">Dulciuri create</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

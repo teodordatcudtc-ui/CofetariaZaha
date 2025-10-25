@@ -4,7 +4,7 @@ Site web modern și responsiv pentru Cofetăria Zaha, o cofetărie din Bucureșt
 
 ## 🚀 Caracteristici
 
-- **Design Modern**: Interfață elegantă cu culorile #05ddf4 și design aerisit
+- **Design Modern**: Interfață elegantă cu culorile #8cdef5 și design aerisit
 - **Responsive**: Optimizat pentru desktop, tabletă și mobile
 - **Animații Subtile**: Micro-interacțiuni și animații smooth cu Framer Motion
 - **SEO Optimizat**: Meta tags, sitemap.xml, robots.txt și structură semantică
@@ -109,8 +109,8 @@ cofetaria-zaha/
 ## 🎨 Personalizare
 
 ### Culori:
-- **Primary**: #05ddf4 (în `tailwind.config.js`)
-- **Secondary**: #05ddf4
+- **Primary**: #8cdef5 (în `tailwind.config.js`)
+- **Secondary**: #8cdef5
 
 ### Fonturi:
 - **Primary**: Montserrat

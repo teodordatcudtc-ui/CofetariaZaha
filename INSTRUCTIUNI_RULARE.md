@@ -12,7 +12,7 @@ Site-ul complet pentru Cofetăria Zaha cu toate cerințele implementate:
 - ✅ **Contact** - Formular funcțional, hartă, informații
 
 ### 🎨 Design și Animații:
-- ✅ Culori principale: #05ddf4
+- ✅ Culori principale: #8cdef5
 - ✅ Fonturi elegante: Montserrat și Lato
 - ✅ Animații subtile cu Framer Motion
 - ✅ Design modern și profesional

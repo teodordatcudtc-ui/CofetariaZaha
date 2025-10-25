@@ -18,6 +18,10 @@
     font-family: 'Playfair Display', serif;
     font-weight: 600;
   }
+  
+  .font-dancing {
+    font-family: var(--font-dancing), 'Dancing Script', cursive;
+  }
 }
 
 @layer components {
@@ -46,7 +50,7 @@
   }
   
   .hero-bg {
-    background: linear-gradient(135deg, rgba(5, 221, 244, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(140, 222, 245, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
   }
 }
 
@@ -74,12 +78,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #05ddf4;
+  background: #8cdef5;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #04c4d4;
+  background: #7bc8e8;
 }
 
 /* Loading animation */

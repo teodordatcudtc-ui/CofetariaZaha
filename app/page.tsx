@@ -221,7 +221,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-20">
+      <section className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center hero-bg overflow-hidden pt-16 sm:pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
 
         {/* Elemente decorative îmbunătățite */}
@@ -292,7 +292,7 @@ const HomePage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="block">Dulciuri Personalizate</span>
+                <span className="block">Dulciuri Artizanale</span>
                 <span className="block">
                   <span className="text-gradient bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent animate-pulse">
                     Cofetăria Zaha București
@@ -492,7 +492,7 @@ const HomePage = () => {
             {/* Carusel container pentru mobile */}
             <div 
               className="relative overflow-hidden" 
-              style={{ width: 'calc(2 * 160px + 1 * 8px)' }}
+              style={{ width: 'calc(2 * 160px + 1 * 16px)' }}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -500,13 +500,13 @@ const HomePage = () => {
               <motion.div
                 className="flex space-x-4"
                 animate={{
-                  x: -currentProductIndex * (160 + 8), // 160px produs + 8px spațiu
+                  x: -currentProductIndex * (160 + 16), // 160px produs + 16px spațiu
                 }}
                 transition={{
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                style={{ width: `${featuredProducts.length * (160 + 8)}px` }}
+                style={{ width: `${featuredProducts.length * (160 + 16)}px` }}
               >
                 {featuredProducts.map((product, index) => {
                   const ProductIcon = product.icon
@@ -518,7 +518,7 @@ const HomePage = () => {
                       transition={{ duration: 0.3 }}
                     >
                       <Link href={`/produse/${product.slug}`} className="block">
-                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg">
+                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
                           <div className="relative overflow-hidden rounded-t-lg h-24">
                             <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
@@ -534,11 +534,11 @@ const HomePage = () => {
                             </motion.div>
                           </div>
                           </div>
-                          <div className="p-2">
-                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1">
+                          <div className="p-2 flex flex-col flex-grow">
+                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1 flex-grow">
                               {product.name}
                             </h3>
-                            <span className="text-sm font-bold text-primary">{product.price}</span>
+                            <span className="text-sm font-bold text-primary mt-auto">{product.price}</span>
                           </div>
                       </div>
                       </Link>
@@ -572,7 +572,7 @@ const HomePage = () => {
                   const ProductIcon = product.icon
                   return (
                     <motion.div key={product.id} className="flex-shrink-0 w-72" whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.3 }}>
-                      <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg">
+                      <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
                         <div className="relative overflow-hidden rounded-t-lg h-48">
                           <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
@@ -588,9 +588,9 @@ const HomePage = () => {
                             </motion.div>
                           </div>
                         </div>
-                        <div className="p-4">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-4">{product.name}</h3>
-                          <div className="flex items-center justify-between">
+                        <div className="p-4 flex flex-col flex-grow">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4 flex-grow">{product.name}</h3>
+                          <div className="flex items-center justify-between mt-auto">
                             <span className="text-lg font-bold text-primary">{product.price}</span>
                           </div>
                         </div>

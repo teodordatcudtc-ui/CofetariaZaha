@@ -110,7 +110,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#8cdef5" />
       </head>
-              <body className={`${inter.className} ${dancingScript.variable} antialiased`}>
+              <body className={`${inter.className} ${dancingScript.variable} antialiased`} suppressHydrationWarning>
                 <CookieProvider>
                   <CartProvider>
                     <NotificationProvider>

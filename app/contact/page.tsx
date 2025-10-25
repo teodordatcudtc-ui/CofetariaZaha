@@ -146,9 +146,9 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section className="relative py-8 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -156,10 +156,10 @@ const ContactPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-                    <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                    <h1 className="text-3xl font-bold text-gray-900 mb-4">
                       Comandă <span className="text-gradient">Acum</span>
                     </h1>
-                    <p className="text-xl text-gray-600 leading-relaxed">
+                    <p className="text-lg text-gray-600 leading-relaxed">
                       Plasează comanda pentru tortul perfect sau prăjiturile preferate. 
                       Oferim servicii complete de comandă online, programare pentru evenimente 
                       și ridicare din magazin în București.

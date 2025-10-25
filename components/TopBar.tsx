@@ -12,8 +12,8 @@ const TopBar = () => {
           <span className="text-xs sm:text-sm">Luni - Sâmbătă: 08:00 - 20:00 | Duminică: 09:00 - 18:00</span>
         </div>
 
-        {/* Social Media Links */}
-        <div className="flex items-center space-x-2 sm:space-x-4">
+        {/* Social Media Links - Hidden on mobile */}
+        <div className="hidden sm:flex items-center space-x-4">
           <a
             href="https://www.facebook.com/profile.php?id=100058296618834"
             target="_blank"
@@ -22,7 +22,7 @@ const TopBar = () => {
             aria-label="Facebook"
           >
             <Facebook className="h-4 w-4" />
-            <span className="hidden sm:inline">Facebook</span>
+            <span>Facebook</span>
           </a>
           
           <a
@@ -33,7 +33,7 @@ const TopBar = () => {
             aria-label="Instagram"
           >
             <Instagram className="h-4 w-4" />
-            <span className="hidden sm:inline">Instagram</span>
+            <span>Instagram</span>
           </a>
         </div>
       </div>

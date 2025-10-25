@@ -19,6 +19,8 @@ import {
 const HomePage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [currentProductIndex, setCurrentProductIndex] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
 
   // Animații pentru secțiuni
   const fadeInUp = {
@@ -150,6 +152,35 @@ const HomePage = () => {
 
     return () => clearInterval(interval)
   }, [featuredProducts.length])
+
+  // Touch handlers pentru carusel mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      setCurrentProductIndex((prev) => 
+        prev === featuredProducts.length - 1 ? 0 : prev + 1
+      )
+    }
+    if (isRightSwipe) {
+      setCurrentProductIndex((prev) => 
+        prev === 0 ? featuredProducts.length - 1 : prev - 1
+      )
+    }
+  }
 
   // Date pentru servicii
   const services = [
@@ -459,7 +490,13 @@ const HomePage = () => {
             className="relative flex justify-center"
           >
             {/* Carusel container pentru mobile */}
-            <div className="relative overflow-hidden" style={{ width: 'calc(2 * 160px + 1 * 8px)' }}>
+            <div 
+              className="relative overflow-hidden" 
+              style={{ width: 'calc(2 * 160px + 1 * 8px)' }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <motion.div
                 className="flex space-x-4"
                 animate={{
@@ -481,9 +518,9 @@ const HomePage = () => {
                       transition={{ duration: 0.3 }}
                     >
                       <Link href={`/produse/${product.slug}`} className="block">
-                        <div className="card group overflow-hidden h-full">
-                        <div className="relative overflow-hidden rounded-lg mb-4">
-                          <div className="w-full h-24 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
+                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg">
+                          <div className="relative overflow-hidden rounded-t-lg h-24">
+                            <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
                             <div className="absolute inset-0 opacity-10">
                               <div className="absolute top-2 left-2 w-8 h-8 border-2 border-primary/30 rounded-full"></div>
@@ -496,20 +533,13 @@ const HomePage = () => {
                               <ProductIcon className="h-6 w-6 text-primary" />
                             </motion.div>
                           </div>
-                          <div className="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
-                            {product.category}
                           </div>
-                        </div>
-
-                        <div className="space-y-2">
-                          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2">
-                            {product.name}
-                          </h3>
-
-                          <div className="flex items-center justify-between">
+                          <div className="p-2">
+                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1">
+                              {product.name}
+                            </h3>
                             <span className="text-sm font-bold text-primary">{product.price}</span>
                           </div>
-                        </div>
                       </div>
                       </Link>
                     </motion.div>
@@ -542,9 +572,9 @@ const HomePage = () => {
                   const ProductIcon = product.icon
                   return (
                     <motion.div key={product.id} className="flex-shrink-0 w-72" whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.3 }}>
-                      <div className="card group overflow-hidden h-full">
-                        <div className="relative overflow-hidden rounded-lg mb-6">
-                          <div className="w-full h-48 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
+                      <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg">
+                        <div className="relative overflow-hidden rounded-t-lg h-48">
+                          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                             {/* Pattern decorative */}
                             <div className="absolute inset-0 opacity-10">
                               <div className="absolute top-4 left-4 w-16 h-16 border-2 border-primary/30 rounded-full"></div>
@@ -556,19 +586,13 @@ const HomePage = () => {
                             <motion.div className="relative z-10" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
                               <ProductIcon className="h-16 w-16 text-primary" />
                             </motion.div>
-
-                            <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                              {product.category}
-                            </div>
                           </div>
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-4">{product.name}</h3>
-                        <div className="flex items-center justify-between">
-                          <span className="text-2xl font-bold text-primary">{product.price}</span>
-                          <Link href={`/produse/${product.slug}`} className="text-primary hover:text-primary/80 font-medium flex items-center group-hover:translate-x-1 transition-transform duration-200">
-                            Vezi detalii
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Link>
+                        <div className="p-4">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4">{product.name}</h3>
+                          <div className="flex items-center justify-between">
+                            <span className="text-lg font-bold text-primary">{product.price}</span>
+                          </div>
                         </div>
                       </div>
                     </motion.div>

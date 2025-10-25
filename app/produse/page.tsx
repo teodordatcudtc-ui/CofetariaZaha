@@ -404,8 +404,8 @@ const ProductsPage = () => {
                   variants={fadeInUp}
                   className="card group overflow-hidden cursor-pointer"
                 >
-                <div className="relative overflow-hidden rounded-lg mb-6">
-                  <div className="w-full h-48 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
+                <div className="relative overflow-hidden rounded-t-lg h-48">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                     {/* Pattern decorative */}
                     <div className="absolute inset-0 opacity-10">
                       <div className="absolute top-4 left-4 w-16 h-16 border-2 border-primary/30 rounded-full"></div>
@@ -421,9 +421,6 @@ const ProductsPage = () => {
                     >
                       <product.icon className="h-16 w-16 text-primary" />
                     </motion.div>
-                  </div>
-                  <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {categories.find(cat => cat.id === product.category)?.name}
                   </div>
                 </div>
 

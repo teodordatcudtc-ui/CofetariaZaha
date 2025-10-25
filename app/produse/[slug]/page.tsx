@@ -352,10 +352,10 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16">
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4">
-        <div className="container-custom">
+        <div className="container-custom px-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
             <Link href="/" className="hover:text-primary">Acasă</Link>
             <span>/</span>
@@ -366,7 +366,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
 
-      <div className="container-custom py-8">
+      <div className="container-custom py-8 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Imagine produs */}
           <motion.div
@@ -376,7 +376,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             className="space-y-4"
           >
             {/* Imaginea principală */}
-            <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden mx-4">
               {/* Placeholder pentru imagine */}
               <div className="text-center">
                 <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -392,7 +392,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-6 px-4"
           >
             {/* Titlu și preț */}
             <div>

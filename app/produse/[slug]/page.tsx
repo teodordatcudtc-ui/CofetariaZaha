@@ -376,7 +376,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             className="space-y-4"
           >
             {/* Imaginea principală */}
-                <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden mx-4 h-64 sm:h-auto">
+                <div className="aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden mx-auto h-64 sm:h-auto max-w-md">
               {/* Placeholder pentru imagine */}
               <div className="text-center">
                 <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -398,38 +398,20 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             <div>
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">{product.name}</h1>
               <div className="flex items-center space-x-4 mb-4 sm:mb-6">
-                <span className="text-2xl sm:text-3xl font-bold text-primary">{product.price} RON</span>
+                <span className="text-2xl sm:text-3xl font-bold text-primary">
+                  {Math.round(product.price * quantity)} RON
+                </span>
                 {product.originalPrice && (
-                  <span className="text-lg sm:text-xl text-gray-500 line-through">{product.originalPrice} RON</span>
+                  <span className="text-lg sm:text-xl text-gray-500 line-through">
+                    {Math.round(product.originalPrice * quantity)} RON
+                  </span>
+                )}
+                {quantity > 1 && (
+                  <span className="text-sm text-gray-500">
+                    ({product.price} RON × {quantity})
+                  </span>
                 )}
               </div>
-            </div>
-
-            {/* Butoane acțiune */}
-            <div className="space-y-4">
-              <div className="flex space-x-4">
-                <button 
-                  onClick={handleAddToCart}
-                  className="flex-1 border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200"
-                >
-                  Adaugă în coș
-                </button>
-                <button 
-                  onClick={handleBuyNow}
-                  className="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
-                >
-                  Cumpără acum
-                </button>
-              </div>
-              <p className="text-sm text-gray-500 text-center">
-                Mai multe opțiuni de plată
-              </p>
-            </div>
-
-            {/* Descriere */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Descriere</h3>
-              <p className="text-gray-600 leading-relaxed">{product.longDescription}</p>
             </div>
 
             {/* Data livrării */}
@@ -482,50 +464,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                       </button>
                     </div>
 
-                    {/* Zilele săptămânii */}
+                    {/* Grid calendar */}
                     <div className="grid grid-cols-7 gap-1 mb-2">
-                      {['L', 'M', 'M', 'J', 'V', 'S', 'D'].map((day, index) => (
-                        <div key={index} className="text-center text-sm font-medium text-gray-500 py-2">
+                      {['Lu', 'Ma', 'Mi', 'Jo', 'Vi', 'Sa', 'Du'].map((day) => (
+                        <div key={day} className="text-center text-sm font-medium text-gray-500 py-2">
                           {day}
                         </div>
                       ))}
                     </div>
 
-                    {/* Zilele calendarului */}
                     <div className="grid grid-cols-7 gap-1">
-                      {getDaysInMonth(currentMonth).map((day, index) => {
-                        const isDisabled = isDateDisabled(day.date)
-                        const isSelected = isDateSelected(day.date)
-                        const isToday = day.date.toDateString() === new Date().toDateString()
-                        
-                        return (
-                          <button
-                            key={index}
-                            onClick={() => !isDisabled && handleDateSelect(day.date)}
-                            disabled={isDisabled}
-                            className={`
-                              h-10 w-10 rounded-lg text-sm font-medium transition-all duration-200
-                              ${!day.isCurrentMonth ? 'text-gray-300' : 'text-gray-900'}
-                              ${isDisabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-primary/10 cursor-pointer'}
-                              ${isSelected ? 'bg-primary text-white shadow-lg' : ''}
-                              ${isToday && !isSelected ? 'bg-primary/20 text-primary font-semibold' : ''}
-                              ${!isDisabled && !isSelected && day.isCurrentMonth ? 'hover:bg-primary/5' : ''}
-                            `}
-                          >
-                            {day.date.getDate()}
-                          </button>
-                        )
-                      })}
-                    </div>
-
-                    {/* Buton închidere */}
-                    <div className="mt-4 pt-3 border-t border-gray-200">
-                      <button
-                        onClick={() => setShowCalendar(false)}
-                        className="w-full text-sm text-gray-600 hover:text-primary transition-colors duration-200"
-                      >
-                        Închide
-                      </button>
+                      {getCalendarDays().map((day, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleDateSelect(day)}
+                          disabled={!day || day < new Date()}
+                          className={`p-2 text-sm rounded-lg transition-colors duration-200 ${
+                            day && day.toDateString() === selectedDate?.toDateString()
+                              ? 'bg-primary text-white'
+                              : day && day >= new Date()
+                              ? 'hover:bg-primary/10 text-gray-900'
+                              : 'text-gray-300 cursor-not-allowed'
+                          }`}
+                        >
+                          {day?.getDate()}
+                        </button>
+                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -534,23 +498,87 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
             {/* Cantitate */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Cantitate</label>
-              <div className="flex items-center space-x-3">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
-                >
-                  -
-                </button>
-                <span className="text-lg font-medium">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
-                >
-                  +
-                </button>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                {product.category === 'Torturi' ? 'Selectează greutatea' : 'Selectează cantitatea'}
+              </label>
+              <p className="text-sm text-gray-600 mb-3">
+                {product.category === 'Torturi' 
+                  ? 'Alege greutatea potrivită pentru numărul de persoane'
+                  : 'Alege cantitatea dorită'
+                }
+              </p>
+              <div className="flex items-center space-x-4">
+                {product.category === 'Torturi' ? (
+                  // Selector pentru greutate (torturi)
+                  <div className="flex space-x-2">
+                    {[
+                      { weight: '2kg', people: '10 persoane', multiplier: 1 },
+                      { weight: '3kg', people: '15 persoane', multiplier: 1.5 },
+                      { weight: '5kg', people: '25 persoane', multiplier: 2.5 }
+                    ].map((option, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setQuantity(option.multiplier)}
+                        className={`px-4 py-2 rounded-lg border-2 transition-colors duration-200 ${
+                          quantity === option.multiplier
+                            ? 'border-primary bg-primary text-white'
+                            : 'border-gray-300 hover:border-primary'
+                        }`}
+                      >
+                        <div className="text-sm font-medium">{option.weight}</div>
+                        <div className="text-xs opacity-75">{option.people}</div>
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  // Selector pentru cantitate (produse normale)
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors duration-200"
+                    >
+                      <Minus className="h-4 w-4" />
+                    </button>
+                    <span className="text-lg font-semibold min-w-[3rem] text-center">{quantity}</span>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors duration-200"
+                    >
+                      <Plus className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
+
+            {/* Butoane acțiune */}
+            <div className="space-y-4">
+              <div className="flex space-x-4">
+                <button 
+                  onClick={handleAddToCart}
+                  className="flex-1 border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200"
+                >
+                  Adaugă în coș
+                </button>
+                <button 
+                  onClick={handleBuyNow}
+                  className="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Cumpără acum
+                </button>
+              </div>
+              <p className="text-sm text-gray-500 text-center">
+                Mai multe opțiuni de plată
+              </p>
+            </div>
+
+            {/* Descriere */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Descriere</h3>
+              <p className="text-gray-600 leading-relaxed">{product.longDescription}</p>
+            </div>
+
+
 
 
             {/* Taxe și transport */}

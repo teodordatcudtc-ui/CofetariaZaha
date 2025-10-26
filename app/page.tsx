@@ -72,7 +72,7 @@ const HomePage = () => {
     {
       id: 2,
       name: "Caserolă mini prăjituri",
-      price: "88 RON",
+      price: "75 RON",
       category: "mini-prajituri",
       icon: Cookie,
       slug: "caserola-mini-prajituri",

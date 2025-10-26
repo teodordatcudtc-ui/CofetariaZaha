@@ -1369,20 +1369,34 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       }
     },
     
-    // Platou Mixt / Mini Prăjituri
+    // Platou Mini Prăjituri
     'platou-mix-mini-prajituri': {
       id: 54,
-      name: 'Platou Mixt / Mini Prăjituri',
+      name: 'Platou Mini Prăjituri',
       price: 228,
       originalPrice: 228,
       category: 'mini-prajituri',
       description: 'Selecție variată de mini prăjituri.',
-      longDescription: 'Platoul nostru mixt cu mini prăjituri include o selecție variată de mini prăjituri. O combinație perfectă de texturi și gusturi.',
+      longDescription: 'Platoul nostru cu mini prăjituri include o selecție variată de mini prăjituri. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Selecție variată de mini prăjituri'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Platou 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '700g',
+          name: 'Platou 700g',
+          price: 150,
+          servings: '700g'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1418,11 +1432,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'caserola-mini-prajituri': {
       id: 56,
       name: 'Caserolă mini prăjituri',
-      price: 88,
-      originalPrice: 88,
+      price: 75,
+      originalPrice: 75,
       category: 'mini-prajituri',
       description: 'Caserolă cu mini prăjituri variate: mini tarte, mini eclere, mini amandine, mini kranț.',
-      longDescription: 'Caserola noastră cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru gustări sau evenimente.',
+      longDescription: 'Caserola noastră cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru gustări sau evenimente. 350g per caserolă.',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },

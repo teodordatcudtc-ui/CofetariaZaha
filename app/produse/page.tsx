@@ -943,10 +943,10 @@ const ProductsPage = () => {
       ingredients: ['Blat umed de cacao', 'Blat umed alb', 'Unt', 'Ciocolată', 'Rom', 'Fructe de pădure']
     },
     
-    // Platou Mixt / Mini Prăjituri
+    // Platou Mini Prăjituri
     {
       id: 54,
-      name: 'Platou Mixt / Mini Prăjituri',
+      name: 'Platou Mini Prăjituri',
       price: '228 RON',
       priceValue: 228,
       category: 'mini-prajituri',
@@ -956,7 +956,21 @@ const ProductsPage = () => {
       servings: '1kg',
       icon: Cookie,
       slug: 'platou-mix-mini-prajituri',
-      description: 'Selecție variată de mini prăjituri'
+      description: 'Selecție variată de mini prăjituri',
+      variants: [
+        {
+          id: '1kg',
+          name: 'Platou 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '700g',
+          name: 'Platou 700g',
+          price: 150,
+          servings: '700g'
+        }
+      ]
     },
 
     // Produse lipsă din carusel
@@ -980,13 +994,13 @@ const ProductsPage = () => {
     {
       id: 56,
       name: 'Caserolă mini prăjituri',
-      price: '88 RON',
-      priceValue: 88,
+      price: '75 RON',
+      priceValue: 75,
       category: 'mini-prajituri',
       rating: 5,
       reviews: 15,
       preparationTime: 'Zilnic',
-      servings: '1kg',
+      servings: '350g',
       icon: Cookie,
       slug: 'caserola-mini-prajituri',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată']

@@ -70,6 +70,12 @@ const Header = () => {
       description: 'Ecler, tiramisu, papanași'
     },
     {
+      name: 'Fără zahăr / Green Sugar',
+      href: '/produse?category=fara-zahar-green-sugar',
+      icon: Star,
+      description: 'Produse fără zahăr cu Green Sugar'
+    },
+    {
       name: 'Dulciuri de Casă',
       href: '/produse?category=dulciuri',
       icon: Star,
@@ -178,6 +184,9 @@ const Header = () => {
                                   <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors duration-200">
                                       {category.name}
+                                      {category.name === 'Fără zahăr / Green Sugar' && (
+                                        <span className="ml-2 text-green-500 font-bold text-xs">●</span>
+                                      )}
                                     </p>
                                     <p className="text-xs text-gray-500 group-hover:text-primary/70 transition-colors duration-200">
                                       {category.description}
@@ -385,7 +394,12 @@ const Header = () => {
                                     >
                                       <category.icon className="h-4 w-4 mr-3 text-primary" />
                                       <div>
-                                        <p className="font-medium">{category.name}</p>
+                                        <p className="font-medium">
+                                          {category.name}
+                                          {category.name === 'Fără zahăr / Green Sugar' && (
+                                            <span className="ml-2 text-green-500 font-bold text-xs">●</span>
+                                          )}
+                                        </p>
                                         <p className="text-xs text-gray-500">{category.description}</p>
                                       </div>
                                     </Link>

@@ -18,7 +18,8 @@ import {
   Phone,
   ArrowUpDown,
   ArrowUp,
-  ArrowDown
+  ArrowDown,
+  Leaf
 } from 'lucide-react'
 
 const ProductsPage = () => {
@@ -84,10 +85,11 @@ const ProductsPage = () => {
   // Categorii de produse
   const categories = [
     { id: 'all', name: 'Toate Produsele', icon: Cake },
-    { id: 'mini-prajituri', name: 'Mini prăjituri', icon: Cookie },
     { id: 'prajituri', name: 'Prăjituri', icon: Cookie },
-    { id: 'torturi', name: 'Torturi', icon: Cake },
+    { id: 'fara-zahar-green-sugar', name: 'Fără zahăr / Green Sugar', icon: Leaf },
+    { id: 'mini-prajituri', name: 'Mini prăjituri', icon: Cookie },
     { id: 'dulciuri', name: 'Dulciuri de Casă', icon: Heart },
+    { id: 'torturi', name: 'Torturi', icon: Cake },
     { id: 'evenimente', name: 'Evenimente', icon: Users }
   ]
 
@@ -239,7 +241,7 @@ const ProductsPage = () => {
       name: 'Tiramisu Green Sugar',
       price: '35 RON',
       priceValue: 35,
-      category: 'prajituri',
+      category: 'fara-zahar-green-sugar',
       rating: 5,
       reviews: 19,
       preparationTime: 'Zilnic',
@@ -255,7 +257,7 @@ const ProductsPage = () => {
       name: 'Amandina Green Sugar',
       price: '39 RON',
       priceValue: 39,
-      category: 'prajituri',
+      category: 'fara-zahar-green-sugar',
       rating: 5,
       reviews: 21,
       preparationTime: 'Zilnic',
@@ -281,26 +283,10 @@ const ProductsPage = () => {
       ingredients: ['Unt', 'Fondant', 'Făină', 'Zahăr', 'Ouă', 'Cacao', 'Rom']
     },
     
-    // Tarte Mici
-    {
-      id: 12,
-      name: 'Tarte Mici',
-      price: '228 RON/kg',
-      priceValue: 228,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 18,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'tarte-mici',
-      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb']
-    },
-    
     // Tarte Mari
     {
       id: 13,
-      name: 'Tarte Mari',
+      name: 'Tarte',
       price: '18 RON',
       priceValue: 18,
       category: 'prajituri',
@@ -364,14 +350,14 @@ const ProductsPage = () => {
     // Cozonac
     {
       id: 17,
-      name: 'Cozonac',
+      name: 'Cozonac - 950g',
       price: '153 RON/kg',
       priceValue: 153,
       category: 'dulciuri',
       rating: 5,
       reviews: 40,
       preparationTime: '2-3 zile',
-      servings: '1kg',
+      servings: '950g',
       icon: Heart,
       slug: 'cozonac-traditional-nuca-cacao',
       ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Unt', 'Drojdie', 'Coajă de lămâie și portocală', 'Mac', 'Stafide', 'Rahat', 'Rom']
@@ -380,17 +366,17 @@ const ProductsPage = () => {
     // Chec
     {
       id: 18,
-      name: 'Chec',
-      price: '178 RON/kg',
-      priceValue: 178,
+      name: 'Chec cu nucă și scortisoară',
+      price: '120 RON',
+      priceValue: 120,
       category: 'dulciuri',
       rating: 5,
       reviews: 25,
       preparationTime: 'Zilnic',
-      servings: '1kg',
+      servings: '700g',
       icon: Heart,
       slug: 'chec',
-      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt']
+      ingredients: ['Nucă', 'Făină de grâu', 'Zahăr', 'Ouă', 'Ulei', 'Scorțișoară']
     },
     
     // Pricomigdale
@@ -602,11 +588,7 @@ const ProductsPage = () => {
       servings: '150g',
       icon: Cookie,
       slug: 'medovika-prajitura',
-      ingredients: ['Făină', 'Mascarpone', 'Cremă de brânză', 'Zahăr', 'Fructe de pădure', 'Rodie', 'Mere', 'Miere', 'Frișcă naturală', 'Unt', 'Ouă', 'Gelatină', 'Bicarbonat'],
-      variants: [
-        { weight: '150g', price: 35, priceValue: 35 },
-        { weight: '1kg', price: 205, priceValue: 205 }
-      ]
+      ingredients: ['Făină', 'Mascarpone', 'Cremă de brânză', 'Zahăr', 'Fructe de pădure', 'Rodie', 'Mere', 'Miere', 'Frișcă naturală', 'Unt', 'Ouă', 'Gelatină', 'Bicarbonat']
     },
     
     // Dobos
@@ -801,10 +783,10 @@ const ProductsPage = () => {
       ingredients: ['Bezea', 'Piure fructul pasiunii', 'Mango', 'Frișcă', 'Fructe mixte']
     },
     
-    // Tort Trois Chocolat
+    // Tort Trios Chocolat
     {
       id: 44,
-      name: 'Tort Trois Chocolat',
+      name: 'Tort Trios Chocolat',
       price: '205 RON/kg',
       priceValue: 205,
       category: 'torturi',
@@ -941,7 +923,7 @@ const ProductsPage = () => {
       preparationTime: 'Zilnic',
       servings: '200g',
       icon: Cookie,
-      slug: 'kataif',
+      slug: 'cataif',
       ingredients: ['Cataif', 'Unt', 'Sirop de zahăr', 'Coajă de portocală', 'Frișcă naturală']
     },
     
@@ -965,7 +947,7 @@ const ProductsPage = () => {
     {
       id: 54,
       name: 'Platou Mixt / Mini Prăjituri',
-      price: '228 RON/kg',
+      price: '228 RON',
       priceValue: 228,
       category: 'mini-prajituri',
       rating: 5,
@@ -1014,13 +996,13 @@ const ProductsPage = () => {
     {
       id: 57,
       name: 'Mini tarte',
-      price: '8 RON',
+      price: '228 RON/kg',
       priceValue: 8,
       category: 'mini-prajituri',
       rating: 5,
       reviews: 20,
       preparationTime: 'Zilnic',
-      servings: '1 bucată',
+      servings: '1 kg',
       icon: Cookie,
       slug: 'mini-tarte',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe']
@@ -1046,13 +1028,13 @@ const ProductsPage = () => {
     {
       id: 59,
       name: 'Mini eclere cu vanilie și ciocolată',
-      price: '9 RON',
-      priceValue: 9,
+      price: '228 RON/kg',
+      priceValue: 228,
       category: 'mini-prajituri',
       rating: 5,
       reviews: 22,
       preparationTime: 'Zilnic',
-      servings: '1 bucată',
+      servings: '1kg',
       icon: Cookie,
       slug: 'mini-eclere-vanilie-ciocolata',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată', 'Cremă']
@@ -1062,13 +1044,13 @@ const ProductsPage = () => {
     {
       id: 60,
       name: 'Mini eclere cu ness',
-      price: '9 RON',
-      priceValue: 9,
+      price: '228 RON/kg',
+      priceValue: 228,
       category: 'mini-prajituri',
       rating: 5,
       reviews: 19,
       preparationTime: 'Zilnic',
-      servings: '1 bucată',
+      servings: '1kg',
       icon: Cookie,
       slug: 'mini-eclere-ness',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Ness', 'Cremă']
@@ -1088,6 +1070,198 @@ const ProductsPage = () => {
       icon: Heart,
       slug: 'fursecuri-fragede-nuca',
       ingredients: ['Făină', 'Unt', 'Zahăr', 'Nucă', 'Vanilie']
+    },
+
+    // Platou fără lactoză
+    {
+      id: 62,
+      name: 'Platou fără lactoză',
+      price: '228 RON',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 12,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'platou-fara-lactoza',
+      ingredients: ['Brownie cu merișoare', 'Pandispan cu prune sau vișine', 'Pavlova cu cremă de kalamansi', 'Fructul pasiunii', 'Mango']
+    },
+
+    // Mini trio chocolate
+    {
+      id: 63,
+      name: 'Mini trio chocolate',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-trio-chocolate',
+      ingredients: ['Ciocolată albă', 'Ciocolată cu lapte', 'Ciocolată neagră', 'Cremă', 'Făină', 'Unt']
+    },
+
+    // Căciulițe cu ciocolată și portocală
+    {
+      id: 64,
+      name: 'Căciulițe cu ciocolată și portocală',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'caciulite-ciocolata-portocala',
+      ingredients: ['Ciocolată', 'Coajă de portocală', 'Făină', 'Unt', 'Ouă', 'Zahăr']
+    },
+
+    // Mini Choux a la creme
+    {
+      id: 65,
+      name: 'Mini Choux a la creme',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-choux-creme',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Vanilie', 'Frișcă naturală', 'Zahăr']
+    },
+
+    // Mini krant
+    {
+      id: 66,
+      name: 'Mini krant',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 14,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-krant',
+      ingredients: ['Cremă de vanilie', 'Unt', 'Nucă caramelizată', 'Făină', 'Zahăr', 'Ouă']
+    },
+
+    // Mini cannoli
+    {
+      id: 67,
+      name: 'Mini cannoli',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-cannoli',
+      ingredients: ['Cremă de brânză', 'Unt', 'Ciocolată neagră', 'Făină', 'Zahăr', 'Ouă']
+    },
+
+    // Mini Red velvet
+    {
+      id: 68,
+      name: 'Mini Red velvet',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-red-velvet',
+      ingredients: ['Făină', 'Cacao', 'Cremă de brânză', 'Colorant roșu', 'Unt', 'Zahăr']
+    },
+
+    // Cozonac cu nucă, cacao, stafide și rahat
+    {
+      id: 69,
+      name: 'Cozonac cu nucă, cacao, stafide și rahat - 1kg',
+      price: '153 RON',
+      priceValue: 153,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 25,
+      preparationTime: '2-3 zile',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'cozonac-nuca-cacao-stafide-rahat',
+      ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Cacao', 'Stafide', 'Rahat', 'Unt', 'Drojdie']
+    },
+
+    // Mini tarte cu lămâie, kalamansi și meringa
+    {
+      id: 70,
+      name: 'Mini tarte cu lămâie, kalamansi și meringa',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-tarte-lamaie-kalamansi-meringa',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Lămâie', 'Kalamansi', 'Meringa', 'Cremă']
+    },
+
+    // Mini exotic
+    {
+      id: 71,
+      name: 'Mini exotic',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'fara-zahar-green-sugar',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'mini-exotic',
+      ingredients: ['Blat de vanilie', 'Cremă de vanilie', 'Cremos din fructul pasiunii', 'Green Sugar', 'Făină', 'Unt', 'Ouă']
+    },
+
+    // Chec cu morcov
+    {
+      id: 72,
+      name: 'Chec cu morcov',
+      price: '120 RON',
+      priceValue: 120,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '700g',
+      icon: Heart,
+      slug: 'chec-morcov',
+      ingredients: ['Morcov', 'Nucă', 'Ouă', 'Ulei', 'Scorțișoară', 'Făină', 'Zahăr']
+    },
+
+    // Chec simplu
+    {
+      id: 73,
+      name: 'Chec simplu',
+      price: '120 RON',
+      priceValue: 120,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 30,
+      preparationTime: 'Zilnic',
+      servings: '700g',
+      icon: Heart,
+      slug: 'chec-simplu',
+      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt']
     }
   ]
 
@@ -1283,49 +1457,56 @@ const ProductsPage = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           {Object.keys(groupedProducts).length > 0 ? (
-            Object.entries(groupedProducts).map(([categoryKey, categoryProducts]) => {
-              const categoryInfo = categories.find(cat => cat.id === categoryKey)
-              if (!categoryInfo) return null
-              
-              return (
-                <div key={categoryKey} className="mb-12">
-                  {/* Subtitlu categorie */}
-                  <div className="flex items-center justify-center mb-6">
-                    <categoryInfo.icon className="h-6 w-6 text-primary mr-3" />
-                    <h2 className="text-2xl font-bold text-gray-900">{categoryInfo.name}</h2>
-                  </div>
-                  
-                  {/* Produsele din categoria respectivă */}
-                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                    {(categoryProducts as any[]).map((product: any, index: number) => (
-                      <Link key={`${product.id}-${categoryKey}`} href={`/produse/${product.slug}`}>
-                        <div className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col">
-                          <div className="relative overflow-hidden rounded-t-lg h-48 sm:h-64 md:h-80">
-                            <Image
-                              src={`/images/products/${product.slug}.jpg`}
-                              alt={product.name}
-                              fill
-                              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                            />
-                          </div>
-                          <div className="p-4 flex flex-col flex-grow">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-200 flex-grow">
-                              {product.name}
-                            </h3>
-                            <div className="flex items-center justify-between mt-auto">
-                              <span className="text-base font-bold text-primary">
-                                {product.price}
-                              </span>
+            categories
+              .filter(category => groupedProducts[category.id] && groupedProducts[category.id].length > 0)
+              .map((categoryInfo) => {
+                const categoryProducts = groupedProducts[categoryInfo.id]
+                
+                return (
+                  <div key={categoryInfo.id} className="mb-12">
+                    {/* Subtitlu categorie */}
+                    <div className="flex items-center justify-center mb-6">
+                      <categoryInfo.icon className="h-6 w-6 text-primary mr-3" />
+                      <h2 className="text-2xl font-bold text-gray-900">{categoryInfo.name}</h2>
+                    </div>
+                    
+                    {/* Produsele din categoria respectivă */}
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                      {(categoryProducts as any[]).map((product: any, index: number) => (
+                        <Link key={`${product.id}-${categoryInfo.id}`} href={`/produse/${product.slug}`}>
+                          <div className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col relative">
+                            {/* Pop-out pentru produsele Green Sugar */}
+                            {product.category === 'fara-zahar-green-sugar' && (
+                              <div className="absolute top-2 right-2 z-10 bg-green-500 text-white px-3 py-2 rounded-full text-sm font-medium shadow-lg">
+                                Fără zahăr
+                              </div>
+                            )}
+                            <div className="relative overflow-hidden rounded-t-lg h-48 sm:h-64 md:h-80">
+                              <Image
+                                src={`/images/products/${product.slug}.jpg`}
+                                alt={product.name}
+                                fill
+                                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                              />
+                            </div>
+                            <div className="p-4 flex flex-col flex-grow">
+                              <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-200 flex-grow">
+                                {product.name}
+                              </h3>
+                              <div className="flex items-center justify-between mt-auto">
+                                <span className="text-base font-bold text-primary">
+                                  {product.price}
+                                </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
-                    ))}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            })
+                )
+              })
           ) : (
             <div className="text-center py-12">
               <div className="text-gray-400 mb-4">

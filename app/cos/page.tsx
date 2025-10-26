@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { 
   ArrowLeft, 
+  ArrowRight,
   Plus, 
   Minus, 
   Trash2, 
@@ -18,27 +20,13 @@ import { useCart } from '@/contexts/CartContext'
 import { useNotification } from '@/contexts/NotificationContext'
 
 const CartPage = () => {
+  const router = useRouter()
   const { items, updateQuantity, removeFromCart, clearCart, getTotalPrice, getTotalItems } = useCart()
-  const [isCheckingOut, setIsCheckingOut] = useState(false)
-  const { showSuccess, showInfo } = useNotification()
+  const { showInfo } = useNotification()
 
   const handleCheckout = () => {
-    setIsCheckingOut(true)
-    showInfo(
-      'Se procesează comanda...',
-      'Vă rugăm să așteptați în timp ce procesăm comanda dumneavoastră.',
-      2000
-    )
-    // Simulare procesare comandă
-    setTimeout(() => {
-      showSuccess(
-        'Comandă procesată!',
-        'Comanda a fost procesată cu succes! Veți fi contactați pentru confirmarea detaliilor.',
-        5000
-      )
-      clearCart()
-      setIsCheckingOut(false)
-    }, 2000)
+    // Redirecționează către pagina de checkout steps folosind router
+    router.push('/checkout/steps')
   }
 
   if (items.length === 0) {
@@ -242,20 +230,10 @@ const CartPage = () => {
               {/* Buton checkout */}
               <button
                 onClick={handleCheckout}
-                disabled={isCheckingOut}
-                className="w-full bg-primary text-white py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="w-full bg-primary text-white py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
-                {isCheckingOut ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Se procesează...</span>
-                  </>
-                ) : (
-                  <>
-                    <CreditCard className="h-5 w-5" />
-                    <span>Finalizează comanda</span>
-                  </>
-                )}
+                <ArrowRight className="h-5 w-5" />
+                <span>Următorul pas</span>
               </button>
 
               {/* Informații suplimentare */}

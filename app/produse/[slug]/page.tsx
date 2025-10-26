@@ -23,7 +23,8 @@ import {
   Minus,
   Plus,
   Calendar,
-  ShoppingCart
+  ShoppingCart,
+  Phone
 } from 'lucide-react'
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
@@ -38,6 +39,9 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
   })
   const [showCalendar, setShowCalendar] = useState(false)
   const [currentMonth, setCurrentMonth] = useState(new Date())
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
   const { addToCart } = useCart()
   const { showSuccess, showInfo } = useNotification()
 
@@ -46,6 +50,50 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       ...prev,
       [section]: !prev[section]
     }))
+  }
+
+  // Funcții pentru galeria de imagini
+  const getProductImages = (slug: string) => {
+    const galleryProducts = ['tort-trois-chocolat', 'tort-maria']
+    if (galleryProducts.includes(slug)) {
+      return [
+        `/images/products/${slug}.jpg`,
+        `/images/products/${slug}-slice.jpg`
+      ]
+    }
+    return [`/images/products/${slug}.jpg`]
+  }
+
+  const nextImage = () => {
+    const images = getProductImages(params.slug)
+    setCurrentImageIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    const images = getProductImages(params.slug)
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      nextImage()
+    }
+    if (isRightSwipe) {
+      prevImage()
+    }
   }
 
   // Funcții pentru calendar
@@ -127,6 +175,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
   const handleAddToCart = () => {
     if (product) {
+      // Adaugă produsul cu cantitatea selectată
+      for (let i = 0; i < quantity; i++) {
       addToCart({
         id: product.id.toString(),
         name: product.name,
@@ -135,9 +185,10 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         category: product.category,
         selectedDate: selectedDate
       })
+      }
       showSuccess(
         'Produs adăugat!',
-        `${product.name} a fost adăugat în coșul tău de cumpărături.`,
+        `${product.name} x${quantity} ${quantity === 1 ? 'bucată' : 'bucăți'} a fost adăugat în coșul tău de cumpărături.`,
         3000
       )
     }
@@ -145,6 +196,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
   const handleBuyNow = () => {
     if (product) {
+      // Adaugă produsul cu cantitatea selectată
+      for (let i = 0; i < quantity; i++) {
       addToCart({
         id: product.id.toString(),
         name: product.name,
@@ -153,6 +206,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         category: product.category,
         selectedDate: selectedDate
       })
+      }
       showInfo(
         'Redirecționare...',
         'Te ducem la coșul de cumpărături pentru finalizarea comenzii.',
@@ -349,7 +403,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Tiramisu Green Sugar',
       price: 35,
       originalPrice: 35,
-      category: 'prajituri',
+      category: 'fara-zahar-green-sugar',
       description: 'Tiramisu cu Green Sugar - o versiune modernă a clasicului.',
       longDescription: 'Tiramisu-ul nostru cu Green Sugar este preparat cu făină, Green Sugar, ouă, mascarpone, frișcă naturală, gelatină, cacao și cafea. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Green Sugar', 'Ouă', 'Mascarpone', 'Frișcă naturală', 'Gelatină', 'Cacao', 'Cafea'],
@@ -371,7 +425,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Amandina Green Sugar',
       price: 39,
       originalPrice: 39,
-      category: 'prajituri',
+      category: 'fara-zahar-green-sugar',
       description: 'Amandina cu Green Sugar - o versiune modernă a clasicului.',
       longDescription: 'Amandina noastră cu Green Sugar este preparată cu făină, cacao, ouă, Green Sugar, praf de copt, ulei, unt și rom. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Cacao', 'Ouă', 'Green Sugar', 'Praf de copt', 'Ulei', 'Unt', 'Rom'],
@@ -397,28 +451,6 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       description: 'Amandină clasică cu fondant și cacao.',
       longDescription: 'Amandina noastră clasică este preparată cu unt, fondant, făină, zahăr, ouă, cacao și rom. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Unt', 'Fondant', 'Făină', 'Zahăr', 'Ouă', 'Cacao', 'Rom'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    
-    // Tarte Mici
-    'tarte-mici': {
-      id: 12,
-      name: 'Tarte Mici',
-      price: 228,
-      originalPrice: 228,
-      category: 'mini-prajituri',
-      description: 'Tarte mici cu fructe mixte.',
-      longDescription: 'Tarte-urile noastre mici cu fructe mixte sunt preparate cu lapte, făină, unt, gălbenuș, zahăr, fructe mixte, vanilie păstaie, gelatină și amidon de porumb. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
@@ -522,12 +554,12 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     // Cozonac
     'cozonac-traditional-nuca-cacao': {
       id: 17,
-      name: 'Cozonac',
+      name: 'Cozonac - 950g',
       price: 153,
       originalPrice: 153,
       category: 'dulciuri',
-      description: 'Cozonac traditional cu nucă și cacao.',
-      longDescription: 'Cozonacul nostru traditional cu nucă și cacao este preparat cu făină, ouă, zahăr, lapte, nucă, unt, drojdie, coajă de lămâie și portocală, mac, stafide, rahat și rom. Gustul autentic românesc.',
+      description: 'Cozonac traditional cu nucă și cacao - 950g.',
+      longDescription: 'Cozonacul nostru traditional cu nucă și cacao este preparat cu făină, ouă, zahăr, lapte, nucă, unt, drojdie, coajă de lămâie și portocală, mac, stafide, rahat și rom. Gustul autentic românesc în porție de 950g.',
       ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Unt', 'Drojdie', 'Coajă de lămâie și portocală', 'Mac', 'Stafide', 'Rahat', 'Rom'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
@@ -544,13 +576,13 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     // Chec
     'chec': {
       id: 18,
-      name: 'Chec',
-      price: 178,
-      originalPrice: 178,
+      name: 'Chec cu nucă și scorțișoară',
+      price: 120,
+      originalPrice: 120,
       category: 'dulciuri',
-      description: 'Chec cu amidon de cartofi și coajă de lămâie.',
-      longDescription: 'Checul nostru cu amidon de cartofi și coajă de lămâie este preparat cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
+      description: 'Chec cu nucă, făină de grâu, zahăr, ouă, ulei și scorțișoară - 700g.',
+      longDescription: 'Checul nostru cu nucă, făină de grâu, zahăr, ouă, ulei și scorțișoară este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
+      ingredients: ['Nucă', 'Făină de grâu', 'Zahăr', 'Ouă', 'Ulei', 'Scorțișoară'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
@@ -850,11 +882,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      },
-      variants: [
-        { weight: '150g', price: 35, priceValue: 35 },
-        { weight: '1kg', price: 205, priceValue: 205 }
-      ]
+      }
     },
     
     // Dobos
@@ -1298,7 +1326,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     },
     
     // Cataif
-    'kataif': {
+    'cataif': {
       id: 52,
       name: 'Cataif',
       price: 25,
@@ -1456,8 +1484,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'mini-eclere-vanilie-ciocolata': {
       id: 59,
       name: 'Mini eclere cu vanilie și ciocolată',
-      price: 9,
-      originalPrice: 9,
+      price: 228,
+      originalPrice: 228,
       category: 'mini-prajituri',
       description: 'Mini eclere cu cremă de vanilie și ciocolată.',
       longDescription: 'Mini eclerele noastre sunt preparate cu făină, unt, ouă, zahăr, vanilie, ciocolată și cremă. O combinație perfectă de texturi și gusturi.',
@@ -1478,8 +1506,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'mini-eclere-ness': {
       id: 60,
       name: 'Mini eclere cu ness',
-      price: 9,
-      originalPrice: 9,
+      price: 228,
+      originalPrice: 228,
       category: 'mini-prajituri',
       description: 'Mini eclere cu cremă de ness.',
       longDescription: 'Mini eclerele noastre cu ness sunt preparate cu făină, unt, ouă, zahăr, ness și cremă. O combinație perfectă de texturi și gusturi.',
@@ -1516,6 +1544,270 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Platou fără lactoză
+    'platou-fara-lactoza': {
+      id: 62,
+      name: 'Platou fără lactoză',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Platou fără lactoză cu brownie, pandispan și pavlova.',
+      longDescription: 'Platoul nostru fără lactoză conține brownie cu merișoare, pandispan cu prune sau vișine și Pavlova cu cremă de kalamansi, fructul pasiunii și mango. Perfect pentru cei cu intoleranță la lactoză.',
+      ingredients: ['Brownie cu merișoare', 'Pandispan cu prune sau vișine', 'Pavlova cu cremă de kalamansi', 'Fructul pasiunii', 'Mango'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini trio chocolate
+    'mini-trio-chocolate': {
+      id: 63,
+      name: 'Mini trio chocolate',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini trio chocolate cu 3 tipuri de ciocolată.',
+      longDescription: 'Mini trio chocolate-ul nostru include o selecție variată de mini prăjituri cu ciocolată albă, cu lapte și neagră. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Ciocolată albă', 'Ciocolată cu lapte', 'Ciocolată neagră', 'Cremă', 'Făină', 'Unt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Căciulițe cu ciocolată și portocală
+    'caciulite-ciocolata-portocala': {
+      id: 64,
+      name: 'Căciulițe cu ciocolată și portocală',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Căciulițe cu ciocolată și portocală.',
+      longDescription: 'Căciulițele noastre cu ciocolată și portocală sunt preparate cu ciocolată fină și coajă de portocală. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Ciocolată', 'Coajă de portocală', 'Făină', 'Unt', 'Ouă', 'Zahăr'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini Choux a la creme
+    'mini-choux-creme': {
+      id: 65,
+      name: 'Mini Choux a la creme',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini Choux a la creme cu vanilie și frișcă naturală.',
+      longDescription: 'Mini Choux-urile noastre a la creme sunt preparate cu vanilie și frișcă naturală. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Vanilie', 'Frișcă naturală', 'Zahăr'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini krant
+    'mini-krant': {
+      id: 66,
+      name: 'Mini krant',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini krant cu cremă de vanilie și crocant din nucă caramelizată.',
+      longDescription: 'Mini krant-ul nostru cu cremă de vanilie și crocant din nucă caramelizată este preparat cu unt și ingrediente de calitate. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Cremă de vanilie', 'Unt', 'Nucă caramelizată', 'Făină', 'Zahăr', 'Ouă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini cannoli
+    'mini-cannoli': {
+      id: 67,
+      name: 'Mini cannoli',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini cannoli cu cremă de brânză și ciocolată neagră.',
+      longDescription: 'Mini cannoli-urile noastre cu cremă de brânză și ciocolată neagră sunt preparate cu unt și ingrediente de calitate. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Cremă de brânză', 'Unt', 'Ciocolată neagră', 'Făină', 'Zahăr', 'Ouă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini Red velvet
+    'mini-red-velvet': {
+      id: 68,
+      name: 'Mini Red velvet',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini Red velvet cu cremă de brânză.',
+      longDescription: 'Mini Red velvet-ul nostru cu cremă de brânză este preparat cu colorant roșu și ingrediente de calitate. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Cacao', 'Cremă de brânză', 'Colorant roșu', 'Unt', 'Zahăr'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Cozonac cu nucă, cacao, stafide și rahat
+    'cozonac-nuca-cacao-stafide-rahat': {
+      id: 69,
+      name: 'Cozonac cu nucă, cacao, stafide și rahat - 1kg',
+      price: 153,
+      originalPrice: 153,
+      category: 'dulciuri',
+      description: 'Cozonac cu nucă, cacao, stafide și rahat - 1kg.',
+      longDescription: 'Cozonacul nostru cu nucă, cacao, stafide și rahat este preparat cu ingrediente de calitate și gustul autentic românesc. Perfect pentru sărbători în porție de 1kg.',
+      ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Cacao', 'Stafide', 'Rahat', 'Unt', 'Drojdie'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini tarte cu lămâie, kalamansi și meringa
+    'mini-tarte-lamaie-kalamansi-meringa': {
+      id: 70,
+      name: 'Mini tarte cu lămâie, kalamansi și meringa',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Mini tarte cu lămâie, kalamansi și meringa.',
+      longDescription: 'Mini tarte-urile noastre cu lămâie, kalamansi și meringa sunt preparate cu ingrediente de calitate. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Lămâie', 'Kalamansi', 'Meringa', 'Cremă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini exotic
+    'mini-exotic': {
+      id: 71,
+      name: 'Mini exotic',
+      price: 228,
+      originalPrice: 228,
+      category: 'fara-zahar-green-sugar',
+      description: 'Mini exotic cu blat de vanilie și cremos din fructul pasiunii cu Green Sugar.',
+      longDescription: 'Mini exotic-ul nostru cu blat de vanilie, cremă de vanilie și cremos din fructul pasiunii integral făcută cu Green Sugar. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat de vanilie', 'Cremă de vanilie', 'Cremos din fructul pasiunii', 'Green Sugar', 'Făină', 'Unt', 'Ouă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Chec cu morcov
+    'chec-morcov': {
+      id: 72,
+      name: 'Chec cu morcov',
+      price: 120,
+      originalPrice: 120,
+      category: 'dulciuri',
+      description: 'Chec cu morcov, nucă, ouă, ulei și scorțișoară - 700g.',
+      longDescription: 'Checul nostru cu morcov, nucă, ouă, ulei și scorțișoară este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
+      ingredients: ['Morcov', 'Nucă', 'Ouă', 'Ulei', 'Scorțișoară', 'Făină', 'Zahăr'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Chec simplu
+    'chec-simplu': {
+      id: 73,
+      name: 'Chec simplu',
+      price: 120,
+      originalPrice: 120,
+      category: 'dulciuri',
+      description: 'Chec simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt - 700g.',
+      longDescription: 'Checul nostru simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
+      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 
@@ -1538,6 +1830,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         setSelectedFlavor('')
       }
     }
+    // Resetează indexul imaginii când se schimbă produsul
+    setCurrentImageIndex(0)
   }, [params.slug])
 
   if (!product) {
@@ -1579,13 +1873,63 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             className="mx-auto max-w-md"
           >
             <div className="relative">
+              {(() => {
+                const images = getProductImages(params.slug)
+                const hasMultipleImages = images.length > 1
+                
+                return (
+                  <div 
+                    className="relative"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                  >
               <Image
-                src={`/images/products/${params.slug}.jpg`}
+                      src={images[currentImageIndex]}
                 alt={product.name}
                 width={500}
                 height={400}
-                className="w-full h-64 sm:h-auto object-cover rounded-lg shadow-lg"
-              />
+                      className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+                    />
+                    
+                    {/* Săgeți de navigare */}
+                    {hasMultipleImages && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
+                          aria-label="Imaginea anterioară"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
+                          aria-label="Imaginea următoare"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </>
+                    )}
+                    
+                    {/* Indicatori de pagină */}
+                    {hasMultipleImages && (
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {images.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                              index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                            }`}
+                            aria-label={`Imaginea ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })()}
             </div>
           </motion.div>
 
@@ -1601,11 +1945,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
               <div className="flex items-center space-x-4 mb-6">
                 <span className="text-2xl sm:text-3xl font-bold text-primary">
-                  {Math.round(currentPrice * quantity)} RON
+                  {Math.round(currentPrice * quantity)} RON{currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                 </span>
                 {product.originalPrice && product.originalPrice > currentPrice && (
                   <span className="text-xl text-gray-500 line-through">
-                    {Math.round(product.originalPrice * quantity)} RON
+                    {Math.round(product.originalPrice * quantity)} RON{product.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                   </span>
                 )}
               </div>
@@ -1636,7 +1980,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                             : 'border-gray-300 hover:border-primary'
                         }`}
                       >
-                        {variant.weight} - {variant.price} RON
+                        {variant.weight} - {variant.price} RON{variant.price === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                       </button>
                     ))}
                   </div>
@@ -1665,112 +2009,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 </div>
               )}
 
-              {/* Quantity */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Cantitate</h3>
-                  <div className="flex items-center space-x-4">
-                    <button
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
-                    >
-                    -
-                    </button>
-                  <span className="text-xl font-semibold w-12 text-center">{quantity}</span>
-                    <button
-                      onClick={() => setQuantity(quantity + 1)}
-                    className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
-                    >
-                    +
-                    </button>
-                  </div>
-              </div>
 
-              {/* Date Selection */}
-                <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege data livrării</h3>
-                <div className="relative">
-                  <button
-                    onClick={() => setShowCalendar(!showCalendar)}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-left hover:border-primary transition-colors flex items-center justify-between"
-                  >
-                    <span className="text-gray-700">
-                      {selectedDate || 'Selectează data'}
-                    </span>
-                    <Calendar className="w-5 h-5 text-gray-500" />
-                  </button>
-
-                  {showCalendar && (
-                    <div className="absolute z-10 mt-2 bg-white border-2 border-gray-200 rounded-lg shadow-lg p-4 w-full">
-                      <div className="flex items-center justify-between mb-4">
-                        <button
-                          onClick={() => navigateMonth('prev')}
-                          className="p-2 hover:bg-gray-100 rounded-lg"
-                        >
-                          <ChevronLeft className="w-5 h-5" />
-                        </button>
-                        <span className="font-semibold">{formatMonthYear(currentMonth)}</span>
-                        <button
-                          onClick={() => navigateMonth('next')}
-                          className="p-2 hover:bg-gray-100 rounded-lg"
-                        >
-                          <ChevronRight className="w-5 h-5" />
-                        </button>
+              {/* Butoane de comandă */}
+              <div className="space-y-3 pt-4">
+                <a
+                  href="https://food.bolt.eu/ro-RO/325-bucharest/p/103885-cofet%C4%83ria-zaha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors duration-200 flex items-center justify-center space-x-2"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>Comandă prin Bolt Food</span>
+                </a>
+                
+                <a
+                  href="tel:0731195126"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>Apel telefonic - 0731 195 126</span>
+                </a>
                       </div>
 
-                      <div className="grid grid-cols-7 gap-1">
-                        {['D', 'L', 'M', 'M', 'J', 'V', 'S'].map((day) => (
-                          <div key={day} className="text-center text-sm font-semibold text-gray-600 py-2">
-                            {day}
-                          </div>
-                        ))}
-                        {getDaysInMonth(currentMonth).map((day, index) => (
-                      <button
-                        key={index}
-                            onClick={() => !isDateDisabled(day.date) && handleDateSelect(day.date)}
-                            disabled={isDateDisabled(day.date)}
-                            className={`
-                              p-2 text-sm rounded-lg transition-colors
-                              ${!day.isCurrentMonth ? 'text-gray-400' : 'text-gray-900'}
-                              ${isDateDisabled(day.date) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}
-                              ${isDateSelected(day.date) ? 'bg-primary text-white hover:bg-primary' : ''}
-                            `}
-                          >
-                            {day.date.getDate()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button
-                  onClick={handleAddToCart}
-                  className="flex-1 btn-primary flex items-center justify-center space-x-2"
-                >
-                  <ShoppingCart className="w-5 h-5" />
-                  <span>Adaugă în coș</span>
-                </button>
-                <button
-                  onClick={handleBuyNow}
-                  className="flex-1 bg-secondary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2"
-                >
-                  <span>Cumpără acum</span>
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Additional Info Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 space-y-4"
-        >
+              {/* Informații suplimentare */}
+              <div className="mt-8 space-y-4">
           {/* Ingredients */}
           <div className="border border-gray-200 rounded-lg overflow-hidden">
               <button
@@ -1826,8 +2090,12 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 </div>
             </div>
           )}
+                </div>
+              </div>
           </div>
         </motion.div>
+        </div>
+
       </div>
     </div>
   )

@@ -105,445 +105,92 @@ const ProductsPage = () => {
 
   // Produse
   const products = [
-    // Găluști cu prune
+    // Brownie Fistic
     {
       id: 1,
-      name: 'Găluști cu prune',
+      name: 'Brownie Fistic',
+      price: '33 RON',
+      priceValue: 33,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '150g',
+      icon: Cookie,
+      slug: 'brownie-fistic',
+      ingredients: ['Făină integrală', 'Ouă', 'Zahăr', 'Unt', 'Ciocolată', 'Merișoare', 'Pastă pură de fistic', 'Gelatină']
+    },
+    
+    // Saleuri
+    {
+      id: 2,
+      name: 'Saleuri',
+      price: '206 RON/kg',
+      priceValue: 206,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'saleuri',
+      ingredients: ['Făină', 'Unt', 'Telemea', 'Semințe', 'Chimen', 'Susan', 'Mac', 'Susan negru', 'In', 'Ou']
+    },
+    
+    // Poale'n Brau
+    {
+      id: 3,
+      name: 'Poale\'n Brau',
       price: '19 RON',
       priceValue: 19,
       category: 'dulciuri',
       rating: 5,
-      reviews: 15,
+      reviews: 18,
       preparationTime: 'Zilnic',
-      servings: '100g',
+      servings: '140g',
       icon: Heart,
-      slug: 'galusti-cu-prune',
-      ingredients: ['cartofi', 'ou', 'pesmet', 'unt', 'prune fără sâmbure', 'scorțișoară']
+      slug: 'poale-n-brau',
+      ingredients: ['Făină', 'Zahăr', 'Ouă', 'Brânză', 'Lapte', 'Stafide', 'Drojdie', 'Rom', 'Sare', 'Coajă de lămâie', 'Portocală']
     },
     
-    // Mini prăjituri
-    {
-      id: 2,
-      name: 'Caserolă mini prăjituri',
-      price: '88 RON',
-      priceValue: 88,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 20,
-      preparationTime: 'Zilnic',
-      servings: '300g',
-      icon: Cookie,
-      slug: 'caserola-mini-prajituri',
-      description: 'Mini tarte, mini eclere, mini amandine, mini kranț'
-    },
-    {
-      id: 3,
-      name: 'Platou mini prăjituri',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 25,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'platou-mini-prajituri',
-      description: 'Mini tarte, mini eclere, mini amandine, mini kranț'
-    },
-    
-    // Mini tarte
+    // Rulouri
     {
       id: 4,
-      name: 'Mini tarte bezea și lămâie',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 22,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-tarte-bezea-lamai',
-      description: 'Savoarea untului împreunează dulceața bezelei cu asprimea lămâi'
-    },
-    {
-      id: 5,
-      name: 'Mini tarte',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
+      name: 'Rulouri',
+      price: '25 RON',
+      priceValue: 25,
+      category: 'dulciuri',
       rating: 5,
       reviews: 16,
       preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-tarte'
+      servings: '85g',
+      icon: Heart,
+      slug: 'rulouri',
+      ingredients: ['Făină', 'Unt', 'Gălbenuș', 'Sare', 'Zahăr', 'Lapte', 'Vanilie păstaie', 'Amidon', 'Fistic', 'Arahide', 'Alune']
     },
+    
+    // Strudel
     {
-      id: 6,
-      name: 'Mini krant',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 19,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-krant',
-      ingredients: ['blat nucă', 'cremă de vanilie cu unt', 'crocant nucă caramelizată']
-    },
-    {
-      id: 7,
-      name: 'Mini eclere cu ness',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
+      id: 5,
+      name: 'Strudel',
+      price: '24 RON',
+      priceValue: 24,
+      category: 'dulciuri',
       rating: 5,
       reviews: 14,
       preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-eclere-ness'
-    },
-    {
-      id: 8,
-      name: 'Mini eclere cu vanilie și ciocolată',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 17,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-eclere-vanilie-ciocolata'
-    },
-    {
-      id: 9,
-      name: 'Mini amandine',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 21,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-amandine'
-    },
-    {
-      id: 10,
-      name: 'Mini choux',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 13,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-choux'
-    },
-    {
-      id: 11,
-      name: 'Mini duo chocolat cu fructe de pădure',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'mini-prajituri',
-      rating: 5,
-      reviews: 23,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Cookie,
-      slug: 'mini-duo-chocolat-fructe-padure'
-    },
-    
-    // Fursecuri
-    {
-      id: 12,
-      name: 'Amestec fursecuri',
-      price: '127 RON',
-      priceValue: 127,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 28,
-      preparationTime: 'Zilnic',
-      servings: '500g',
-      icon: Heart,
-      slug: 'amestec-fursecuri',
-      description: 'Pungă sau caserolă',
-      variants: [
-        { weight: '500g', price: 127, priceValue: 127 },
-        { weight: '700g', price: 177, priceValue: 177 }
-      ]
-    },
-    {
-      id: 15,
-      name: 'Fursecuri fragede cu nucă',
-      price: '254 RON/kg',
-      priceValue: 254,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 26,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'fursecuri-fragede-nuca',
-      ingredients: ['făină de grâu', 'unt', 'nucă', 'bicarbonat']
-    },
-    {
-      id: 16,
-      name: 'Cornulețe cu nucă și gem',
-      price: '254 RON/kg',
-      priceValue: 254,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 20,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'cornulete-nuca-gem',
-      ingredients: ['aluat fraged cu făină de grâu', 'unt', 'ou', 'nucă', 'gem de fructe de pădure']
-    },
-    {
-      id: 17,
-      name: 'Limbi de pisică',
-      price: '254 RON/kg',
-      priceValue: 254,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 18,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'limbi-de-pisica',
-      ingredients: ['făină grâu', 'unt', 'albuș', 'vanilie']
-    },
-    {
-      id: 18,
-      name: 'Fursec cu gem',
-      price: '254 RON/kg',
-      priceValue: 254,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 22,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'fursec-cu-gem',
-      ingredients: ['aluat fraged cu unt', 'făină grâu', 'ou', 'gem de fructe de pădure']
-    },
-    {
-      id: 19,
-      name: 'Fourstafidă',
-      price: '254 RON/kg',
-      priceValue: 254,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 15,
-      preparationTime: 'Zilnic',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'fourstafida',
-      ingredients: ['făină grâu', 'unt', 'ou', 'stafide', 'vanilie păstaie', 'rom']
-    },
-    {
-      id: 20,
-      name: 'Pricomigdale',
-      price: '296 RON/kg',
-      priceValue: 296,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 19,
-      preparationTime: 'Zilnic',
-      servings: '1kg (în jur de 30 bucăți)',
-      icon: Heart,
-      slug: 'pricomigdale',
-      ingredients: ['nucă', 'migdale', 'albuș', 'zahăr', 'cremă de ciocolată']
-    },
-    
-    // Torturi
-    {
-      id: 21,
-      name: 'Duo chocolate',
-      price: '266 RON/kg',
-      priceValue: 266,
-      category: 'torturi',
-      rating: 5,
-      reviews: 30,
-      preparationTime: '2-3 zile',
-      servings: '1kg',
-      icon: Cake,
-      slug: 'duo-chocolate-1kg',
-      ingredients: ['blat cacao', 'mousse ciocolată neagră', 'fructe de pădure', 'mousse ciocolată albă']
-    },
-    {
-      id: 22,
-      name: 'Tort Maria',
-      price: '266 RON',
-      priceValue: 266,
-      category: 'torturi',
-      rating: 5,
-      reviews: 35,
-      preparationTime: '3-5 zile',
-      servings: '1kg',
-      icon: Cake,
-      slug: 'tort-maria',
-      ingredients: ['blat alb', 'cremă de vanilie', 'frișcă naturală', 'fructe de pădure'],
-      variants: [
-        { weight: '1kg', price: 266, priceValue: 266 },
-        { weight: '1.5kg', price: 399, priceValue: 399 },
-        { weight: '2kg', price: 532, priceValue: 532 }
-      ]
-    },
-    {
-      id: 25,
-      name: 'Tort mousse de ciocolată și fructe de pădure',
-      price: '399 RON',
-      priceValue: 399,
-      category: 'torturi',
-      rating: 5,
-      reviews: 26,
-      preparationTime: '3-4 zile',
-      servings: '1.5kg',
-      icon: Cake,
-      slug: 'tort-mousse-ciocolata-fructe-padure'
-    },
-    {
-      id: 26,
-      name: 'Tort medovika',
-      price: '453 RON',
-      priceValue: 453,
-      category: 'torturi',
-      rating: 5,
-      reviews: 24,
-      preparationTime: '4-5 zile',
-      servings: '1700g',
-      icon: Cake,
-      slug: 'tort-medovika'
-    },
-    {
-      id: 27,
-      name: 'Tort pavlova',
-      price: '320 RON',
-      priceValue: 320,
-      category: 'torturi',
-      rating: 5,
-      reviews: 29,
-      preparationTime: '3-4 zile',
-      servings: '1200g',
-      icon: Cake,
-      slug: 'tort-pavlova',
-      ingredients: ['bezea', 'piure de fructul pasiunii', 'frișcă naturală', 'mango', 'fructe mixte decor']
-    },
-    {
-      id: 28,
-      name: 'Tort diplomat',
-      price: '533 RON',
-      priceValue: 533,
-      category: 'torturi',
-      rating: 5,
-      reviews: 22,
-      preparationTime: '4-5 zile',
-      servings: '2kg',
-      icon: Cake,
-      slug: 'tort-diplomat',
-      ingredients: ['cremă de vanilie', 'frișcă naturală', 'blat alb', 'fructe în compot', 'ananas', 'piersici']
-    },
-    {
-      id: 29,
-      name: 'Tort red velvet',
-      price: '400 RON',
-      priceValue: 400,
-      category: 'torturi',
-      rating: 5,
-      reviews: 27,
-      preparationTime: '3-4 zile',
-      servings: '1.5kg',
-      icon: Cake,
-      slug: 'tort-red-velvet',
-      ingredients: ['făină', 'unt', 'zahăr', 'ou', 'kefir', 'cremă de brânză', 'frișcă', 'colorant alimentar roșu', 'bicarbonat']
-    },
-    
-    // Cozonac
-    {
-      id: 30,
-      name: 'Cozonac traditional cu nucă și cacao',
-      price: '198 RON',
-      priceValue: 198,
-      category: 'dulciuri',
-      rating: 5,
-      reviews: 40,
-      preparationTime: '2-3 zile',
-      servings: '1kg',
-      icon: Heart,
-      slug: 'cozonac-traditional-nuca-cacao',
-      description: 'Cozonac tradițional realizat cu unt, nucă, ouă în coajă'
-    },
-    
-    // Prăjituri
-    {
-      id: 31,
-      name: 'Pavlova',
-      price: '35 RON',
-      priceValue: 35,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 18,
-      preparationTime: 'Zilnic',
-      servings: '100g',
-      icon: Cookie,
-      slug: 'pavlova',
-      ingredients: ['albuș', 'zahăr', 'amidon', 'frișcă naturală', 'fructul pasiunii', 'fructe mixte']
-    },
-    {
-      id: 32,
-      name: 'Kataif',
-      price: '32 RON',
-      priceValue: 32,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 16,
-      preparationTime: 'Zilnic',
       servings: '200g',
-      icon: Cookie,
-      slug: 'kataif',
-      ingredients: ['făină', 'frișcă naturală', 'coajă lămâie', 'portocală']
+      icon: Heart,
+      slug: 'strudel',
+      ingredients: ['Făină', 'Unt', 'Sare', 'Mere', 'Arahide', 'Ou', 'Scorțișoară']
     },
+    
+    // Boema
     {
-      id: 33,
-      name: 'Amandină',
-      price: '36 RON',
-      priceValue: 36,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 21,
-      preparationTime: 'Zilnic',
-      servings: '150g',
-      icon: Cookie,
-      slug: 'amandina',
-      ingredients: ['făină', 'cacao', 'unt', 'zahăr', 'rom esență']
-    },
-    {
-      id: 34,
-      name: 'Savarină',
-      price: '36 RON',
-      priceValue: 36,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 19,
-      preparationTime: 'Zilnic',
-      servings: '280g',
-      icon: Cookie,
-      slug: 'savarina',
-      ingredients: ['făină', 'ouă', 'frișcă naturală', 'miere', 'drojdie', 'rom']
-    },
-    {
-      id: 35,
+      id: 6,
       name: 'Boema',
-      price: '40 RON',
-      priceValue: 40,
+      price: '31 RON',
+      priceValue: 31,
       category: 'prajituri',
       rating: 5,
       reviews: 17,
@@ -551,13 +198,159 @@ const ProductsPage = () => {
       servings: '150g',
       icon: Cookie,
       slug: 'boema',
-      ingredients: ['frișcă naturală', 'făină', 'ciocolată', 'ouă', 'ulei', 'unt', 'rom', 'cacao', 'praf de copt']
+      ingredients: ['Frișcă naturală', 'Făină', 'Ciocolată', 'Ouă', 'Ulei', 'Unt', 'Rom', 'Cacao', 'Praf de copt']
     },
+    
+    // Cornulețe
     {
-      id: 36,
-      name: 'Mousse 3 ciocolate',
-      price: '41 RON',
-      priceValue: 41,
+      id: 7,
+      name: 'Cornulețe',
+      price: '196 RON/kg',
+      priceValue: 196,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'cornulete-nuca-gem',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Gălbenuș', 'Gem de fructe de pădure (magiun)', 'Nucă']
+    },
+    
+    // Fursecuri
+    {
+      id: 8,
+      name: 'Fursecuri',
+      price: '196 RON/kg',
+      priceValue: 196,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'fursec-cu-gem',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Ouă', 'Gem de fructe de pădure (magiun)']
+    },
+    
+    // Tiramisu Green Sugar
+    {
+      id: 9,
+      name: 'Tiramisu Green Sugar',
+      price: '35 RON',
+      priceValue: 35,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '200g',
+      icon: Cookie,
+      slug: 'tiramisu-green-sugar',
+      ingredients: ['Făină', 'Green Sugar', 'Ouă', 'Mascarpone', 'Frișcă naturală', 'Gelatină', 'Cacao', 'Cafea']
+    },
+    
+    // Amandina Green Sugar
+    {
+      id: 10,
+      name: 'Amandina Green Sugar',
+      price: '39 RON',
+      priceValue: 39,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 21,
+      preparationTime: 'Zilnic',
+      servings: '150g',
+      icon: Cookie,
+      slug: 'amandina-green-sugar',
+      ingredients: ['Făină', 'Cacao', 'Ouă', 'Green Sugar', 'Praf de copt', 'Ulei', 'Unt', 'Rom']
+    },
+    
+    // Amandină
+    {
+      id: 11,
+      name: 'Amandină',
+      price: '28 RON',
+      priceValue: 28,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 21,
+      preparationTime: 'Zilnic',
+      servings: '150g',
+      icon: Cookie,
+      slug: 'amandina',
+      ingredients: ['Unt', 'Fondant', 'Făină', 'Zahăr', 'Ouă', 'Cacao', 'Rom']
+    },
+    
+    // Tarte Mici
+    {
+      id: 12,
+      name: 'Tarte Mici',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'tarte-mici',
+      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb']
+    },
+    
+    // Tarte Mari
+    {
+      id: 13,
+      name: 'Tarte Mari',
+      price: '18 RON',
+      priceValue: 18,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '90g',
+      icon: Cookie,
+      slug: 'tarte-mari',
+      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb']
+    },
+    
+    // Carrot Cake
+    {
+      id: 14,
+      name: 'Carrot Cake',
+      price: '189 RON/kg',
+      priceValue: 189,
+      category: 'torturi',
+      rating: 5,
+      reviews: 23,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'carrot-cake',
+      ingredients: ['Făină', 'Ouă', 'Ulei', 'Zahăr', 'Morcov', 'Nuci', 'Scorțișoară', 'Praf de copt', 'Bicarbonat']
+    },
+    
+    // Trandafir
+    {
+      id: 15,
+      name: 'Trandafir',
+      price: '28 RON',
+      priceValue: 28,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '120g',
+      icon: Cookie,
+      slug: 'trandafir',
+      ingredients: ['Făină', 'Miere', 'Zahăr', 'Unt', 'Drojdie', 'Ouă', 'Ciocolată albă', 'Frișcă', 'Gelatină', 'Kalamansi', 'Rom']
+    },
+    
+    // Mousse 3 Ciocolate
+    {
+      id: 16,
+      name: 'Mousse 3 Ciocolate',
+      price: '35 RON',
+      priceValue: 35,
       category: 'prajituri',
       rating: 5,
       reviews: 23,
@@ -565,13 +358,243 @@ const ProductsPage = () => {
       servings: '150g',
       icon: Cookie,
       slug: 'mousse-3-ciocolate',
-      ingredients: ['frișcă naturală', 'ciocolată albă', 'neagră', 'cu lapte', 'făină', 'ouă', 'zahăr', 'gelatină']
+      ingredients: ['Frișcă naturală', 'Ciocolată albă, neagră și cu lapte', 'Făină', 'Ouă', 'Zahăr', 'Cacao', 'Gelatină']
     },
+    
+    // Cozonac
     {
-      id: 37,
+      id: 17,
+      name: 'Cozonac',
+      price: '153 RON/kg',
+      priceValue: 153,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 40,
+      preparationTime: '2-3 zile',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'cozonac-traditional-nuca-cacao',
+      ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Unt', 'Drojdie', 'Coajă de lămâie și portocală', 'Mac', 'Stafide', 'Rahat', 'Rom']
+    },
+    
+    // Chec
+    {
+      id: 18,
+      name: 'Chec',
+      price: '178 RON/kg',
+      priceValue: 178,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 25,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'chec',
+      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt']
+    },
+    
+    // Pricomigdale
+    {
+      id: 19,
+      name: 'Pricomigdale',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'pricomigdale',
+      ingredients: ['Nucă', 'Migdale', 'Zahăr', 'Ouă', 'Ciocolată', 'Vanilie păstaie', 'Unt', 'Cafea', 'Rom', 'Amidon de porumb']
+    },
+    
+    // Cheesecake
+    {
+      id: 20,
+      name: 'Cheesecake',
+      price: '37 RON',
+      priceValue: 37,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 28,
+      preparationTime: 'Zilnic',
+      servings: '180g',
+      icon: Cookie,
+      slug: 'cheesecake',
+      ingredients: ['Biscuiți', 'Mascarpone', 'Frișcă naturală', 'Philadelphia', 'Coajă de lime', 'Gelatină', 'Fructe']
+    },
+    
+    // Ecler
+    {
+      id: 21,
+      name: 'Ecler',
+      price: '35 RON',
+      priceValue: 35,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '120g',
+      icon: Cookie,
+      slug: 'ecler',
+      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Ciocolată', 'Rom', 'Amidon']
+    },
+    
+    // Profiterol
+    {
+      id: 22,
+      name: 'Profiterol',
+      price: '39 RON',
+      priceValue: 39,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '200g',
+      icon: Cookie,
+      slug: 'profiterol',
+      ingredients: ['Făină', 'Ulei', 'Unt', 'Ouă', 'Pastă de fistic', 'Ciocolată', 'Frișcă naturală', 'Gelatină']
+    },
+    
+    // Tort Mousse de Ciocolată și Fructe de Pădure
+    {
+      id: 23,
+      name: 'Tort Mousse de Ciocolată și Fructe de Pădure',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 26,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-mousse-ciocolata-fructe-padure',
+      ingredients: ['Făină', 'Cacao', 'Ouă', 'Zahăr', 'Frișcă naturală', 'Ciocolată', 'Gelatină']
+    },
+    
+    // Negresă de Post
+    {
+      id: 24,
+      name: 'Negresă de Post',
+      price: '13 RON',
+      priceValue: 13,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 12,
+      preparationTime: 'Zilnic',
+      servings: '70g',
+      icon: Heart,
+      slug: 'negresa-de-post',
+      ingredients: ['Făină', 'Nucă de cocos', 'Zahăr', 'Ulei', 'Cacao', 'Bicarbonat']
+    },
+    
+    // Tort Brownie cu Fistic
+    {
+      id: 25,
+      name: 'Tort Brownie cu Fistic',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 24,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-brownie-cu-fistic',
+      description: 'Brownie cremos de ciocolată și cremos de fistic'
+    },
+    
+    // Ciocolată de Casă
+    {
+      id: 26,
+      name: 'Ciocolată de Casă',
+      price: '14 RON',
+      priceValue: 14,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '65g',
+      icon: Heart,
+      slug: 'ciocolata-de-casa',
+      ingredients: ['Lapte praf', 'Zahăr', 'Unt', 'Cacao', 'Rom']
+    },
+    
+    // Bezele
+    {
+      id: 27,
+      name: 'Bezele',
+      price: '159 RON/kg',
+      priceValue: 159,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'bezele',
+      ingredients: ['Albuș', 'Zahăr', 'Amidon']
+    },
+    
+    // Colivă
+    {
+      id: 28,
+      name: 'Colivă',
+      price: '19 RON',
+      priceValue: 19,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '200g',
+      icon: Heart,
+      slug: 'coliva',
+      ingredients: ['Arpacaș', 'Nucă', 'Zahăr', 'Coajă de citrice', 'Rom', 'Biscuiți'],
+      variants: [
+        { weight: '200g', price: 19, priceValue: 19 },
+        { weight: '1kg', price: 92, priceValue: 92 }
+      ]
+    },
+    
+    // Pavlova
+    {
+      id: 29,
+      name: 'Pavlova',
+      price: '28 RON',
+      priceValue: 28,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '100g',
+      icon: Cookie,
+      slug: 'pavlova',
+      ingredients: ['Albuș', 'Zahăr', 'Amidon', 'Frișcă naturală', 'Fructul pasiunii', 'Fructe mixte']
+    },
+    
+    // Pișcoturi
+    {
+      id: 30,
+      name: 'Pișcoturi',
+      price: '196 RON/kg',
+      priceValue: 196,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'piscoturi',
+      ingredients: ['Făină', 'Ouă', 'Zahăr']
+    },
+    
+    // Medovika
+    {
+      id: 31,
       name: 'Medovika',
-      price: '45 RON',
-      priceValue: 45,
+      price: '35 RON',
+      priceValue: 35,
       category: 'prajituri',
       rating: 5,
       reviews: 25,
@@ -579,75 +602,379 @@ const ProductsPage = () => {
       servings: '150g',
       icon: Cookie,
       slug: 'medovika-prajitura',
-      ingredients: ['făină', 'mascarpone', 'miere', 'cremă de brânză', 'zahăr', 'fructe de pădure', 'rodie mere', 'friscă naturală', 'unt', 'ouă', 'gelatină', 'bicarbonat']
+      ingredients: ['Făină', 'Mascarpone', 'Cremă de brânză', 'Zahăr', 'Fructe de pădure', 'Rodie', 'Mere', 'Miere', 'Frișcă naturală', 'Unt', 'Ouă', 'Gelatină', 'Bicarbonat'],
+      variants: [
+        { weight: '150g', price: 35, priceValue: 35 },
+        { weight: '1kg', price: 205, priceValue: 205 }
+      ]
     },
+    
+    // Dobos
+    {
+      id: 32,
+      name: 'Dobos',
+      price: '35 RON',
+      priceValue: 35,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '150g',
+      icon: Cookie,
+      slug: 'dobos',
+      ingredients: ['Unt', 'Ciocolată belgiană', 'Ouă', 'Zahăr', 'Făină', 'Ulei']
+    },
+    
+    // Trufe
+    {
+      id: 33,
+      name: 'Trufe',
+      price: '277 RON/kg',
+      priceValue: 277,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 21,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'trufe',
+      ingredients: ['Ciocolată', 'Frișcă', 'Tonka']
+    },
+    
+    // Savarină
+    {
+      id: 34,
+      name: 'Savarină',
+      price: '28 RON',
+      priceValue: 28,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '280g',
+      icon: Cookie,
+      slug: 'savarina',
+      ingredients: ['Făină', 'Ouă', 'Frișcă', 'Zahăr', 'Drojdie', 'Coajă de lămâie', 'Rom (alcool)', 'Gem de fructe de pădure']
+    },
+    
+    // Fourstafidă
+    {
+      id: 35,
+      name: 'Fourstafidă',
+      price: '196 RON/kg',
+      priceValue: 196,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'fourstafida',
+      ingredients: ['Unt', 'Făină', 'Ouă', 'Zahăr', 'Stafide', 'Rom', 'Esență', 'Vanilie păstaie']
+    },
+    
+    // Tort Maria
+    {
+      id: 36,
+      name: 'Tort Maria',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 35,
+      preparationTime: '3-5 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-maria',
+      ingredients: ['Cremă de vanilie', 'Frișcă', 'Fructe de pădure']
+    },
+    
+    // Cannoli
+    {
+      id: 37,
+      name: 'Cannoli',
+      price: '28 RON',
+      priceValue: 28,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 17,
+      preparationTime: 'Zilnic',
+      servings: '120g',
+      icon: Cookie,
+      slug: 'cannoli',
+      ingredients: ['Făină', 'Untură', 'Cremă de brânză', 'Unt', 'Frișcă', 'Ciocolată']
+    },
+    
+    // Danish
     {
       id: 38,
-      name: 'Cremes',
-      price: '296 RON/kg',
-      priceValue: 296,
+      name: 'Danish',
+      price: '36 RON',
+      priceValue: 36,
       category: 'prajituri',
       rating: 5,
       reviews: 20,
       preparationTime: 'Zilnic',
-      servings: '1kg',
+      servings: '120g',
       icon: Cookie,
-      slug: 'cremes',
-      ingredients: ['foietaj: unt', 'făină', 'sare', 'cremă de vanilie', 'frișcă', 'gelatină']
+      slug: 'danish',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Lapte', 'Drojdie', 'Vanilie păstaie', 'Scorțișoară', 'Fructe mixte']
     },
     
-    // Saleuri
+    // Tort Red Velvet
     {
       id: 39,
-      name: 'Saleuri',
-      price: '67 RON',
-      priceValue: 67,
-      category: 'dulciuri',
+      name: 'Tort Red Velvet',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
       rating: 5,
-      reviews: 12,
-      preparationTime: 'Zilnic',
-      servings: '250g',
-      icon: Heart,
-      slug: 'saleuri',
-      ingredients: ['făină', 'unt', 'telemea de vacă']
+      reviews: 27,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-red-velvet',
+      ingredients: ['Blat cu chefir', 'Cremă de brânză', 'Fructe de pădure']
     },
     
-    // Bobfistic
+    // Tort Snickers
     {
       id: 40,
-      name: 'Bobfistic',
-      price: '50 RON',
-      priceValue: 50,
+      name: 'Tort Snickers',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 24,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-snickers',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată', 'Caramel sărat cu arahide', 'Cremă de caramel']
+    },
+    
+    // Tort Tiramisu
+    {
+      id: 41,
+      name: 'Tort Tiramisu',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 26,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-tiramisu',
+      ingredients: ['Pișcot', 'Mousse mascarpone', 'Cafea', 'Cacao', 'Gelatină']
+    },
+    
+    // Tort Duo Chocolat
+    {
+      id: 42,
+      name: 'Tort Duo Chocolat',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 30,
+      preparationTime: '2-3 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'duo-chocolate-1kg',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată albă și neagră', 'Fructe de pădure']
+    },
+    
+    // Tort Pavlova
+    {
+      id: 43,
+      name: 'Tort Pavlova',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 29,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-pavlova',
+      ingredients: ['Bezea', 'Piure fructul pasiunii', 'Mango', 'Frișcă', 'Fructe mixte']
+    },
+    
+    // Tort Trois Chocolat
+    {
+      id: 44,
+      name: 'Tort Trois Chocolat',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 25,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-trois-chocolat',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată albă, cu lapte și neagră']
+    },
+    
+    // Tort Boema
+    {
+      id: 45,
+      name: 'Tort Boema',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 22,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-boema',
+      ingredients: ['Blat însiropat cu rom (alcool)', 'Cremă de ciocolată neagră', 'Vișine', 'Mousse de frișcă']
+    },
+    
+    // Alba ca Zăpada
+    {
+      id: 46,
+      name: 'Alba ca Zăpada',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 20,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'alba-ca-zapada',
+      ingredients: ['Unt', 'Făină', 'Ouă', 'Zahăr', 'Griș', 'Amidon de porumb', 'Bicarbonat', 'Coajă de lămâie']
+    },
+    
+    // Cookies
+    {
+      id: 47,
+      name: 'Cookies',
+      price: '17 RON',
+      priceValue: 17,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 24,
+      preparationTime: 'Zilnic',
+      servings: '60g',
+      icon: Heart,
+      slug: 'cookies',
+      ingredients: ['Făină', 'Unt', 'Migdale', 'Ouă', 'Ciocolată', 'Praf de copt']
+    },
+    
+    // Brownie
+    {
+      id: 48,
+      name: 'Brownie',
+      price: '15 RON',
+      priceValue: 15,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '70g',
+      icon: Heart,
+      slug: 'brownie',
+      ingredients: ['Ciocolată', 'Ouă', 'Zahăr', 'Făină integrală', 'Unt', 'Merișoare', 'Nucă']
+    },
+    
+    // Limbi de Pisică
+    {
+      id: 49,
+      name: 'Limbi de Pisică',
+      price: '196 RON/kg',
+      priceValue: 196,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Heart,
+      slug: 'limbi-de-pisica',
+      ingredients: ['Unt', 'Zahăr', 'Albuș', 'Făină']
+    },
+    
+    // Plăcintă cu Mere
+    {
+      id: 50,
+      name: 'Plăcintă cu Mere',
+      price: '19 RON',
+      priceValue: 19,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '110g',
+      icon: Heart,
+      slug: 'placinta-cu-mere',
+      ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Mere']
+    },
+    
+    // Plăcintă de Dovleac
+    {
+      id: 51,
+      name: 'Plăcintă de Dovleac',
+      price: '19 RON',
+      priceValue: 19,
       category: 'dulciuri',
       rating: 5,
       reviews: 14,
       preparationTime: 'Zilnic',
-      servings: '150g',
+      servings: '110g',
       icon: Heart,
-      slug: 'bobfistic',
-      ingredients: ['crocant de biscuite cu pastă pură de fistic', 'mousse de fistic cu ciocolată', 'jeleu din fructe de pădure']
+      slug: 'placinta-de-dovleac',
+      ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Dovleac', 'Scorțișoară']
     },
     
-    // Înghețată
+    // Cataif
     {
-      id: 41,
-      name: 'Gelato',
-      price: '115 RON',
-      priceValue: 115,
-      category: 'dulciuri',
+      id: 52,
+      name: 'Cataif',
+      price: '25 RON',
+      priceValue: 25,
+      category: 'prajituri',
       rating: 5,
-      reviews: 33,
+      reviews: 16,
       preparationTime: 'Zilnic',
-      servings: '500g',
-      icon: Heart,
-      slug: 'gelato',
-      description: 'Înghețată artizanală realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc',
-      ingredients: ['fructe congelate', 'fructe proaspete', 'pastă pură de fistic', 'pastă pură de ciocolată'],
-      flavors: ['Straciatella, mango', 'fistic, vanilie', 'cheesecake, ciocolată', 'straciatella, fistic', 'vanilie, straciatella', 'ciocolată cu îndulcitor, căpșuni', 'căpșuni, mango'],
-      variants: [
-        { weight: '500g', price: 115, priceValue: 115 },
-        { weight: '1kg', price: 234, priceValue: 234 }
-      ]
+      servings: '200g',
+      icon: Cookie,
+      slug: 'kataif',
+      ingredients: ['Cataif', 'Unt', 'Sirop de zahăr', 'Coajă de portocală', 'Frișcă naturală']
+    },
+    
+    // Cartof
+    {
+      id: 53,
+      name: 'Cartof',
+      price: '18 RON',
+      priceValue: 18,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 13,
+      preparationTime: 'Zilnic',
+      servings: '110g',
+      icon: Cookie,
+      slug: 'cartof',
+      ingredients: ['Blat umed de cacao', 'Blat umed alb', 'Unt', 'Ciocolată', 'Rom', 'Fructe de pădure']
+    },
+    
+    // Platou Mixt / Mini Prăjituri
+    {
+      id: 54,
+      name: 'Platou Mixt / Mini Prăjituri',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 25,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'platou-mix-mini-prajituri',
+      description: 'Selecție variată de mini prăjituri'
     }
   ]
 

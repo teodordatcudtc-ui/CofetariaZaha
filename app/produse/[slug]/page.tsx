@@ -156,8 +156,1205 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
   // Date produse reale
   const products = {
-    'galusti-cu-prune': {
+    // Brownie Fistic
+    'brownie-fistic': {
       id: 1,
+      name: 'Brownie Fistic',
+      price: 33,
+      originalPrice: 33,
+      category: 'prajituri',
+      description: 'Brownie cu fistic - o combinație perfectă de ciocolată și fistic.',
+      longDescription: 'Brownie-ul nostru cu fistic este preparat cu făină integrală, ouă, zahăr, unt, ciocolată, merișoare, pastă pură de fistic și gelatină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină integrală', 'Ouă', 'Zahăr', 'Unt', 'Ciocolată', 'Merișoare', 'Pastă pură de fistic', 'Gelatină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Saleuri
+    'saleuri': {
+      id: 2,
+      name: 'Saleuri',
+      price: 206,
+      originalPrice: 206,
+      category: 'dulciuri',
+      description: 'Saleuri tradiționale cu semințe și condimente.',
+      longDescription: 'Saleurile noastre tradiționale sunt preparate cu făină, unt, telemea, semințe, chimen, susan, mac, susan negru, in și ou. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Telemea', 'Semințe', 'Chimen', 'Susan', 'Mac', 'Susan negru', 'In', 'Ou'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Poale'n Brau
+    'poale-n-brau': {
+      id: 3,
+      name: 'Poale\'n Brau',
+      price: 19,
+      originalPrice: 19,
+      category: 'dulciuri',
+      description: 'Poale\'n Brau tradiționale cu brânză și stafide.',
+      longDescription: 'Poale\'n Brau-urile noastre tradiționale sunt preparate cu făină, zahăr, ouă, brânză, lapte, stafide, drojdie, rom, sare, coajă de lămâie și portocală. Gustul autentic românesc.',
+      ingredients: ['Făină', 'Zahăr', 'Ouă', 'Brânză', 'Lapte', 'Stafide', 'Drojdie', 'Rom', 'Sare', 'Coajă de lămâie', 'Portocală'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Rulouri
+    'rulouri': {
+      id: 4,
+      name: 'Rulouri',
+      price: 25,
+      originalPrice: 25,
+      category: 'dulciuri',
+      description: 'Rulouri delicate cu fistic, arahide și alune.',
+      longDescription: 'Rulourile noastre delicate sunt preparate cu făină, unt, gălbenuș, sare, zahăr, lapte, vanilie păstaie, amidon, fistic, arahide și alune. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Gălbenuș', 'Sare', 'Zahăr', 'Lapte', 'Vanilie păstaie', 'Amidon', 'Fistic', 'Arahide', 'Alune'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Strudel
+    'strudel': {
+      id: 5,
+      name: 'Strudel',
+      price: 24,
+      originalPrice: 24,
+      category: 'dulciuri',
+      description: 'Strudel cu mere și arahide.',
+      longDescription: 'Strudelul nostru cu mere și arahide este preparat cu făină, unt, sare, mere, arahide, ou și scorțișoară. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Sare', 'Mere', 'Arahide', 'Ou', 'Scorțișoară'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Boema
+    'boema': {
+      id: 6,
+      name: 'Boema',
+      price: 31,
+      originalPrice: 31,
+      category: 'prajituri',
+      description: 'Boema cu frișcă naturală și ciocolată.',
+      longDescription: 'Boema noastră este preparată cu frișcă naturală, făină, ciocolată, ouă, ulei, unt, rom, cacao și praf de copt. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Frișcă naturală', 'Făină', 'Ciocolată', 'Ouă', 'Ulei', 'Unt', 'Rom', 'Cacao', 'Praf de copt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cornulețe
+    'cornulete-nuca-gem': {
+      id: 7,
+      name: 'Cornulețe',
+      price: 196,
+      originalPrice: 196,
+      category: 'dulciuri',
+      description: 'Cornulețe cu nucă și gem de fructe de pădure.',
+      longDescription: 'Cornulețele noastre cu nucă și gem de fructe de pădure sunt preparate cu făină, unt, zahăr, gălbenuș, gem de fructe de pădure (magiun) și nucă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Gălbenuș', 'Gem de fructe de pădure (magiun)', 'Nucă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Fursecuri
+    'fursec-cu-gem': {
+      id: 8,
+      name: 'Fursecuri',
+      price: 196,
+      originalPrice: 196,
+      category: 'dulciuri',
+      description: 'Fursecuri cu gem de fructe de pădure.',
+      longDescription: 'Fursecurii noștri cu gem de fructe de pădure sunt preparați cu făină, unt, zahăr, ouă și gem de fructe de pădure (magiun). O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Ouă', 'Gem de fructe de pădure (magiun)'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tiramisu Green Sugar
+    'tiramisu-green-sugar': {
+      id: 9,
+      name: 'Tiramisu Green Sugar',
+      price: 35,
+      originalPrice: 35,
+      category: 'prajituri',
+      description: 'Tiramisu cu Green Sugar - o versiune modernă a clasicului.',
+      longDescription: 'Tiramisu-ul nostru cu Green Sugar este preparat cu făină, Green Sugar, ouă, mascarpone, frișcă naturală, gelatină, cacao și cafea. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Green Sugar', 'Ouă', 'Mascarpone', 'Frișcă naturală', 'Gelatină', 'Cacao', 'Cafea'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Amandina Green Sugar
+    'amandina-green-sugar': {
+      id: 10,
+      name: 'Amandina Green Sugar',
+      price: 39,
+      originalPrice: 39,
+      category: 'prajituri',
+      description: 'Amandina cu Green Sugar - o versiune modernă a clasicului.',
+      longDescription: 'Amandina noastră cu Green Sugar este preparată cu făină, cacao, ouă, Green Sugar, praf de copt, ulei, unt și rom. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Cacao', 'Ouă', 'Green Sugar', 'Praf de copt', 'Ulei', 'Unt', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Amandină
+    'amandina': {
+      id: 11,
+      name: 'Amandină',
+      price: 28,
+      originalPrice: 28,
+      category: 'prajituri',
+      description: 'Amandină clasică cu fondant și cacao.',
+      longDescription: 'Amandina noastră clasică este preparată cu unt, fondant, făină, zahăr, ouă, cacao și rom. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Fondant', 'Făină', 'Zahăr', 'Ouă', 'Cacao', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tarte Mici
+    'tarte-mici': {
+      id: 12,
+      name: 'Tarte Mici',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Tarte mici cu fructe mixte.',
+      longDescription: 'Tarte-urile noastre mici cu fructe mixte sunt preparate cu lapte, făină, unt, gălbenuș, zahăr, fructe mixte, vanilie păstaie, gelatină și amidon de porumb. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tarte Mari
+    'tarte-mari': {
+      id: 13,
+      name: 'Tarte Mari',
+      price: 18,
+      originalPrice: 18,
+      category: 'prajituri',
+      description: 'Tarte mari cu fructe mixte.',
+      longDescription: 'Tarte-urile noastre mari cu fructe mixte sunt preparate cu lapte, făină, unt, gălbenuș, zahăr, fructe mixte, vanilie păstaie, gelatină și amidon de porumb. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Lapte', 'Făină', 'Unt', 'Gălbenuș', 'Zahăr', 'Fructe mixte', 'Vanilie păstaie', 'Gelatină', 'Amidon de porumb'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Carrot Cake
+    'carrot-cake': {
+      id: 14,
+      name: 'Carrot Cake',
+      price: 189,
+      originalPrice: 189,
+      category: 'torturi',
+      description: 'Carrot Cake cu morcov și nuci.',
+      longDescription: 'Carrot Cake-ul nostru cu morcov și nuci este preparat cu făină, ouă, ulei, zahăr, morcov, nuci, scorțișoară, praf de copt și bicarbonat. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ouă', 'Ulei', 'Zahăr', 'Morcov', 'Nuci', 'Scorțișoară', 'Praf de copt', 'Bicarbonat'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Trandafir
+    'trandafir': {
+      id: 15,
+      name: 'Trandafir',
+      price: 28,
+      originalPrice: 28,
+      category: 'prajituri',
+      description: 'Trandafir cu miere și ciocolată albă.',
+      longDescription: 'Trandafirul nostru cu miere și ciocolată albă este preparat cu făină, miere, zahăr, unt, drojdie, ouă, ciocolată albă, frișcă, gelatină, kalamansi și rom. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Miere', 'Zahăr', 'Unt', 'Drojdie', 'Ouă', 'Ciocolată albă', 'Frișcă', 'Gelatină', 'Kalamansi', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Mousse 3 Ciocolate
+    'mousse-3-ciocolate': {
+      id: 16,
+      name: 'Mousse 3 Ciocolate',
+      price: 35,
+      originalPrice: 35,
+      category: 'prajituri',
+      description: 'Mousse cu 3 tipuri de ciocolată.',
+      longDescription: 'Mousse-ul nostru cu 3 tipuri de ciocolată este preparat cu frișcă naturală, ciocolată albă, neagră și cu lapte, făină, ouă, zahăr, cacao și gelatină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Frișcă naturală', 'Ciocolată albă, neagră și cu lapte', 'Făină', 'Ouă', 'Zahăr', 'Cacao', 'Gelatină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cozonac
+    'cozonac-traditional-nuca-cacao': {
+      id: 17,
+      name: 'Cozonac',
+      price: 153,
+      originalPrice: 153,
+      category: 'dulciuri',
+      description: 'Cozonac traditional cu nucă și cacao.',
+      longDescription: 'Cozonacul nostru traditional cu nucă și cacao este preparat cu făină, ouă, zahăr, lapte, nucă, unt, drojdie, coajă de lămâie și portocală, mac, stafide, rahat și rom. Gustul autentic românesc.',
+      ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Unt', 'Drojdie', 'Coajă de lămâie și portocală', 'Mac', 'Stafide', 'Rahat', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Chec
+    'chec': {
+      id: 18,
+      name: 'Chec',
+      price: 178,
+      originalPrice: 178,
+      category: 'dulciuri',
+      description: 'Chec cu amidon de cartofi și coajă de lămâie.',
+      longDescription: 'Checul nostru cu amidon de cartofi și coajă de lămâie este preparat cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Pricomigdale
+    'pricomigdale': {
+      id: 19,
+      name: 'Pricomigdale',
+      price: 228,
+      originalPrice: 228,
+      category: 'dulciuri',
+      description: 'Pricomigdale cu nucă, migdale și ciocolată.',
+      longDescription: 'Pricomigdalele noastre cu nucă, migdale și ciocolată sunt preparate cu nucă, migdale, zahăr, ouă, ciocolată, vanilie păstaie, unt, cafea, rom și amidon de porumb. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Nucă', 'Migdale', 'Zahăr', 'Ouă', 'Ciocolată', 'Vanilie păstaie', 'Unt', 'Cafea', 'Rom', 'Amidon de porumb'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cheesecake
+    'cheesecake': {
+      id: 20,
+      name: 'Cheesecake',
+      price: 37,
+      originalPrice: 37,
+      category: 'prajituri',
+      description: 'Cheesecake cu mascarpone și Philadelphia.',
+      longDescription: 'Cheesecake-ul nostru cu mascarpone și Philadelphia este preparat cu biscuiți, mascarpone, frișcă naturală, Philadelphia, coajă de lime, gelatină și fructe. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Biscuiți', 'Mascarpone', 'Frișcă naturală', 'Philadelphia', 'Coajă de lime', 'Gelatină', 'Fructe'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Ecler
+    'ecler': {
+      id: 21,
+      name: 'Ecler',
+      price: 35,
+      originalPrice: 35,
+      category: 'prajituri',
+      description: 'Ecler cu vanilie și ciocolată.',
+      longDescription: 'Eclerul nostru cu vanilie și ciocolată este preparat cu făină, unt, ulei, ouă, vanilie păstaie, ciocolată, rom și amidon. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Ciocolată', 'Rom', 'Amidon'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Profiterol
+    'profiterol': {
+      id: 22,
+      name: 'Profiterol',
+      price: 39,
+      originalPrice: 39,
+      category: 'prajituri',
+      description: 'Profiterol cu pastă de fistic și ciocolată.',
+      longDescription: 'Profiterolul nostru cu pastă de fistic și ciocolată este preparat cu făină, ulei, unt, ouă, pastă de fistic, ciocolată, frișcă naturală și gelatină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ulei', 'Unt', 'Ouă', 'Pastă de fistic', 'Ciocolată', 'Frișcă naturală', 'Gelatină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Mousse de Ciocolată și Fructe de Pădure
+    'tort-mousse-ciocolata-fructe-padure': {
+      id: 23,
+      name: 'Tort Mousse de Ciocolată și Fructe de Pădure',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort mousse de ciocolată și fructe de pădure.',
+      longDescription: 'Tortul nostru mousse de ciocolată și fructe de pădure este preparat cu făină, cacao, ouă, zahăr, frișcă naturală, ciocolată și gelatină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Cacao', 'Ouă', 'Zahăr', 'Frișcă naturală', 'Ciocolată', 'Gelatină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Negresă de Post
+    'negresa-de-post': {
+      id: 24,
+      name: 'Negresă de Post',
+      price: 13,
+      originalPrice: 13,
+      category: 'dulciuri',
+      description: 'Negresă de Post cu nucă de cocos.',
+      longDescription: 'Negresa noastră de Post cu nucă de cocos este preparată cu făină, nucă de cocos, zahăr, ulei, cacao și bicarbonat. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Nucă de cocos', 'Zahăr', 'Ulei', 'Cacao', 'Bicarbonat'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Brownie cu Fistic
+    'tort-brownie-cu-fistic': {
+      id: 25,
+      name: 'Tort Brownie cu Fistic',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Brownie cremos de ciocolată și cremos de fistic.',
+      longDescription: 'Tortul nostru Brownie cu Fistic este preparat cu brownie cremos de ciocolată și cremos de fistic. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Brownie cremos de ciocolată', 'Cremos de fistic'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Ciocolată de Casă
+    'ciocolata-de-casa': {
+      id: 26,
+      name: 'Ciocolată de Casă',
+      price: 14,
+      originalPrice: 14,
+      category: 'dulciuri',
+      description: 'Ciocolată de casă cu lapte praf și cacao.',
+      longDescription: 'Ciocolata noastră de casă cu lapte praf și cacao este preparată cu lapte praf, zahăr, unt, cacao și rom. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Lapte praf', 'Zahăr', 'Unt', 'Cacao', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Bezele
+    'bezele': {
+      id: 27,
+      name: 'Bezele',
+      price: 159,
+      originalPrice: 159,
+      category: 'dulciuri',
+      description: 'Bezele cu albuș și zahăr.',
+      longDescription: 'Bezelele noastre cu albuș și zahăr sunt preparate cu albuș, zahăr și amidon. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Albuș', 'Zahăr', 'Amidon'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Colivă
+    'coliva': {
+      id: 28,
+      name: 'Colivă',
+      price: 19,
+      originalPrice: 19,
+      category: 'dulciuri',
+      description: 'Colivă cu arpacaș și nucă.',
+      longDescription: 'Coliva noastră cu arpacaș și nucă este preparată cu arpacaș, nucă, zahăr, coajă de citrice, rom și biscuiți. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Arpacaș', 'Nucă', 'Zahăr', 'Coajă de citrice', 'Rom', 'Biscuiți'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      },
+      variants: [
+        { weight: '200g', price: 19, priceValue: 19 },
+        { weight: '1kg', price: 92, priceValue: 92 }
+      ]
+    },
+    
+    // Pavlova
+    'pavlova': {
+      id: 29,
+      name: 'Pavlova',
+      price: 28,
+      originalPrice: 28,
+      category: 'prajituri',
+      description: 'Pavlova cu fructul pasiunii și fructe mixte.',
+      longDescription: 'Pavlova noastră cu fructul pasiunii și fructe mixte este preparată cu albuș, zahăr, amidon, frișcă naturală, fructul pasiunii și fructe mixte. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Albuș', 'Zahăr', 'Amidon', 'Frișcă naturală', 'Fructul pasiunii', 'Fructe mixte'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Pișcoturi
+    'piscoturi': {
+      id: 30,
+      name: 'Pișcoturi',
+      price: 196,
+      originalPrice: 196,
+      category: 'dulciuri',
+      description: 'Pișcoturi cu făină și ouă.',
+      longDescription: 'Pișcoturile noastre cu făină și ouă sunt preparate cu făină, ouă și zahăr. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ouă', 'Zahăr'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Medovika
+    'medovika-prajitura': {
+      id: 31,
+      name: 'Medovika',
+      price: 35,
+      originalPrice: 35,
+      category: 'prajituri',
+      description: 'Medovika cu mascarpone și fructe de pădure.',
+      longDescription: 'Medovika noastră cu mascarpone și fructe de pădure este preparată cu făină, mascarpone, cremă de brânză, zahăr, fructe de pădure, rodie, mere, miere, frișcă naturală, unt, ouă, gelatină și bicarbonat. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Mascarpone', 'Cremă de brânză', 'Zahăr', 'Fructe de pădure', 'Rodie', 'Mere', 'Miere', 'Frișcă naturală', 'Unt', 'Ouă', 'Gelatină', 'Bicarbonat'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      },
+      variants: [
+        { weight: '150g', price: 35, priceValue: 35 },
+        { weight: '1kg', price: 205, priceValue: 205 }
+      ]
+    },
+    
+    // Dobos
+    'dobos': {
+      id: 32,
+      name: 'Dobos',
+      price: 35,
+      originalPrice: 35,
+      category: 'prajituri',
+      description: 'Dobos cu ciocolată belgiană.',
+      longDescription: 'Dobosul nostru cu ciocolată belgiană este preparat cu unt, ciocolată belgiană, ouă, zahăr, făină și ulei. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Ciocolată belgiană', 'Ouă', 'Zahăr', 'Făină', 'Ulei'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Trufe
+    'trufe': {
+      id: 33,
+      name: 'Trufe',
+      price: 277,
+      originalPrice: 277,
+      category: 'dulciuri',
+      description: 'Trufe cu ciocolată și tonka.',
+      longDescription: 'Trufele noastre cu ciocolată și tonka sunt preparate cu ciocolată, frișcă și tonka. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Ciocolată', 'Frișcă', 'Tonka'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Savarină
+    'savarina': {
+      id: 34,
+      name: 'Savarină',
+      price: 28,
+      originalPrice: 28,
+      category: 'prajituri',
+      description: 'Savarină cu frișcă și gem de fructe de pădure.',
+      longDescription: 'Savarina noastră cu frișcă și gem de fructe de pădure este preparată cu făină, ouă, frișcă, zahăr, drojdie, coajă de lămâie, rom (alcool) și gem de fructe de pădure. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ouă', 'Frișcă', 'Zahăr', 'Drojdie', 'Coajă de lămâie', 'Rom (alcool)', 'Gem de fructe de pădure'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Fourstafidă
+    'fourstafida': {
+      id: 35,
+      name: 'Fourstafidă',
+      price: 196,
+      originalPrice: 196,
+      category: 'dulciuri',
+      description: 'Fourstafidă cu stafide și rom.',
+      longDescription: 'Fourstafida noastră cu stafide și rom este preparată cu unt, făină, ouă, zahăr, stafide, rom, esență și vanilie păstaie. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Făină', 'Ouă', 'Zahăr', 'Stafide', 'Rom', 'Esență', 'Vanilie păstaie'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Maria
+    'tort-maria': {
+      id: 36,
+      name: 'Tort Maria',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Maria cu cremă de vanilie și fructe de pădure.',
+      longDescription: 'Tortul nostru Maria cu cremă de vanilie și fructe de pădure este preparat cu cremă de vanilie, frișcă și fructe de pădure. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Cremă de vanilie', 'Frișcă', 'Fructe de pădure'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-5 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cannoli
+    'cannoli': {
+      id: 37,
+      name: 'Cannoli',
+      price: 28,
+      originalPrice: 28,
+      category: 'prajituri',
+      description: 'Cannoli cu cremă de brânză și ciocolată.',
+      longDescription: 'Cannoli-ul nostru cu cremă de brânză și ciocolată este preparat cu făină, untură, cremă de brânză, unt, frișcă și ciocolată. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Untură', 'Cremă de brânză', 'Unt', 'Frișcă', 'Ciocolată'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Danish
+    'danish': {
+      id: 38,
+      name: 'Danish',
+      price: 36,
+      originalPrice: 36,
+      category: 'prajituri',
+      description: 'Danish cu fructe mixte și scorțișoară.',
+      longDescription: 'Danish-ul nostru cu fructe mixte și scorțișoară este preparat cu făină, unt, ouă, zahăr, lapte, drojdie, vanilie păstaie, scorțișoară și fructe mixte. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Lapte', 'Drojdie', 'Vanilie păstaie', 'Scorțișoară', 'Fructe mixte'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Red Velvet
+    'tort-red-velvet': {
+      id: 39,
+      name: 'Tort Red Velvet',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Red Velvet cu blat cu chefir și cremă de brânză.',
+      longDescription: 'Tortul nostru Red Velvet cu blat cu chefir și cremă de brânză este preparat cu blat cu chefir, cremă de brânză și fructe de pădure. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat cu chefir', 'Cremă de brânză', 'Fructe de pădure'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Snickers
+    'tort-snickers': {
+      id: 40,
+      name: 'Tort Snickers',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort Snickers cu caramel sărat cu arahide.',
+      longDescription: 'Tortul nostru Snickers cu caramel sărat cu arahide este preparat cu blat umed de cacao, mousse de ciocolată, caramel sărat cu arahide și cremă de caramel. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată', 'Caramel sărat cu arahide', 'Cremă de caramel'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Tiramisu
+    'tort-tiramisu': {
+      id: 41,
+      name: 'Tort Tiramisu',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort Tiramisu cu mousse mascarpone și cafea.',
+      longDescription: 'Tortul nostru Tiramisu cu mousse mascarpone și cafea este preparat cu pișcot, mousse mascarpone, cafea, cacao și gelatină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Pișcot', 'Mousse mascarpone', 'Cafea', 'Cacao', 'Gelatină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Duo Chocolat
+    'duo-chocolate-1kg': {
+      id: 42,
+      name: 'Tort Duo Chocolat',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Duo Chocolat cu mousse de ciocolată albă și neagră.',
+      longDescription: 'Tortul nostru Duo Chocolat cu mousse de ciocolată albă și neagră este preparat cu blat umed de cacao, mousse de ciocolată albă și neagră și fructe de pădure. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată albă și neagră', 'Fructe de pădure'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Pavlova
+    'tort-pavlova': {
+      id: 43,
+      name: 'Tort Pavlova',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Pavlova cu bezea și fructe mixte.',
+      longDescription: 'Tortul nostru Pavlova cu bezea și fructe mixte este preparat cu bezea, piure fructul pasiunii, mango, frișcă și fructe mixte. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Bezea', 'Piure fructul pasiunii', 'Mango', 'Frișcă', 'Fructe mixte'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Trois Chocolat
+    'tort-trois-chocolat': {
+      id: 44,
+      name: 'Tort Trois Chocolat',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Trois Chocolat cu 3 tipuri de ciocolată.',
+      longDescription: 'Tortul nostru Trois Chocolat cu 3 tipuri de ciocolată este preparat cu blat umed de cacao și mousse de ciocolată albă, cu lapte și neagră. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat umed de cacao', 'Mousse de ciocolată albă, cu lapte și neagră'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Tort Boema
+    'tort-boema': {
+      id: 45,
+      name: 'Tort Boema',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort Boema cu blat însiropat cu rom și vișine.',
+      longDescription: 'Tortul nostru Boema cu blat însiropat cu rom și vișine este preparat cu blat însiropat cu rom (alcool), cremă de ciocolată neagră, vișine și mousse de frișcă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat însiropat cu rom (alcool)', 'Cremă de ciocolată neagră', 'Vișine', 'Mousse de frișcă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Alba ca Zăpada
+    'alba-ca-zapada': {
+      id: 46,
+      name: 'Alba ca Zăpada',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort Alba ca Zăpada cu griș și coajă de lămâie.',
+      longDescription: 'Tortul nostru Alba ca Zăpada cu griș și coajă de lămâie este preparat cu unt, făină, ouă, zahăr, griș, amidon de porumb, bicarbonat și coajă de lămâie. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Făină', 'Ouă', 'Zahăr', 'Griș', 'Amidon de porumb', 'Bicarbonat', 'Coajă de lămâie'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cookies
+    'cookies': {
+      id: 47,
+      name: 'Cookies',
+      price: 17,
+      originalPrice: 17,
+      category: 'dulciuri',
+      description: 'Cookies cu migdale și ciocolată.',
+      longDescription: 'Cookies-urile noastre cu migdale și ciocolată sunt preparate cu făină, unt, migdale, ouă, ciocolată și praf de copt. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Migdale', 'Ouă', 'Ciocolată', 'Praf de copt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Brownie
+    'brownie': {
+      id: 48,
+      name: 'Brownie',
+      price: 15,
+      originalPrice: 15,
+      category: 'dulciuri',
+      description: 'Brownie cu ciocolată și merișoare.',
+      longDescription: 'Brownie-ul nostru cu ciocolată și merișoare este preparat cu ciocolată, ouă, zahăr, făină integrală, unt, merișoare și nucă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Ciocolată', 'Ouă', 'Zahăr', 'Făină integrală', 'Unt', 'Merișoare', 'Nucă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Limbi de Pisică
+    'limbi-de-pisica': {
+      id: 49,
+      name: 'Limbi de Pisică',
+      price: 196,
+      originalPrice: 196,
+      category: 'dulciuri',
+      description: 'Limbi de pisică cu unt și albuș.',
+      longDescription: 'Limbii noștri de pisică cu unt și albuș sunt preparați cu unt, zahăr, albuș și făină. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Unt', 'Zahăr', 'Albuș', 'Făină'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Plăcintă cu Mere
+    'placinta-cu-mere': {
+      id: 50,
+      name: 'Plăcintă cu Mere',
+      price: 19,
+      originalPrice: 19,
+      category: 'dulciuri',
+      description: 'Plăcintă cu mere și griș.',
+      longDescription: 'Plăcinta noastră cu mere și griș este preparată cu făină, ulei de cocos, griș, zahăr și mere. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Mere'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Plăcintă de Dovleac
+    'placinta-de-dovleac': {
+      id: 51,
+      name: 'Plăcintă de Dovleac',
+      price: 19,
+      originalPrice: 19,
+      category: 'dulciuri',
+      description: 'Plăcintă de dovleac cu scorțișoară.',
+      longDescription: 'Plăcinta noastră de dovleac cu scorțișoară este preparată cu făină, ulei de cocos, griș, zahăr, dovleac și scorțișoară. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Dovleac', 'Scorțișoară'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cataif
+    'kataif': {
+      id: 52,
+      name: 'Cataif',
+      price: 25,
+      originalPrice: 25,
+      category: 'prajituri',
+      description: 'Cataif cu sirop de zahăr și frișcă naturală.',
+      longDescription: 'Cataiful nostru cu sirop de zahăr și frișcă naturală este preparat cu cataif, unt, sirop de zahăr, coajă de portocală și frișcă naturală. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Cataif', 'Unt', 'Sirop de zahăr', 'Coajă de portocală', 'Frișcă naturală'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Cartof
+    'cartof': {
+      id: 53,
+      name: 'Cartof',
+      price: 18,
+      originalPrice: 18,
+      category: 'prajituri',
+      description: 'Cartof cu blat umed de cacao și fructe de pădure.',
+      longDescription: 'Cartoful nostru cu blat umed de cacao și fructe de pădure este preparat cu blat umed de cacao, blat umed alb, unt, ciocolată, rom și fructe de pădure. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Blat umed de cacao', 'Blat umed alb', 'Unt', 'Ciocolată', 'Rom', 'Fructe de pădure'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Platou Mixt / Mini Prăjituri
+    'platou-mix-mini-prajituri': {
+      id: 54,
+      name: 'Platou Mixt / Mini Prăjituri',
+      price: 228,
+      originalPrice: 228,
+      category: 'mini-prajituri',
+      description: 'Selecție variată de mini prăjituri.',
+      longDescription: 'Platoul nostru mixt cu mini prăjituri include o selecție variată de mini prăjituri. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Selecție variată de mini prăjituri'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+    
+    // Existing products from original file
+    'galusti-cu-prune': {
+      id: 55,
       name: 'Găluști cu prune',
       price: 19,
       originalPrice: 19,

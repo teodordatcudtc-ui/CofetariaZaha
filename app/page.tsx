@@ -43,19 +43,19 @@ const HomePage = () => {
       id: 1,
       title: "Dulciuri Artizanale",
       description: "Creații unice pentru momente speciale",
-      icon: Cake,
+      image: "/images/hero/hero-1.jpg",
     },
     {
       id: 2,
       title: "Prăjituri Tradiționale",
       description: "Gusturi autentice românești",
-      icon: Heart,
+      image: "/images/hero/hero-2.jpg",
     },
     {
       id: 3,
       title: "Dulciuri de Casă",
       description: "Preparate cu pasiune și dragoste",
-      icon: Star,
+      image: "/images/hero/hero-3.jpg",
     },
   ]
 
@@ -73,57 +73,57 @@ const HomePage = () => {
       id: 2,
       name: "Caserolă mini prăjituri",
       price: "88 RON",
-      category: "prajituri",
+      category: "mini-prajituri",
       icon: Cookie,
       slug: "caserola-mini-prajituri",
     },
     {
       id: 3,
-      name: "Platou mini prăjituri 1kg",
-      price: "296 RON/kg",
-      category: "prajituri",
-      icon: Star,
-      slug: "platou-mini-prajituri-1kg",
+      name: "Mini tarte",
+      price: "8 RON",
+      category: "mini-prajituri",
+      icon: Cookie,
+      slug: "mini-tarte",
     },
     {
       id: 4,
-      name: "Amestec fursecuri",
-      price: "127 RON",
-      category: "dulciuri",
-      icon: Heart,
-      slug: "amestec-fursecuri",
+      name: "Mini amandine",
+      price: "11 RON",
+      category: "mini-prajituri",
+      icon: Cookie,
+      slug: "mini-amandine",
     },
     {
       id: 5,
-      name: "Tort Maria 1kg",
-      price: "266 RON",
-      category: "torturi",
-      icon: Cake,
-      slug: "tort-maria-1kg",
+      name: "Mini eclere cu vanilie și ciocolată",
+      price: "9 RON",
+      category: "mini-prajituri",
+      icon: Cookie,
+      slug: "mini-eclere-vanilie-ciocolata",
     },
     {
       id: 6,
-      name: "Cozonac traditional",
-      price: "198 RON",
-      category: "dulciuri",
-      icon: Heart,
-      slug: "cozonac-traditional",
+      name: "Mini eclere cu ness",
+      price: "9 RON",
+      category: "mini-prajituri",
+      icon: Cookie,
+      slug: "mini-eclere-ness",
     },
     {
       id: 7,
-      name: "Pavlova 100g",
-      price: "35 RON",
-      category: "prajituri",
-      icon: Star,
-      slug: "pavlova-100g",
+      name: "Cornulete cu nucă și gem",
+      price: "5 RON",
+      category: "dulciuri",
+      icon: Heart,
+      slug: "cornulete-nuca-gem",
     },
     {
       id: 8,
-      name: "Gelato 500g",
-      price: "115 RON",
+      name: "Fursecuri fragede cu nucă",
+      price: "5 RON",
       category: "dulciuri",
       icon: Heart,
-      slug: "gelato-500g",
+      slug: "fursecuri-fragede-nuca",
     },
   ]
 
@@ -402,44 +402,39 @@ const HomePage = () => {
               <div className="hidden lg:block absolute inset-0 bg-primary/5 rounded-2xl -m-4"></div>
               <div className="relative">
                 <div className="w-full h-[400px] bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
-                  {/* Pattern decorative */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-10 left-10 w-32 h-32 border-2 border-primary/30 rounded-full"></div>
-                    <div className="absolute bottom-10 right-10 w-24 h-24 border-2 border-primary/20 rounded-full"></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-primary/15 rounded-full"></div>
-                  </div>
-
-                  {/* Carusel */}
+                  {/* Carusel cu poze pe tot chenarul */}
                   <div className="relative z-10 w-full h-full">
                     {carouselImages.map((image, index) => {
-                      const ImageIcon = image.icon
                       return (
                         <motion.div
                           key={image.id}
-                          className="absolute inset-0 flex items-center justify-center"
-                          initial={{ opacity: 0, scale: 0.8 }}
+                          className="absolute inset-0"
+                          initial={{ opacity: 0 }}
                           animate={{
                             opacity: currentImageIndex === index ? 1 : 0,
-                            scale: currentImageIndex === index ? 1 : 0.8,
                           }}
                           transition={{ duration: 0.8, ease: "easeInOut" }}
                         >
-                          <div className="text-center">
+                          <Image
+                            src={image.image}
+                            alt={image.title}
+                            fill
+                            className="object-cover rounded-2xl"
+                            sizes="100vw"
+                          />
+                          {/* Overlay pentru text */}
+                          <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-6">
                             <motion.div
+                              initial={{ opacity: 0, y: 20 }}
                               animate={{
-                                scale: [1, 1.1, 1],
-                                rotate: [0, 5, 0],
+                                opacity: currentImageIndex === index ? 1 : 0,
+                                y: currentImageIndex === index ? 0 : 20,
                               }}
-                              transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                              }}
+                              transition={{ duration: 0.8, delay: 0.3 }}
                             >
-                              <ImageIcon className="h-24 w-24 text-primary mx-auto mb-4" />
+                              <h3 className="text-3xl font-bold text-white mb-2">{image.title}</h3>
+                              <p className="text-lg text-white/90">{image.description}</p>
                             </motion.div>
-                            <h3 className="text-xl font-bold text-primary mb-2">{image.title}</h3>
-                            <p className="text-sm text-primary/80">{image.description}</p>
                           </div>
                         </motion.div>
                       )
@@ -447,32 +442,17 @@ const HomePage = () => {
                   </div>
 
                   {/* Indicatori carusel */}
-                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
                     {carouselImages.map((_, index) => (
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          currentImageIndex === index ? "bg-primary scale-125" : "bg-primary/30 hover:bg-primary/50"
+                        className={`w-3 h-3 rounded-full transition-all duration-300 backdrop-blur-sm ${
+                          currentImageIndex === index ? "bg-white scale-125" : "bg-white/50 hover:bg-white/70"
                         }`}
                       />
                     ))}
                   </div>
-
-                  <motion.div
-                    className="absolute -top-4 -right-4 bg-primary text-white p-4 rounded-full shadow-lg"
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 5, 0],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <Star className="h-6 w-6" />
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -480,7 +460,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Produse pentru Mobile - Carusel cu swipe */}
+      {/* Produse pentru Mobile - Carusel cu scroll liber */}
       <section className="py-6 md:py-16 bg-gray-50 md:hidden">
         <div className="container-custom">
           <motion.div
@@ -488,27 +468,11 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative flex justify-center"
+            className="relative"
           >
-            {/* Carusel container pentru mobile */}
-            <div 
-              className="relative overflow-hidden" 
-              style={{ width: 'calc(2 * 160px + 1 * 16px)' }}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <motion.div
-                className="flex space-x-4"
-                animate={{
-                  x: -currentProductIndex * (160 + 16), // 160px produs + 16px spațiu
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeInOut",
-                }}
-                style={{ width: `${featuredProducts.length * (160 + 16)}px` }}
-              >
+            {/* Carusel container pentru mobile cu scroll liber */}
+            <div className="overflow-x-auto scrollbar-none">
+              <div className="flex space-x-4 pb-4" style={{ width: 'max-content' }}>
                 {featuredProducts.map((product, index) => {
                   const ProductIcon = product.icon
                   return (
@@ -521,19 +485,13 @@ const HomePage = () => {
                       <Link href={`/produse/${product.slug}`} className="block">
                         <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
                           <div className="relative overflow-hidden rounded-t-lg h-24">
-                            <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-                            {/* Pattern decorative */}
-                            <div className="absolute inset-0 opacity-10">
-                              <div className="absolute top-2 left-2 w-8 h-8 border-2 border-primary/30 rounded-full"></div>
-                              <div className="absolute bottom-2 right-2 w-6 h-6 border-2 border-primary/20 rounded-full"></div>
-                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 border border-primary/15 rounded-full"></div>
-                            </div>
-
-                            {/* Iconița principală */}
-                            <motion.div className="relative z-10" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
-                              <ProductIcon className="h-6 w-6 text-primary" />
-                            </motion.div>
-                          </div>
+                            <Image
+                              src={`/images/products/${product.slug}.jpg`}
+                              alt={product.name}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              sizes="160px"
+                            />
                           </div>
                           <div className="p-2 flex flex-col flex-grow">
                             <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1 flex-grow">
@@ -541,12 +499,12 @@ const HomePage = () => {
                             </h3>
                             <span className="text-sm font-bold text-primary mt-auto">{product.price}</span>
                           </div>
-                      </div>
+                        </div>
                       </Link>
                     </motion.div>
                   )
                 })}
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -574,24 +532,18 @@ const HomePage = () => {
                   return (
                     <motion.div key={product.id} className="flex-shrink-0 w-72" whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.3 }}>
                       <Link href={`/produse/${product.slug}`} className="block">
-                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
+                        <div className="group overflow-hidden h-80 rounded-lg bg-white shadow-lg flex flex-col">
                         <div className="relative overflow-hidden rounded-t-lg h-48">
-                          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-                            {/* Pattern decorative */}
-                            <div className="absolute inset-0 opacity-10">
-                              <div className="absolute top-4 left-4 w-16 h-16 border-2 border-primary/30 rounded-full"></div>
-                              <div className="absolute bottom-4 right-4 w-12 h-12 border-2 border-primary/20 rounded-full"></div>
-                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border border-primary/15 rounded-full"></div>
-                            </div>
-
-                            {/* Iconița principală */}
-                            <motion.div className="relative z-10" whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
-                              <ProductIcon className="h-16 w-16 text-primary" />
-                            </motion.div>
-                          </div>
+                          <Image
+                            src={`/images/products/${product.slug}.jpg`}
+                            alt={product.name}
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            sizes="288px"
+                          />
                         </div>
-                        <div className="p-4 flex flex-col flex-grow">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-4 flex-grow">{product.name}</h3>
+                        <div className="p-4 flex flex-col h-32">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2">{product.name}</h3>
                           <div className="flex items-center justify-between mt-auto">
                             <span className="text-lg font-bold text-primary">{product.price}</span>
                           </div>
@@ -632,6 +584,132 @@ const HomePage = () => {
             >
               <ArrowRight className="h-6 w-6 text-primary" />
             </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Torturi Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.6 }} 
+            viewport={{ once: true }} 
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Torturi <span className="text-gradient">Speciale</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Descoperă selecția noastră de torturi artizanale, preparate cu ingrediente de cea mai bună calitate și decorare personalizată pentru momentele tale speciale.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerChildren} 
+            initial="initial" 
+            whileInView="animate" 
+            viewport={{ once: true }} 
+            className="grid grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto"
+          >
+            {/* Primul rând */}
+            <motion.div variants={fadeInUp} className="group">
+              <Link href="/produse/duo-chocolate-1kg" className="block">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden h-80 group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/products/duo-chocolate-1kg.jpg"
+                      alt="Duo Chocolate"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Duo Chocolate</h3>
+                    <p className="text-primary font-bold text-sm">378 RON</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="group">
+              <Link href="/produse/tort-mousse-ciocolata-fructe-padure" className="block">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden h-80 group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/products/tort-mousse-ciocolata-fructe-padure.jpg"
+                      alt="Tort Mousse de ciocolată și fructe de pădure"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Tort Mousse</h3>
+                    <p className="text-primary font-bold text-sm">445 RON</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Al doilea rând */}
+            <motion.div variants={fadeInUp} className="group">
+              <Link href="/produse/tort-medovika" className="block">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden h-80 group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/products/tort-medovika.jpg"
+                      alt="Tort Medovika"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Tort Medovika</h3>
+                    <p className="text-primary font-bold text-sm">445 RON</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="group">
+              <Link href="/produse/tort-pavlova" className="block">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden h-80 group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/products/tort-pavlova.jpg"
+                      alt="Tort Pavlova"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Tort Pavlova</h3>
+                    <p className="text-primary font-bold text-sm">445 RON</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.6, delay: 0.3 }} 
+            viewport={{ once: true }} 
+            className="text-center"
+          >
+            <Link 
+              href="/produse?category=torturi" 
+              className="inline-flex items-center bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
+            >
+              <span>Vezi mai multe variante</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </motion.div>
         </div>
       </section>

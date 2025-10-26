@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -25,6 +25,9 @@ import {
 const ProductPage = ({ params }: { params: { slug: string } }) => {
   const [selectedDate, setSelectedDate] = useState('')
   const [quantity, setQuantity] = useState(1)
+  const [selectedVariant, setSelectedVariant] = useState<any>(null)
+  const [currentPrice, setCurrentPrice] = useState(0)
+  const [selectedFlavor, setSelectedFlavor] = useState<string>('')
   const [expandedSections, setExpandedSections] = useState({
     ingredients: false,
     features: false
@@ -213,14 +216,14 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'platou-mini-prajituri-600g': {
-      id: 4,
-      name: 'Platou mini prăjituri 600g',
-      price: 175,
-      originalPrice: 175,
+    'platou-mini-prajituri': {
+      id: 3,
+      name: 'Platou mini prăjituri',
+      price: 296,
+      originalPrice: 296,
       category: 'prajituri',
-      description: 'Platou cu mini prăjituri variate de 600g: mini tarte, mini eclere, mini amandine, mini kranț.',
-      longDescription: 'Platoul nostru cu mini prăjituri de 600g include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru evenimente medii.',
+      description: 'Platou cu mini prăjituri variate: mini tarte, mini eclere, mini amandine, mini kranț.',
+      longDescription: 'Platoul nostru cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru evenimente.',
       ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'ciocolată'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
@@ -231,7 +234,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
+      },
+      variants: [
+        { weight: '600g', price: 175, priceValue: 175 },
+        { weight: '1kg', price: 296, priceValue: 296 }
+      ]
     },
     'mini-tarte-bezea-lamai': {
       id: 5,
@@ -273,7 +280,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'mini-krant-1kg': {
+    'mini-krant': {
       id: 7,
       name: 'Mini krant 1kg',
       price: 296,
@@ -293,7 +300,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'minieclere-ness': {
+    'mini-eclere-ness': {
       id: 8,
       name: 'Mini eclere cu ness',
       price: 296,
@@ -313,7 +320,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'minieclere-vanilie-ciocolata': {
+    'mini-eclere-vanilie-ciocolata': {
       id: 9,
       name: 'Mini eclere cu vanilie și ciocolată',
       price: 296,
@@ -457,7 +464,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'limbi-pisica': {
+    'limbi-de-pisica': {
       id: 16,
       name: 'Limbi de pisică',
       price: 254,
@@ -477,7 +484,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'fursec-gem': {
+    'fursec-cu-gem': {
       id: 17,
       name: 'Fursec cu gem',
       price: 254,
@@ -557,7 +564,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'tort-maria-2kg': {
+    'tort-maria': {
       id: 21,
       name: 'Tort Maria 2kg',
       price: 532,
@@ -617,7 +624,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'tort-mousse-ciocolata-fructe': {
+    'tort-mousse-ciocolata-fructe-padure': {
       id: 24,
       name: 'Tort mousse de ciocolată și fructe de pădure',
       price: 399,
@@ -677,7 +684,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'tort-diplomat-2kg': {
+    'tort-diplomat': {
       id: 27,
       name: 'Tort diplomat 2kg',
       price: 533,
@@ -717,7 +724,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'cozonac-traditional': {
+    'cozonac-traditional-nuca-cacao': {
       id: 29,
       name: 'Cozonac traditional cu nucă și cacao',
       price: 198,
@@ -737,7 +744,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'pavlova-100g': {
+    'pavlova': {
       id: 30,
       name: 'Pavlova 100g',
       price: 35,
@@ -857,7 +864,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'medovika-150g': {
+    'medovika-prajitura': {
       id: 36,
       name: 'Medovika 150g',
       price: 45,
@@ -937,14 +944,14 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     },
-    'gelato-500g': {
+    'gelato': {
       id: 40,
-      name: 'Gelato 500g',
+      name: 'Gelato',
       price: 115,
       originalPrice: 115,
       category: 'dulciuri',
-      description: 'Înghețată artizanală 500g realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc.',
-      longDescription: 'Înghețata noastră artizanală 500g este realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc. Arome disponibile: Straciatella, mango, fistic, vanilie, cheesecake, ciocolată, căpșuni.',
+      description: 'Înghețată artizanală realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc.',
+      longDescription: 'Înghețata noastră artizanală este realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc. Arome disponibile: Straciatella, mango, fistic, vanilie, cheesecake, ciocolată, căpșuni.',
       ingredients: ['ingrediente naturale', 'fructe congelate', 'fructe proaspete', 'pastă pură de fistic', 'pastă pură de ciocolată'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
@@ -956,7 +963,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       },
-      flavors: ['Straciatella', 'Mango', 'Fistic', 'Vanilie', 'Cheesecake', 'Ciocolată', 'Căpșuni']
+      flavors: ['Straciatella', 'Mango', 'Fistic', 'Vanilie', 'Cheesecake', 'Ciocolată', 'Căpșuni'],
+      variants: [
+        { weight: '500g', price: 115, priceValue: 115 },
+        { weight: '1kg', price: 234, priceValue: 234 }
+      ]
     },
     'gelato-1kg': {
       id: 41,
@@ -982,6 +993,25 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
   }
 
   const product = products[params.slug as keyof typeof products]
+
+  // Initialize current price and selected variant only when slug changes
+  useEffect(() => {
+    if (product) {
+      if ((product as any).variants && (product as any).variants.length > 0) {
+        const firstVariant = (product as any).variants[0]
+        setSelectedVariant(firstVariant)
+        setCurrentPrice(firstVariant.price)
+      } else {
+        setSelectedVariant(null)
+        setCurrentPrice(product.price)
+      }
+      if ((product as any).flavors && (product as any).flavors.length > 0) {
+        setSelectedFlavor((product as any).flavors[0])
+      } else {
+        setSelectedFlavor('')
+      }
+    }
+  }, [params.slug])
 
   if (!product) {
     return (
@@ -1023,7 +1053,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
           >
             <div className="relative">
               <Image
-                src="/images/products/product-1.jpg"
+                src={`/images/products/${params.slug}.jpg`}
                 alt={product.name}
                 width={500}
                 height={400}
@@ -1044,9 +1074,9 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
               <div className="flex items-center space-x-4 mb-6">
                 <span className="text-2xl sm:text-3xl font-bold text-primary">
-                  {Math.round(product.price * quantity)} RON
+                  {Math.round(currentPrice * quantity)} RON
                 </span>
-                {product.originalPrice && product.originalPrice > product.price && (
+                {product.originalPrice && product.originalPrice > currentPrice && (
                   <span className="text-xl text-gray-500 line-through">
                     {Math.round(product.originalPrice * quantity)} RON
                   </span>
@@ -1125,7 +1155,27 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               {/* Cantitate */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Cantitate</h3>
-                {product.category === 'torturi' ? (
+                {(product as any).variants ? (
+                  <div className="flex flex-wrap gap-2">
+                    {(product as any).variants.map((variant: any, index: number) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          setSelectedVariant(variant)
+                          setCurrentPrice(variant.price)
+                          setQuantity(1)
+                        }}
+                        className={`px-4 py-2 rounded-lg border transition-colors duration-200 ${
+                          selectedVariant && selectedVariant.weight === variant.weight
+                            ? 'border-primary bg-primary text-white'
+                            : 'border-gray-300 hover:border-primary'
+                        }`}
+                      >
+                        {variant.weight} - {variant.price} RON
+                      </button>
+                    ))}
+                  </div>
+                ) : product.category === 'torturi' ? (
                   <div className="flex space-x-2">
                     {[
                       { weight: '2kg (10 persoane)', multiplier: 1 },
@@ -1163,6 +1213,28 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                   </div>
                 )}
               </div>
+
+              {/* Arome (pentru gelato) */}
+              {(product as any).flavors && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege aroma</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {(product as any).flavors.map((flavor: string, index: number) => (
+                      <button
+                        key={index}
+                        onClick={() => setSelectedFlavor(flavor)}
+                        className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
+                          selectedFlavor === flavor
+                            ? 'bg-primary text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {flavor}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">

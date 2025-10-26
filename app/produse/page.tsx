@@ -84,8 +84,9 @@ const ProductsPage = () => {
   // Categorii de produse
   const categories = [
     { id: 'all', name: 'Toate Produsele', icon: Cake },
-    { id: 'torturi', name: 'Torturi', icon: Cake },
+    { id: 'mini-prajituri', name: 'Mini prăjituri', icon: Cookie },
     { id: 'prajituri', name: 'Prăjituri', icon: Cookie },
+    { id: 'torturi', name: 'Torturi', icon: Cake },
     { id: 'dulciuri', name: 'Dulciuri de Casă', icon: Heart },
     { id: 'evenimente', name: 'Evenimente', icon: Users }
   ]
@@ -126,7 +127,7 @@ const ProductsPage = () => {
       name: 'Caserolă mini prăjituri',
       price: '88 RON',
       priceValue: 88,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 20,
       preparationTime: 'Zilnic',
@@ -140,37 +141,23 @@ const ProductsPage = () => {
       name: 'Platou mini prăjituri',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 25,
       preparationTime: 'Zilnic',
       servings: '1kg',
       icon: Cookie,
-      slug: 'platou-mini-prajituri-1kg',
-      description: 'Mini tarte, mini eclere, mini amandine, mini kranț'
-    },
-    {
-      id: 4,
-      name: 'Platou mini prăjituri',
-      price: '175 RON',
-      priceValue: 175,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 18,
-      preparationTime: 'Zilnic',
-      servings: '600g',
-      icon: Cookie,
-      slug: 'platou-mini-prajituri-600g',
+      slug: 'platou-mini-prajituri',
       description: 'Mini tarte, mini eclere, mini amandine, mini kranț'
     },
     
     // Mini tarte
     {
-      id: 5,
+      id: 4,
       name: 'Mini tarte bezea și lămâie',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 22,
       preparationTime: 'Zilnic',
@@ -180,11 +167,11 @@ const ProductsPage = () => {
       description: 'Savoarea untului împreunează dulceața bezelei cu asprimea lămâi'
     },
     {
-      id: 6,
+      id: 5,
       name: 'Mini tarte',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 16,
       preparationTime: 'Zilnic',
@@ -193,11 +180,11 @@ const ProductsPage = () => {
       slug: 'mini-tarte'
     },
     {
-      id: 7,
+      id: 6,
       name: 'Mini krant',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 19,
       preparationTime: 'Zilnic',
@@ -207,11 +194,11 @@ const ProductsPage = () => {
       ingredients: ['blat nucă', 'cremă de vanilie cu unt', 'crocant nucă caramelizată']
     },
     {
-      id: 8,
+      id: 7,
       name: 'Mini eclere cu ness',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 14,
       preparationTime: 'Zilnic',
@@ -220,11 +207,11 @@ const ProductsPage = () => {
       slug: 'mini-eclere-ness'
     },
     {
-      id: 9,
+      id: 8,
       name: 'Mini eclere cu vanilie și ciocolată',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 17,
       preparationTime: 'Zilnic',
@@ -233,11 +220,11 @@ const ProductsPage = () => {
       slug: 'mini-eclere-vanilie-ciocolata'
     },
     {
-      id: 10,
+      id: 9,
       name: 'Mini amandine',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 21,
       preparationTime: 'Zilnic',
@@ -246,11 +233,11 @@ const ProductsPage = () => {
       slug: 'mini-amandine'
     },
     {
-      id: 11,
+      id: 10,
       name: 'Mini choux',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 13,
       preparationTime: 'Zilnic',
@@ -259,11 +246,11 @@ const ProductsPage = () => {
       slug: 'mini-choux'
     },
     {
-      id: 12,
+      id: 11,
       name: 'Mini duo chocolat cu fructe de pădure',
       price: '296 RON/kg',
       priceValue: 296,
-      category: 'prajituri',
+      category: 'mini-prajituri',
       rating: 5,
       reviews: 23,
       preparationTime: 'Zilnic',
@@ -274,8 +261,8 @@ const ProductsPage = () => {
     
     // Fursecuri
     {
-      id: 13,
-      name: 'Amestec fursecuri 500g',
+      id: 12,
+      name: 'Amestec fursecuri',
       price: '127 RON',
       priceValue: 127,
       category: 'dulciuri',
@@ -664,51 +651,66 @@ const ProductsPage = () => {
     }
   ]
 
-  // Funcție de sortare
-  const sortProducts = (products: any[]) => {
-    return [...products].sort((a, b) => {
-      let aValue, bValue
-      
-      // Parse sort option (e.g., 'name-asc' -> 'name' and 'asc')
-      const [sortField, sortDirection] = sortBy.split('-')
-      
-      switch (sortField) {
-        case 'name':
-          aValue = a.name.toLowerCase()
-          bValue = b.name.toLowerCase()
-          break
-        case 'price':
-          aValue = a.priceValue
-          bValue = b.priceValue
-          break
-        case 'rating':
-          aValue = a.rating
-          bValue = b.rating
-          break
-        case 'reviews':
-          aValue = a.reviews
-          bValue = b.reviews
-          break
-        default:
-          return 0
+  // Funcție de sortare cu grupare pe categorii
+  const sortProductsByCategory = (products: any[]) => {
+    // Grupează produsele pe categorii
+    const groupedProducts = products.reduce((groups: any, product: any) => {
+      const category = product.category
+      if (!groups[category]) {
+        groups[category] = []
       }
-      
-      if (sortDirection === 'asc') {
-        return aValue < bValue ? -1 : aValue > bValue ? 1 : 0
-      } else {
-        return aValue > bValue ? -1 : aValue < bValue ? 1 : 0
-      }
+      groups[category].push(product)
+      return groups
+    }, {})
+
+    // Sortează produsele în cadrul fiecărui grup
+    Object.keys(groupedProducts).forEach(category => {
+      groupedProducts[category] = [...groupedProducts[category]].sort((a, b) => {
+        let aValue, bValue
+        
+        // Parse sort option (e.g., 'name-asc' -> 'name' and 'asc')
+        const [sortField, sortDirection] = sortBy.split('-')
+        
+        switch (sortField) {
+          case 'name':
+            aValue = a.name.toLowerCase()
+            bValue = b.name.toLowerCase()
+            break
+          case 'price':
+            aValue = a.priceValue
+            bValue = b.priceValue
+            break
+          case 'rating':
+            aValue = a.rating
+            bValue = b.rating
+            break
+          case 'reviews':
+            aValue = a.reviews
+            bValue = b.reviews
+            break
+          default:
+            return 0
+        }
+        
+        if (sortDirection === 'asc') {
+          return aValue < bValue ? -1 : aValue > bValue ? 1 : 0
+        } else {
+          return aValue > bValue ? -1 : aValue < bValue ? 1 : 0
+        }
+      })
     })
+
+    return groupedProducts
   }
 
-  // Filtrare și sortare produse
-  const filteredProducts = sortProducts(
-    products.filter(product => {
+  // Filtrare și sortare produse cu grupare pe categorii
+  const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesCategory && matchesSearch
   })
-  )
+
+  const groupedProducts = sortProductsByCategory(filteredProducts)
 
   return (
     <div className="min-h-screen pt-12 sm:pt-16">
@@ -840,41 +842,51 @@ const ProductsPage = () => {
       {/* Lista Produse */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {filteredProducts.map((product, index) => (
-              <Link key={`${product.id}-${selectedCategory}`} href={`/produse/${product.slug}`}>
-              <div className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col">
-                <div className="relative overflow-hidden rounded-t-lg h-56">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-                    {/* Pattern decorative */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-4 left-4 w-16 h-16 border-2 border-primary/30 rounded-full"></div>
-                      <div className="absolute bottom-4 right-4 w-12 h-12 border-2 border-primary/20 rounded-full"></div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border border-primary/15 rounded-full"></div>
-                    </div>
-                    
-                    {/* Iconița principală */}
-                    <div className="relative z-10">
-                      <product.icon className="h-16 w-16 text-primary" />
+          {Object.keys(groupedProducts).length > 0 ? (
+            Object.entries(groupedProducts).map(([categoryKey, categoryProducts]) => {
+              const categoryInfo = categories.find(cat => cat.id === categoryKey)
+              if (!categoryInfo) return null
+              
+              return (
+                <div key={categoryKey} className="mb-12">
+                  {/* Subtitlu categorie */}
+                  <div className="flex items-center justify-center mb-6">
+                    <categoryInfo.icon className="h-6 w-6 text-primary mr-3" />
+                    <h2 className="text-2xl font-bold text-gray-900">{categoryInfo.name}</h2>
                   </div>
+                  
+                  {/* Produsele din categoria respectivă */}
+                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                    {(categoryProducts as any[]).map((product: any, index: number) => (
+                      <Link key={`${product.id}-${categoryKey}`} href={`/produse/${product.slug}`}>
+                        <div className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col">
+                          <div className="relative overflow-hidden rounded-t-lg h-80">
+                            <Image
+                              src={`/images/products/${product.slug}.jpg`}
+                              alt={product.name}
+                              fill
+                              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                            />
+                          </div>
+                          <div className="p-4 flex flex-col flex-grow">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-200 flex-grow">
+                              {product.name}
+                            </h3>
+                            <div className="flex items-center justify-between mt-auto">
+                              <span className="text-base font-bold text-primary">
+                                {product.price}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </div>
-                <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-200 flex-grow">
-                      {product.name}
-                    </h3>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-base font-bold text-primary">
-                      {product.price}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              </Link>
-            ))}
-          </div>
-
-          {filteredProducts.length === 0 && (
+              )
+            })
+          ) : (
             <div className="text-center py-12">
               <div className="text-gray-400 mb-4">
                 <Search className="h-16 w-16 mx-auto" />

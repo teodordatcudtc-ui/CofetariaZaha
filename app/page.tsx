@@ -183,6 +183,26 @@ const HomePage = () => {
     }
   }
 
+  // Auto-scroll pentru mobile
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const scrollContainer = document.querySelector('.overflow-x-auto')
+      if (scrollContainer) {
+        const scrollAmount = 192 // 48 * 4 (w-48 + space-x-4)
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+        
+        // Reset la început când ajungem la sfârșitul
+        setTimeout(() => {
+          if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 50) {
+            scrollContainer.scrollTo({ left: 0, behavior: 'smooth' })
+          }
+        }, 1000)
+      }
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   // Date pentru servicii
   const services = [
     {
@@ -478,12 +498,12 @@ const HomePage = () => {
                   return (
                     <motion.div
                       key={product.id}
-                      className="flex-shrink-0 w-40"
+                      className="flex-shrink-0 w-48"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
                       <Link href={`/produse/${product.slug}`} className="block">
-                        <div className="group overflow-hidden h-full rounded-lg bg-white shadow-lg flex flex-col">
+                        <div className="group overflow-hidden h-48 rounded-lg bg-white shadow-lg flex flex-col">
                           <div className="relative overflow-hidden rounded-t-lg h-24">
                             <Image
                               src={`/images/products/${product.slug}.jpg`}
@@ -493,8 +513,8 @@ const HomePage = () => {
                               sizes="160px"
                             />
                           </div>
-                          <div className="p-2 flex flex-col flex-grow">
-                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1 flex-grow">
+                          <div className="p-2 flex flex-col h-24">
+                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1">
                               {product.name}
                             </h3>
                             <span className="text-sm font-bold text-primary mt-auto">{product.price}</span>

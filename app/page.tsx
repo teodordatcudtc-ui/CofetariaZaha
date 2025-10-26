@@ -188,8 +188,7 @@ const HomePage = () => {
     const interval = setInterval(() => {
       const scrollContainer = document.querySelector('.overflow-x-auto')
       if (scrollContainer) {
-        const containerWidth = scrollContainer.clientWidth
-        const scrollAmount = containerWidth // Scroll cu exact lățimea containerului
+        const scrollAmount = 400 // 2 chenare (2 * 192px) + spațiu (16px)
         
         scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' })
         
@@ -494,7 +493,7 @@ const HomePage = () => {
           >
             {/* Carusel container pentru mobile cu scroll liber */}
             <div className="overflow-x-auto scrollbar-none">
-              <div className="flex space-x-4 pb-4 pl-4" style={{ width: 'max-content' }}>
+              <div className="flex space-x-4 pb-4 pl-2" style={{ width: 'max-content' }}>
                 {featuredProducts.map((product, index) => {
                   const ProductIcon = product.icon
                   return (

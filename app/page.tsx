@@ -188,12 +188,14 @@ const HomePage = () => {
     const interval = setInterval(() => {
       const scrollContainer = document.querySelector('.overflow-x-auto')
       if (scrollContainer) {
-        const scrollAmount = 192 // 48 * 4 (w-48 + space-x-4)
+        const containerWidth = scrollContainer.clientWidth
+        const scrollAmount = containerWidth // Scroll cu exact lățimea containerului
+        
         scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' })
         
         // Reset la început când ajungem la sfârșitul
         setTimeout(() => {
-          if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 50) {
+          if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 10) {
             scrollContainer.scrollTo({ left: 0, behavior: 'smooth' })
           }
         }, 1000)
@@ -504,20 +506,20 @@ const HomePage = () => {
                     >
                       <Link href={`/produse/${product.slug}`} className="block">
                         <div className="group overflow-hidden h-48 rounded-lg bg-white shadow-lg flex flex-col">
-                          <div className="relative overflow-hidden rounded-t-lg h-24">
+                          <div className="relative overflow-hidden rounded-t-lg h-36">
                             <Image
                               src={`/images/products/${product.slug}.jpg`}
                               alt={product.name}
                               fill
                               className="object-cover group-hover:scale-105 transition-transform duration-500"
-                              sizes="160px"
+                              sizes="192px"
                             />
                           </div>
-                          <div className="p-2 flex flex-col h-24">
-                            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2 mb-1">
+                          <div className="p-2 flex flex-col h-12">
+                            <h3 className="text-xs font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-1 mb-1">
                               {product.name}
                             </h3>
-                            <span className="text-sm font-bold text-primary mt-auto">{product.price}</span>
+                            <span className="text-xs font-bold text-primary">{product.price}</span>
                           </div>
                         </div>
                       </Link>

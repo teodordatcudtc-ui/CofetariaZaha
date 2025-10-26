@@ -18,8 +18,12 @@ import {
   Lock,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   Minus,
-  Plus
+  Plus,
+  Calendar,
+  ShoppingCart
 } from 'lucide-react'
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
@@ -49,6 +53,13 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     return date.toLocaleDateString('ro-RO', {
       day: '2-digit',
       month: '2-digit',
+      year: 'numeric'
+    })
+  }
+
+  const formatMonthYear = (date: Date) => {
+    return date.toLocaleDateString('ro-RO', {
+      month: 'long',
       year: 'numeric'
     })
   }
@@ -1350,842 +1361,6 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
-    },
-    
-    // Existing products from original file
-    'galusti-cu-prune': {
-      id: 55,
-      name: 'Găluști cu prune',
-      price: 19,
-      originalPrice: 19,
-      category: 'dulciuri',
-      description: 'Găluști tradiționali cu prune fără sâmbure și scorțișoară. Gustul autentic românesc.',
-      longDescription: 'Găluștii noștri tradiționali sunt preparați cu cartofi, ou, pesmet, unt și prune fără sâmbure, condimentați cu scorțișoară. Gustul autentic românesc care îți va aminti de copilărie.',
-      ingredients: ['cartofi', 'ou', 'pesmet', 'unt', 'prune fără sâmbure', 'scorțișoară'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'caserola-mini-prajituri': {
-      id: 2,
-      name: 'Caserolă mini prăjituri',
-      price: 88,
-      originalPrice: 88,
-      category: 'prajituri',
-      description: 'Caserolă cu mini prăjituri variate: mini tarte, mini eclere, mini amandine, mini kranț.',
-      longDescription: 'Caserola noastră cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru gustări sau evenimente.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'platou-mini-prajituri-1kg': {
-      id: 3,
-      name: 'Platou mini prăjituri 1kg',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Platou cu mini prăjituri variate la kilogram: mini tarte, mini eclere, mini amandine, mini kranț.',
-      longDescription: 'Platoul nostru cu mini prăjituri la kilogram include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru evenimente mai mari.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'platou-mini-prajituri': {
-      id: 3,
-      name: 'Platou mini prăjituri',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Platou cu mini prăjituri variate: mini tarte, mini eclere, mini amandine, mini kranț.',
-      longDescription: 'Platoul nostru cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru evenimente.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      },
-      variants: [
-        { weight: '600g', price: 175, priceValue: 175 },
-        { weight: '1kg', price: 296, priceValue: 296 }
-      ]
-    },
-    'mini-tarte-bezea-lamai': {
-      id: 5,
-      name: 'Mini tarte bezea și lămâie',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini tarte cu bezea și lămâie la kilogram. Savoarea untului împreună cu dulceața bezelei și asprimea lămâii.',
-      longDescription: 'Mini tarte-urile noastre cu bezea și lămâie combină savoarea untului cu dulceața bezelei și asprimea lămâii. O combinație perfectă de gusturi.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'lămâie', 'vanilie'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-tarte': {
-      id: 6,
-      name: 'Mini tarte',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini tarte la kilogram cu diverse arome și umpluturi.',
-      longDescription: 'Mini tarte-urile noastre la kilogram sunt preparate cu diverse arome și umpluturi, oferind o varietate de gusturi pentru toate preferințele.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'diverse umpluturi'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-krant': {
-      id: 7,
-      name: 'Mini krant 1kg',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini krant la kilogram cu blat nucă, cremă de vanilie cu unt și crocant nucă caramelizată.',
-      longDescription: 'Mini krant-ul nostru la kilogram este preparat cu blat nucă, cremă de vanilie cu unt și crocant nucă caramelizată. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'nucă', 'unt', 'ouă', 'zahăr', 'vanilie', 'caramel'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-eclere-ness': {
-      id: 8,
-      name: 'Mini eclere cu ness',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini eclere cu ness la kilogram. Delicat și savuros.',
-      longDescription: 'Mini eclere-urile noastre cu ness la kilogram sunt preparate cu atenție la detalii, oferind un gust delicat și savuros.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'ness', 'vanilie'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-eclere-vanilie-ciocolata': {
-      id: 9,
-      name: 'Mini eclere cu vanilie și ciocolată',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini eclere cu vanilie și ciocolată la kilogram. Combinația perfectă de gusturi.',
-      longDescription: 'Mini eclere-urile noastre cu vanilie și ciocolată la kilogram combină dulceața vaniliei cu bogăția ciocolatei, oferind o experiență gustativă deosebită.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-amandine': {
-      id: 10,
-      name: 'Mini amandine',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini amandine la kilogram. Delicat și savuros.',
-      longDescription: 'Mini amandine-urile noastre la kilogram sunt preparate cu atenție la detalii, oferind un gust delicat și savuros.',
-      ingredients: ['făină', 'migdale', 'unt', 'ouă', 'zahăr', 'vanilie'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-choux': {
-      id: 11,
-      name: 'Mini choux',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini choux la kilogram. Delicat și savuros.',
-      longDescription: 'Mini choux-urile noastre la kilogram sunt preparate cu atenție la detalii, oferind un gust delicat și savuros.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'diverse umpluturi'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mini-duo-chocolat-fructe-padure': {
-      id: 12,
-      name: 'Mini duo chocolat cu fructe de pădure',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Mini duo chocolat cu fructe de pădure la kilogram. Combinația perfectă de ciocolată și fructe.',
-      longDescription: 'Mini duo-ul nostru chocolat cu fructe de pădure la kilogram combină bogăția ciocolatei cu prospețimea fructelor de pădure, oferind o experiență gustativă deosebită.',
-      ingredients: ['făină', 'ciocolată', 'fructe de pădure', 'unt', 'ouă', 'zahăr'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'amestec-fursecuri': {
-      id: 13,
-      name: 'Amestec fursecuri',
-      price: 127,
-      originalPrice: 127,
-      category: 'dulciuri',
-      description: 'Amestec fursecuri în pungă sau caserolă. Varietate de fursecuri tradiționale.',
-      longDescription: 'Amestecul nostru de fursecuri include o varietate de fursecuri tradiționale, perfect pentru gustări sau evenimente. Disponibil în pungă sau caserolă.',
-      ingredients: ['făină', 'unt', 'ouă', 'zahăr', 'vanilie', 'diverse arome'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      },
-      variants: [
-        { weight: '500g', price: 127, priceValue: 127 },
-        { weight: '700g', price: 177, priceValue: 177 }
-      ]
-    },
-    'fursecuri-fragede-nuca': {
-      id: 14,
-      name: 'Fursecuri fragede cu nucă',
-      price: 254,
-      originalPrice: 254,
-      category: 'dulciuri',
-      description: 'Fursecuri fragede cu nucă la kilogram. Făină de grâu, unt, nucă și bicarbonat.',
-      longDescription: 'Fursecurii noștri fragede cu nucă la kilogram sunt preparați cu făină de grâu, unt, nucă și bicarbonat. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină de grâu', 'unt', 'nucă', 'bicarbonat'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'cornulete-nuca-gem': {
-      id: 15,
-      name: 'Cornulețe cu nucă și gem',
-      price: 254,
-      originalPrice: 254,
-      category: 'dulciuri',
-      description: 'Cornulețe cu nucă și gem la kilogram. Aluat fraged cu făină de grâu, unt, ou, nucă și gem de fructe de pădure.',
-      longDescription: 'Cornulețele noastre cu nucă și gem la kilogram sunt preparate cu aluat fraged din făină de grâu, unt, ou, nucă și gem de fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină de grâu', 'unt', 'ou', 'nucă', 'gem de fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'limbi-de-pisica': {
-      id: 16,
-      name: 'Limbi de pisică',
-      price: 254,
-      originalPrice: 254,
-      category: 'dulciuri',
-      description: 'Limbi de pisică la kilogram. Făină de grâu, unt, albuș și vanilie.',
-      longDescription: 'Limbii noștri de pisică la kilogram sunt preparați cu făină de grâu, unt, albuș și vanilie. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină de grâu', 'unt', 'albuș', 'vanilie'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'fursec-cu-gem': {
-      id: 17,
-      name: 'Fursec cu gem',
-      price: 254,
-      originalPrice: 254,
-      category: 'dulciuri',
-      description: 'Fursec cu gem la kilogram. Aluat fraged cu unt, făină de grâu, ou și gem de fructe de pădure.',
-      longDescription: 'Fursecul nostru cu gem la kilogram este preparat cu aluat fraged din unt, făină de grâu, ou și gem de fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină de grâu', 'unt', 'ou', 'gem de fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'fourstafida': {
-      id: 18,
-      name: 'Fourstafidă',
-      price: 254,
-      originalPrice: 254,
-      category: 'dulciuri',
-      description: 'Fourstafidă la kilogram. Făină de grâu, unt, ou, stafide, vanilie păstaie și rom.',
-      longDescription: 'Fourstafida noastră la kilogram este preparată cu făină de grâu, unt, ou, stafide, vanilie păstaie și rom. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină de grâu', 'unt', 'ou', 'stafide', 'vanilie păstaie', 'rom'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'pricomigdale': {
-      id: 19,
-      name: 'Pricomigdale',
-      price: 296,
-      originalPrice: 296,
-      category: 'dulciuri',
-      description: 'Pricomigdale la kilogram (în jur de 30 bucăți). Nucă, migdale, albuș, zahăr și cremă de ciocolată.',
-      longDescription: 'Pricomigdalele noastre la kilogram (în jur de 30 bucăți) sunt preparate cu nucă, migdale, albuș, zahăr și cremă de ciocolată. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['nucă', 'migdale', 'albuș', 'zahăr', 'cremă de ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'duo-chocolate-1kg': {
-      id: 20,
-      name: 'Duo chocolate 1kg',
-      price: 266,
-      originalPrice: 266,
-      category: 'torturi',
-      description: 'Tort duo chocolate 1kg cu blat cacao, mousse ciocolată neagră, fructe de pădure și mousse ciocolată albă.',
-      longDescription: 'Tortul nostru duo chocolate 1kg este preparat cu blat cacao, mousse ciocolată neagră, fructe de pădure și mousse ciocolată albă. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['blat cacao', 'mousse ciocolată neagră', 'fructe de pădure', 'mousse ciocolată albă'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-maria': {
-      id: 21,
-      name: 'Tort Maria 2kg',
-      price: 532,
-      originalPrice: 532,
-      category: 'torturi',
-      description: 'Tort Maria 2kg cu blat alb, cremă de vanilie, frișcă naturală și fructe de pădure.',
-      longDescription: 'Tortul nostru Maria 2kg este preparat cu blat alb, cremă de vanilie, frișcă naturală și fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['blat alb', 'cremă de vanilie', 'frișcă naturală', 'fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-maria-1kg': {
-      id: 22,
-      name: 'Tort Maria 1kg',
-      price: 266,
-      originalPrice: 266,
-      category: 'torturi',
-      description: 'Tort Maria 1kg cu cremă de vanilie, frișcă naturală și fructe de pădure.',
-      longDescription: 'Tortul nostru Maria 1kg este preparat cu cremă de vanilie, frișcă naturală și fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['cremă de vanilie', 'frișcă naturală', 'fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-maria-1-5kg': {
-      id: 23,
-      name: 'Tort Maria 1.5kg',
-      price: 399,
-      originalPrice: 399,
-      category: 'torturi',
-      description: 'Tort Maria 1.5kg cu blat de vanilie, cremă de vanilie aerată cu frișcă naturală și fructe de pădure.',
-      longDescription: 'Tortul nostru Maria 1.5kg este preparat cu blat de vanilie, cremă de vanilie aerată cu frișcă naturală și fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['blat de vanilie', 'cremă de vanilie aerată', 'frișcă naturală', 'fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-mousse-ciocolata-fructe-padure': {
-      id: 24,
-      name: 'Tort mousse de ciocolată și fructe de pădure',
-      price: 399,
-      originalPrice: 399,
-      category: 'torturi',
-      description: 'Tort mousse de ciocolată și fructe de pădure 1.5kg. Delicat și savuros.',
-      longDescription: 'Tortul nostru mousse de ciocolată și fructe de pădure 1.5kg este preparat cu atenție la detalii, oferind un gust delicat și savuros.',
-      ingredients: ['mousse ciocolată', 'fructe de pădure', 'blat', 'cremă'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-medovika': {
-      id: 25,
-      name: 'Tort medovika',
-      price: 453,
-      originalPrice: 453,
-      category: 'torturi',
-      description: 'Tort medovika 1700g. Delicat și savuros.',
-      longDescription: 'Tortul nostru medovika 1700g este preparat cu atenție la detalii, oferind un gust delicat și savuros.',
-      ingredients: ['făină', 'miere', 'unt', 'ouă', 'diverse condimente'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-pavlova': {
-      id: 26,
-      name: 'Tort pavlova',
-      price: 320,
-      originalPrice: 320,
-      category: 'torturi',
-      description: 'Tort pavlova 1200g cu bezea, piure de fructul pasiunii, frișcă naturală, mango și fructe mixte decor.',
-      longDescription: 'Tortul nostru pavlova 1200g este preparat cu bezea, piure de fructul pasiunii, frișcă naturală, mango și fructe mixte decor. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['bezea', 'piure fructul pasiunii', 'frișcă naturală', 'mango', 'fructe mixte'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-diplomat': {
-      id: 27,
-      name: 'Tort diplomat 2kg',
-      price: 533,
-      originalPrice: 533,
-      category: 'torturi',
-      description: 'Tort diplomat 2kg cu cremă de vanilie, frișcă naturală, blat alb și fructe în compot (ananas, piersici).',
-      longDescription: 'Tortul nostru diplomat 2kg este preparat cu cremă de vanilie, frișcă naturală, blat alb și fructe în compot (ananas, piersici). O combinație perfectă de texturi și gusturi.',
-      ingredients: ['cremă de vanilie', 'frișcă naturală', 'blat alb', 'fructe în compot', 'ananas', 'piersici'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'tort-red-velvet': {
-      id: 28,
-      name: 'Tort red velvet',
-      price: 400,
-      originalPrice: 400,
-      category: 'torturi',
-      description: 'Tort red velvet 1.5kg cu făină, unt, zahăr, ou, kefir, cremă de brânză, frișcă, colorant alimentar roșu și bicarbonat.',
-      longDescription: 'Tortul nostru red velvet 1.5kg este preparat cu făină, unt, zahăr, ou, kefir, cremă de brânză, frișcă, colorant alimentar roșu și bicarbonat. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'unt', 'zahăr', 'ou', 'kefir', 'cremă de brânză', 'frișcă', 'colorant alimentar roșu', 'bicarbonat'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 3-5 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'cozonac-traditional-nuca-cacao': {
-      id: 29,
-      name: 'Cozonac traditional cu nucă și cacao',
-      price: 198,
-      originalPrice: 198,
-      category: 'dulciuri',
-      description: 'Cozonac traditional cu nucă și cacao 1kg. Cozonac tradițional realizat cu unt, nucă și ouă în coajă.',
-      longDescription: 'Cozonacul nostru traditional cu nucă și cacao 1kg este realizat cu unt, nucă și ouă în coajă. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'unt', 'nucă', 'ouă în coajă', 'cacao', 'zahăr', 'drojdie'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata în 2-3 zile',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'pavlova': {
-      id: 30,
-      name: 'Pavlova 100g',
-      price: 35,
-      originalPrice: 35,
-      category: 'prajituri',
-      description: 'Pavlova 100g cu albuș, zahăr, amidon, frișcă naturală, fructul pasiunii și fructe mixte.',
-      longDescription: 'Pavlova noastră 100g este preparată cu albuș, zahăr, amidon, frișcă naturală, fructul pasiunii și fructe mixte. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['albuș', 'zahăr', 'amidon', 'frișcă naturală', 'fructul pasiunii', 'fructe mixte'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'kataif': {
-      id: 31,
-      name: 'Kataif',
-      price: 32,
-      originalPrice: 32,
-      category: 'prajituri',
-      description: 'Kataif 200g cu făină, frișcă naturală, coajă lămâie și portocală.',
-      longDescription: 'Kataiful nostru 200g este preparat cu făină, frișcă naturală, coajă lămâie și portocală. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'frișcă naturală', 'coajă lămâie', 'portocală'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'amandina': {
-      id: 32,
-      name: 'Amandină',
-      price: 36,
-      originalPrice: 36,
-      category: 'prajituri',
-      description: 'Amandină 150g cu făină, cacao, unt, zahăr și rom esență.',
-      longDescription: 'Amandina noastră 150g este preparată cu făină, cacao, unt, zahăr și rom esență. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'cacao', 'unt', 'zahăr', 'rom esență'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'savarina': {
-      id: 33,
-      name: 'Savarină',
-      price: 36,
-      originalPrice: 36,
-      category: 'prajituri',
-      description: 'Savarină 280g cu făină, ouă, frișcă naturală, miere, drojdie și rom.',
-      longDescription: 'Savarina noastră 280g este preparată cu făină, ouă, frișcă naturală, miere, drojdie și rom. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'ouă', 'frișcă naturală', 'miere', 'drojdie', 'rom'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'boema': {
-      id: 34,
-      name: 'Boema',
-      price: 40,
-      originalPrice: 40,
-      category: 'prajituri',
-      description: 'Boema 150g cu frișcă naturală, făină, ciocolată, ouă, ulei, unt, rom, cacao și praf de copt.',
-      longDescription: 'Boema noastră 150g este preparată cu frișcă naturală, făină, ciocolată, ouă, ulei, unt, rom, cacao și praf de copt. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['frișcă naturală', 'făină', 'ciocolată', 'ouă', 'ulei', 'unt', 'rom', 'cacao', 'praf de copt'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'mousse-3-ciocolate': {
-      id: 35,
-      name: 'Mousse 3 ciocolate',
-      price: 41,
-      originalPrice: 41,
-      category: 'prajituri',
-      description: 'Mousse 3 ciocolate 150g cu frișcă naturală, ciocolată albă, neagră, cu lapte, făină, ouă, zahăr și gelatină.',
-      longDescription: 'Mousse-ul nostru 3 ciocolate 150g este preparat cu frișcă naturală, ciocolată albă, neagră, cu lapte, făină, ouă, zahăr și gelatină. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['frișcă naturală', 'ciocolată albă', 'ciocolată neagră', 'ciocolată cu lapte', 'făină', 'ouă', 'zahăr', 'gelatină'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'medovika-prajitura': {
-      id: 36,
-      name: 'Medovika 150g',
-      price: 45,
-      originalPrice: 45,
-      category: 'prajituri',
-      description: 'Medovika 150g cu făină, mascarpone, miere, cremă de brânză, zahăr, fructe de pădure, rodie mere, frișcă naturală, unt, ouă, gelatină și bicarbonat.',
-      longDescription: 'Medovika noastră 150g este preparată cu făină, mascarpone, miere, cremă de brânză, zahăr, fructe de pădure, rodie mere, frișcă naturală, unt, ouă, gelatină și bicarbonat. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'mascarpone', 'miere', 'cremă de brânză', 'zahăr', 'fructe de pădure', 'rodie mere', 'frișcă naturală', 'unt', 'ouă', 'gelatină', 'bicarbonat'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'cremes': {
-      id: 37,
-      name: 'Cremes',
-      price: 296,
-      originalPrice: 296,
-      category: 'prajituri',
-      description: 'Cremes la kilogram cu foietaj (unt, făină, sare), cremă de vanilie, frișcă și gelatină.',
-      longDescription: 'Cremes-urile noastre la kilogram sunt preparate cu foietaj (unt, făină, sare), cremă de vanilie, frișcă și gelatină. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['foietaj', 'unt', 'făină', 'sare', 'cremă de vanilie', 'frișcă', 'gelatină'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'saleuri': {
-      id: 38,
-      name: 'Saleuri',
-      price: 67,
-      originalPrice: 67,
-      category: 'dulciuri',
-      description: 'Saleuri 250g cu făină, unt și telemea de vacă.',
-      longDescription: 'Saleurile noastre 250g sunt preparate cu făină, unt și telemea de vacă. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['făină', 'unt', 'telemea de vacă'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'bobfistic': {
-      id: 39,
-      name: 'Bobfistic',
-      price: 50,
-      originalPrice: 50,
-      category: 'dulciuri',
-      description: 'Bobfistic 150g cu crocant de biscuite cu pastă pură de fistic, mousse de fistic cu ciocolată și jeleu din fructe de pădure.',
-      longDescription: 'Bobfisticul nostru 150g este preparat cu crocant de biscuite cu pastă pură de fistic, mousse de fistic cu ciocolată și jeleu din fructe de pădure. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['crocant biscuite', 'pastă pură de fistic', 'mousse fistic', 'ciocolată', 'jeleu fructe de pădure'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    'gelato': {
-      id: 40,
-      name: 'Gelato',
-      price: 115,
-      originalPrice: 115,
-      category: 'dulciuri',
-      description: 'Înghețată artizanală realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc.',
-      longDescription: 'Înghețata noastră artizanală este realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc. Arome disponibile: Straciatella, mango, fistic, vanilie, cheesecake, ciocolată, căpșuni.',
-      ingredients: ['ingrediente naturale', 'fructe congelate', 'fructe proaspete', 'pastă pură de fistic', 'pastă pură de ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      },
-      flavors: ['Straciatella', 'Mango', 'Fistic', 'Vanilie', 'Cheesecake', 'Ciocolată', 'Căpșuni'],
-      variants: [
-        { weight: '500g', price: 115, priceValue: 115 },
-        { weight: '1kg', price: 234, priceValue: 234 }
-      ]
-    },
-    'gelato-1kg': {
-      id: 41,
-      name: 'Gelato 1kg',
-      price: 234,
-      originalPrice: 234,
-      category: 'dulciuri',
-      description: 'Înghețată artizanală 1kg realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc.',
-      longDescription: 'Înghețata noastră artizanală 1kg este realizată în laboratorul nostru cu ingrediente naturale, fructe congelate, fructe proaspete, pastă pură de fistic, pastă pură de ciocolată, etc. Arome disponibile: Straciatella, mango, fistic, vanilie, cheesecake, ciocolată, căpșuni.',
-      ingredients: ['ingrediente naturale', 'fructe congelate', 'fructe proaspete', 'pastă pură de fistic', 'pastă pură de ciocolată'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      },
-      flavors: ['Straciatella', 'Mango', 'Fistic', 'Vanilie', 'Cheesecake', 'Ciocolată', 'Căpșuni']
     }
   }
 
@@ -2285,85 +1460,23 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             <div className="space-y-4 sm:space-y-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Descriere</h3>
-                <p className="text-gray-600 leading-relaxed">{product.description}</p>
+                <p className="text-gray-700">{product.description}</p>
               </div>
 
-              {/* Data livrării */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Data livrării</h3>
-                <div className="relative">
-                  <button
-                    onClick={() => setShowCalendar(!showCalendar)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                  >
-                    {selectedDate || 'Selectează data'}
-                  </button>
-                  
-                  {showCalendar && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-10 p-4"
-                    >
-                      <div className="flex items-center justify-between mb-4">
-                        <button
-                          onClick={() => navigateMonth('prev')}
-                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
-                        >
-                          <ChevronLeft className="h-4 w-4" />
-                        </button>
-                        <h4 className="font-semibold text-gray-900">
-                          {currentMonth.toLocaleDateString('ro-RO', { month: 'long', year: 'numeric' })}
-                        </h4>
-                        <button
-                          onClick={() => navigateMonth('next')}
-                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
-                        >
-                          <ChevronRight className="h-4 w-4" />
-                        </button>
-                      </div>
-                      
-                      <div className="grid grid-cols-7 gap-1">
-                        {getDaysInMonth(currentMonth).map((day, index) => (
-                          <button
-                            key={index}
-                            onClick={() => handleDateSelect(day.date)}
-                            disabled={isDateDisabled(day.date)}
-                            className={`p-2 text-sm rounded-lg transition-colors duration-200 ${
-                              isDateSelected(day.date)
-                                ? 'bg-primary text-white'
-                                : day.isCurrentMonth
-                                ? 'hover:bg-gray-100 text-gray-900'
-                                : 'text-gray-400'
-                            } ${
-                              isDateDisabled(day.date) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-                            }`}
-                          >
-                            {day.date.getDate()}
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-              </div>
-
-              {/* Cantitate */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Cantitate</h3>
-                {(product as any).variants ? (
-                  <div className="flex flex-wrap gap-2">
-                    {(product as any).variants.map((variant: any, index: number) => (
+              {/* Variants */}
+              {(product as any).variants && (product as any).variants.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege greutatea</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {(product as any).variants.map((variant: any) => (
                       <button
-                        key={index}
+                        key={variant.weight}
                         onClick={() => {
                           setSelectedVariant(variant)
                           setCurrentPrice(variant.price)
-                          setQuantity(1)
                         }}
-                        className={`px-4 py-2 rounded-lg border transition-colors duration-200 ${
-                          selectedVariant && selectedVariant.weight === variant.weight
+                        className={`px-4 py-2 rounded-lg border-2 transition-all ${
+                          selectedVariant?.weight === variant.weight
                             ? 'border-primary bg-primary text-white'
                             : 'border-gray-300 hover:border-primary'
                         }`}
@@ -2372,58 +1485,22 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                       </button>
                     ))}
                   </div>
-                ) : product.category === 'torturi' ? (
-                  <div className="flex space-x-2">
-                    {[
-                      { weight: '2kg (10 persoane)', multiplier: 1 },
-                      { weight: '3kg (15 persoane)', multiplier: 1.5 },
-                      { weight: '5kg (25 persoane)', multiplier: 2.5 }
-                    ].map((option, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setQuantity(option.multiplier)}
-                        className={`px-4 py-2 rounded-lg border transition-colors duration-200 ${
-                          quantity === option.multiplier
-                            ? 'border-primary bg-primary text-white'
-                            : 'border-gray-300 hover:border-primary'
-                        }`}
-                      >
-                        {option.weight}
-                      </button>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex items-center space-x-4">
-                    <button
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors duration-200"
-                    >
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span className="text-lg font-semibold min-w-[3rem] text-center">{quantity}</span>
-                    <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors duration-200"
-                    >
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
 
-              {/* Arome (pentru gelato) */}
-              {(product as any).flavors && (
+              {/* Flavors */}
+              {(product as any).flavors && (product as any).flavors.length > 0 && (
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege aroma</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {(product as any).flavors.map((flavor: string, index: number) => (
+                  <div className="flex flex-wrap gap-3">
+                    {(product as any).flavors.map((flavor: string) => (
                       <button
-                        key={index}
+                        key={flavor}
                         onClick={() => setSelectedFlavor(flavor)}
-                        className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
+                        className={`px-4 py-2 rounded-lg border-2 transition-all ${
                           selectedFlavor === flavor
-                            ? 'bg-primary text-white'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            ? 'border-primary bg-primary text-white'
+                            : 'border-gray-300 hover:border-primary'
                         }`}
                       >
                         {flavor}
@@ -2433,160 +1510,168 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 </div>
               )}
 
+              {/* Quantity */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Cantitate</h3>
+                <div className="flex items-center space-x-4">
+                  <button
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
+                  >
+                    -
+                  </button>
+                  <span className="text-xl font-semibold w-12 text-center">{quantity}</span>
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* Date Selection */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege data livrării</h3>
+                <div className="relative">
+                  <button
+                    onClick={() => setShowCalendar(!showCalendar)}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-left hover:border-primary transition-colors flex items-center justify-between"
+                  >
+                    <span className="text-gray-700">
+                      {selectedDate || 'Selectează data'}
+                    </span>
+                    <Calendar className="w-5 h-5 text-gray-500" />
+                  </button>
+
+                  {showCalendar && (
+                    <div className="absolute z-10 mt-2 bg-white border-2 border-gray-200 rounded-lg shadow-lg p-4 w-full">
+                      <div className="flex items-center justify-between mb-4">
+                        <button
+                          onClick={() => navigateMonth('prev')}
+                          className="p-2 hover:bg-gray-100 rounded-lg"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <span className="font-semibold">{formatMonthYear(currentMonth)}</span>
+                        <button
+                          onClick={() => navigateMonth('next')}
+                          className="p-2 hover:bg-gray-100 rounded-lg"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-7 gap-1">
+                        {['D', 'L', 'M', 'M', 'J', 'V', 'S'].map((day) => (
+                          <div key={day} className="text-center text-sm font-semibold text-gray-600 py-2">
+                            {day}
+                          </div>
+                        ))}
+                        {getDaysInMonth(currentMonth).map((day, index) => (
+                          <button
+                            key={index}
+                            onClick={() => !isDateDisabled(day.date) && handleDateSelect(day.date)}
+                            disabled={isDateDisabled(day.date)}
+                            className={`
+                              p-2 text-sm rounded-lg transition-colors
+                              ${!day.isCurrentMonth ? 'text-gray-400' : 'text-gray-900'}
+                              ${isDateDisabled(day.date) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}
+                              ${isDateSelected(day.date) ? 'bg-primary text-white hover:bg-primary' : ''}
+                            `}
+                          >
+                            {day.date.getDate()}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+                  className="flex-1 btn-primary flex items-center justify-center space-x-2"
                 >
-                  Adaugă în coș
+                  <ShoppingCart className="w-5 h-5" />
+                  <span>Adaugă în coș</span>
                 </button>
                 <button
                   onClick={handleBuyNow}
-                  className="flex-1 bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
+                  className="flex-1 bg-secondary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2"
                 >
-                  Cumpără acum
+                  <span>Cumpără acum</span>
                 </button>
-              </div>
-
-              {/* Taxe și transport */}
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Taxe și transport</h4>
-                <p className="text-sm text-gray-600">
-                  Transport gratuit pentru comenzi peste 200 RON în București și Ilfov.
-                  Pentru comenzi sub 200 RON, taxa de transport este de 15 RON.
-                </p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Product Details */}
+        {/* Additional Info Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 space-y-8"
+          className="mt-12 space-y-4"
         >
-          {/* Ingrediente */}
-          {product.ingredients && (
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <button
-                onClick={() => toggleSection('ingredients')}
-                className="w-full flex items-center justify-between text-left"
-              >
-                <h3 className="text-xl font-semibold text-gray-900">Ingrediente</h3>
-                <motion.div
-                  animate={{ rotate: expandedSections.ingredients ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronRight className="h-5 w-5 text-gray-500" />
-                </motion.div>
-              </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: expandedSections.ingredients ? 'auto' : 0,
-                  opacity: expandedSections.ingredients ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="pt-4">
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {product.ingredients.map((ingredient, index) => (
-                      <li key={index} className="flex items-center space-x-2 text-gray-600">
-                        <span className="w-2 h-2 bg-primary rounded-full"></span>
-                        <span className="capitalize">{ingredient}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
-          )}
+          {/* Ingredients */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onClick={() => toggleSection('ingredients')}
+              className="w-full px-6 py-4 bg-gray-50 flex items-center justify-between hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="text-lg font-semibold text-gray-900">Ingrediente</h3>
+              {expandedSections.ingredients ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
+            </button>
+            {expandedSections.ingredients && (
+              <div className="px-6 py-4">
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  {product.ingredients.map((ingredient: string, index: number) => (
+                    <li key={index}>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
-          {/* Caracteristici */}
-          {product.features && (
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <button
-                onClick={() => toggleSection('features')}
-                className="w-full flex items-center justify-between text-left"
-              >
-                <h3 className="text-xl font-semibold text-gray-900">Caracteristici</h3>
-                <motion.div
-                  animate={{ rotate: expandedSections.features ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronRight className="h-5 w-5 text-gray-500" />
-                </motion.div>
-              </button>
-              <motion.div
-                initial={false}
-                animate={{
-                  height: expandedSections.features ? 'auto' : 0,
-                  opacity: expandedSections.features ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="pt-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {product.features.map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <feature.icon className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-gray-600">{feature.text}</span>
-                      </div>
-                    ))}
+          {/* Features */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onClick={() => toggleSection('features')}
+              className="w-full px-6 py-4 bg-gray-50 flex items-center justify-between hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="text-lg font-semibold text-gray-900">Caracteristici</h3>
+              {expandedSections.features ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
+            </button>
+            {expandedSections.features && (
+              <div className="px-6 py-4 space-y-4">
+                {product.features && product.features.map((feature: any, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <feature.icon className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">{feature.text}</span>
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-2">Livrare</h4>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>Zonă:</strong> {product.delivery.area}</p>
+                    <p><strong>Timp:</strong> {product.delivery.time}</p>
+                    <p><strong>Ridicare:</strong> {product.delivery.pickup}</p>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          )}
-
-          {/* Informații livrare */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Informații livrare</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-3">
-                <Clock className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="font-medium text-gray-900">Timp livrare</p>
-                  <p className="text-sm text-gray-600">{product.delivery.time}</p>
-                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Users className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="font-medium text-gray-900">Zonă livrare</p>
-                  <p className="text-sm text-gray-600">{product.delivery.area}</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Heart className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="font-medium text-gray-900">Ridicare</p>
-                  <p className="text-sm text-gray-600">{product.delivery.pickup}</p>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
-        </motion.div>
-
-        {/* Buton înapoi */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <Link
-            href="/produse"
-            className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors duration-200"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Înapoi la produse
-          </Link>
         </motion.div>
       </div>
     </div>

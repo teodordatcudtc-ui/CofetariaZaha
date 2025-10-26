@@ -494,7 +494,7 @@ const HomePage = () => {
           >
             {/* Carusel container pentru mobile cu scroll liber */}
             <div className="overflow-x-auto scrollbar-none">
-              <div className="flex space-x-4 pb-4" style={{ width: 'max-content' }}>
+              <div className="flex space-x-4 pb-4 pl-4" style={{ width: 'max-content' }}>
                 {featuredProducts.map((product, index) => {
                   const ProductIcon = product.icon
                   return (
@@ -506,7 +506,7 @@ const HomePage = () => {
                     >
                       <Link href={`/produse/${product.slug}`} className="block">
                         <div className="group overflow-hidden h-48 rounded-lg bg-white shadow-lg flex flex-col">
-                          <div className="relative overflow-hidden rounded-t-lg h-36">
+                          <div className="relative overflow-hidden rounded-t-lg h-32">
                             <Image
                               src={`/images/products/${product.slug}.jpg`}
                               alt={product.name}
@@ -515,7 +515,7 @@ const HomePage = () => {
                               sizes="192px"
                             />
                           </div>
-                          <div className="p-2 flex flex-col h-12">
+                          <div className="p-2 flex flex-col h-16">
                             <h3 className="text-xs font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-1 mb-1">
                               {product.name}
                             </h3>

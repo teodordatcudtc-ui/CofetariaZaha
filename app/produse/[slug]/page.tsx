@@ -1822,6 +1822,84 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Tort Inimă
+    'tort-inima': {
+      id: 72,
+      name: 'Tort Inimă',
+      price: 206,
+      originalPrice: 206,
+      category: 'torturi',
+      description: 'Tort Inimă cu cremă și fructe.',
+      longDescription: 'Tortul nostru Inimă este preparat cu făină, unt, ouă, zahăr, cremă, fructe și ciocolată. O combinație perfectă de texturi și gusturi pentru momentele speciale.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Inimă 1kg',
+          price: 206,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Inimă 2kg',
+          price: 412,
+          servings: '2kg'
+        },
+        {
+          id: '3kg',
+          name: 'Tort Inimă 3kg',
+          price: 618,
+          servings: '3kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Tort Diplomat
+    'tort-diplomat': {
+      id: 75,
+      name: 'Tort Diplomat',
+      price: 206,
+      originalPrice: 206,
+      category: 'torturi',
+      description: 'Tort Diplomat cu cremă și fructe.',
+      longDescription: 'Tortul nostru Diplomat este preparat cu făină, unt, ouă, zahăr, cremă, fructe și ciocolată. O combinație perfectă de texturi și gusturi pentru momentele speciale.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1.5kg',
+          name: 'Tort Diplomat 1.5kg',
+          price: 309,
+          servings: '1.5kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Diplomat 2kg',
+          price: 412,
+          servings: '2kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 
@@ -1959,11 +2037,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
               <div className="flex items-center space-x-4 mb-6">
                 <span className="text-2xl sm:text-3xl font-bold text-primary">
-                  {Math.round(currentPrice * quantity)} RON{currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                  {selectedVariant ? selectedVariant.price : Math.round(currentPrice * quantity)} RON{currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                 </span>
                 {product.originalPrice && product.originalPrice > currentPrice && (
                   <span className="text-xl text-gray-500 line-through">
-                    {Math.round(product.originalPrice * quantity)} RON{product.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                    {selectedVariant ? selectedVariant.price : Math.round(product.originalPrice * quantity)} RON{product.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                   </span>
                 )}
               </div>
@@ -1983,18 +2061,18 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                   <div className="flex flex-wrap gap-3">
                     {(product as any).variants.map((variant: any) => (
                   <button
-                        key={variant.weight}
+                        key={variant.id}
                         onClick={() => {
                           setSelectedVariant(variant)
                           setCurrentPrice(variant.price)
                         }}
                         className={`px-4 py-2 rounded-lg border-2 transition-all ${
-                          selectedVariant?.weight === variant.weight
+                          selectedVariant?.id === variant.id
                             ? 'border-primary bg-primary text-white'
                             : 'border-gray-300 hover:border-primary'
                         }`}
                       >
-                        {variant.weight} - {variant.price} RON{variant.price === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                        {variant.name} - {variant.price} RON{variant.price === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                       </button>
                     ))}
                   </div>

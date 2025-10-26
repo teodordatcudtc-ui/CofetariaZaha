@@ -1246,9 +1246,45 @@ const ProductsPage = () => {
       ingredients: ['Blat de vanilie', 'Cremă de vanilie', 'Cremos din fructul pasiunii', 'Green Sugar', 'Făină', 'Unt', 'Ouă']
     },
 
-    // Chec cu morcov
+    // Tort Inimă
     {
       id: 72,
+      name: 'Tort Inimă',
+      price: '206 RON/kg',
+      priceValue: 206,
+      category: 'torturi',
+      rating: 5,
+      reviews: 15,
+      preparationTime: '2-3 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-inima',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată'],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Inimă 1kg',
+          price: 206,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Inimă 2kg',
+          price: 412,
+          servings: '2kg'
+        },
+        {
+          id: '3kg',
+          name: 'Tort Inimă 3kg',
+          price: 618,
+          servings: '3kg'
+        }
+      ]
+    },
+
+    // Chec cu morcov
+    {
+      id: 73,
       name: 'Chec cu morcov',
       price: '120 RON',
       priceValue: 120,
@@ -1264,7 +1300,7 @@ const ProductsPage = () => {
 
     // Chec simplu
     {
-      id: 73,
+      id: 74,
       name: 'Chec simplu',
       price: '120 RON',
       priceValue: 120,
@@ -1276,6 +1312,36 @@ const ProductsPage = () => {
       icon: Heart,
       slug: 'chec-simplu',
       ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt']
+    },
+
+    // Tort Diplomat
+    {
+      id: 75,
+      name: 'Tort Diplomat',
+      price: '206 RON',
+      priceValue: 206,
+      category: 'torturi',
+      rating: 5,
+      reviews: 18,
+      preparationTime: '2-3 zile',
+      servings: '1.5kg',
+      icon: Cake,
+      slug: 'tort-diplomat',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată'],
+      variants: [
+        {
+          id: '1.5kg',
+          name: 'Tort Diplomat 1.5kg',
+          price: 309,
+          servings: '1.5kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Diplomat 2kg',
+          price: 412,
+          servings: '2kg'
+        }
+      ]
     }
   ]
 

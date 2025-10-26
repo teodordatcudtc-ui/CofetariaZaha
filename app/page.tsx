@@ -64,7 +64,7 @@ const HomePage = () => {
     {
       id: 1,
       name: "Găluști cu prune",
-      price: "19 RON",
+      price: "12 RON",
       category: "dulciuri",
       icon: Heart,
       slug: "galusti-cu-prune",
@@ -80,7 +80,7 @@ const HomePage = () => {
     {
       id: 3,
       name: "Mini tarte",
-      price: "8 RON",
+      price: "228 RON/kg",
       category: "mini-prajituri",
       icon: Cookie,
       slug: "mini-tarte",
@@ -88,7 +88,7 @@ const HomePage = () => {
     {
       id: 4,
       name: "Mini amandine",
-      price: "11 RON",
+      price: "228 RON/kg",
       category: "mini-prajituri",
       icon: Cookie,
       slug: "mini-amandine",
@@ -96,7 +96,7 @@ const HomePage = () => {
     {
       id: 5,
       name: "Mini eclere cu vanilie și ciocolată",
-      price: "9 RON",
+      price: "228 RON/kg",
       category: "mini-prajituri",
       icon: Cookie,
       slug: "mini-eclere-vanilie-ciocolata",
@@ -104,7 +104,7 @@ const HomePage = () => {
     {
       id: 6,
       name: "Mini eclere cu ness",
-      price: "9 RON",
+      price: "228 RON/kg",
       category: "mini-prajituri",
       icon: Cookie,
       slug: "mini-eclere-ness",
@@ -112,7 +112,7 @@ const HomePage = () => {
     {
       id: 7,
       name: "Cornulete cu nucă și gem",
-      price: "5 RON",
+      price: "196 RON/kg",
       category: "dulciuri",
       icon: Heart,
       slug: "cornulete-nuca-gem",

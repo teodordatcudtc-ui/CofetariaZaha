@@ -964,13 +964,13 @@ const ProductsPage = () => {
     {
       id: 55,
       name: 'Găluști cu prune',
-      price: '19 RON',
-      priceValue: 19,
+      price: '12 RON',
+      priceValue: 12,
       category: 'dulciuri',
       rating: 5,
       reviews: 12,
       preparationTime: 'Zilnic',
-      servings: '250g',
+      servings: '100g',
       icon: Heart,
       slug: 'galusti-cu-prune',
       ingredients: ['Cartofi', 'Ou', 'Pesmet', 'Unt', 'Prune fără sâmbure', 'Scorțișoară']
@@ -1012,13 +1012,13 @@ const ProductsPage = () => {
     {
       id: 58,
       name: 'Mini amandine',
-      price: '11 RON',
-      priceValue: 11,
+      price: '228 RON/kg',
+      priceValue: 228,
       category: 'mini-prajituri',
       rating: 5,
       reviews: 18,
       preparationTime: 'Zilnic',
-      servings: '1 bucată',
+      servings: '1kg',
       icon: Cookie,
       slug: 'mini-amandine',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cacao', 'Cremă']

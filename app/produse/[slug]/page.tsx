@@ -1396,11 +1396,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'galusti-cu-prune': {
       id: 55,
       name: 'Găluști cu prune',
-      price: 19,
-      originalPrice: 19,
+      price: 12,
+      originalPrice: 12,
       category: 'dulciuri',
       description: 'Găluști tradiționali cu prune fără sâmbure și scorțișoară. Gustul autentic românesc.',
-      longDescription: 'Găluștii noștri tradiționali sunt preparați cu cartofi, ou, pesmet, unt și prune fără sâmbure, condimentați cu scorțișoară. Gustul autentic românesc care îți va aminti de copilărie.',
+      longDescription: 'Găluștii noștri tradiționali sunt preparați cu cartofi, ou, pesmet, unt și prune fără sâmbure, condimentați cu scorțișoară. Gustul autentic românesc care îți va aminti de copilărie. 100g per bucată.',
       ingredients: ['Cartofi', 'Ou', 'Pesmet', 'Unt', 'Prune fără sâmbure', 'Scorțișoară'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
@@ -1462,11 +1462,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'mini-amandine': {
       id: 58,
       name: 'Mini amandine',
-      price: 11,
-      originalPrice: 11,
+      price: 228,
+      originalPrice: 228,
       category: 'mini-prajituri',
       description: 'Mini amandine cu cacao și cremă.',
-      longDescription: 'Mini amandinele noastre sunt preparate cu făină, unt, ouă, zahăr, cacao și cremă. O combinație perfectă de texturi și gusturi.',
+      longDescription: 'Mini amandinele noastre sunt preparate cu făină, unt, ouă, zahăr, cacao și cremă. O combinație perfectă de texturi și gusturi. Prețul este per kilogram.',
       ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cacao', 'Cremă'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },

@@ -1361,6 +1361,161 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata zilnic',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Produse lipsă din carusel
+    // Găluști cu prune
+    'galusti-cu-prune': {
+      id: 55,
+      name: 'Găluști cu prune',
+      price: 19,
+      originalPrice: 19,
+      category: 'dulciuri',
+      description: 'Găluști tradiționali cu prune fără sâmbure și scorțișoară. Gustul autentic românesc.',
+      longDescription: 'Găluștii noștri tradiționali sunt preparați cu cartofi, ou, pesmet, unt și prune fără sâmbure, condimentați cu scorțișoară. Gustul autentic românesc care îți va aminti de copilărie.',
+      ingredients: ['Cartofi', 'Ou', 'Pesmet', 'Unt', 'Prune fără sâmbure', 'Scorțișoară'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Caserolă mini prăjituri
+    'caserola-mini-prajituri': {
+      id: 56,
+      name: 'Caserolă mini prăjituri',
+      price: 88,
+      originalPrice: 88,
+      category: 'mini-prajituri',
+      description: 'Caserolă cu mini prăjituri variate: mini tarte, mini eclere, mini amandine, mini kranț.',
+      longDescription: 'Caserola noastră cu mini prăjituri include o selecție variată de mini tarte, mini eclere, mini amandine și mini kranț. Perfect pentru gustări sau evenimente.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini tarte
+    'mini-tarte': {
+      id: 57,
+      name: 'Mini tarte',
+      price: 8,
+      originalPrice: 8,
+      category: 'mini-prajituri',
+      description: 'Mini tarte delicate cu cremă și fructe.',
+      longDescription: 'Mini tarte-urile noastre delicate sunt preparate cu făină, unt, ouă, zahăr, cremă și fructe. Perfect pentru gustări sau evenimente.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini amandine
+    'mini-amandine': {
+      id: 58,
+      name: 'Mini amandine',
+      price: 11,
+      originalPrice: 11,
+      category: 'mini-prajituri',
+      description: 'Mini amandine cu cacao și cremă.',
+      longDescription: 'Mini amandinele noastre sunt preparate cu făină, unt, ouă, zahăr, cacao și cremă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cacao', 'Cremă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini eclere cu vanilie și ciocolată
+    'mini-eclere-vanilie-ciocolata': {
+      id: 59,
+      name: 'Mini eclere cu vanilie și ciocolată',
+      price: 9,
+      originalPrice: 9,
+      category: 'mini-prajituri',
+      description: 'Mini eclere cu cremă de vanilie și ciocolată.',
+      longDescription: 'Mini eclerele noastre sunt preparate cu făină, unt, ouă, zahăr, vanilie, ciocolată și cremă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată', 'Cremă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mini eclere cu ness
+    'mini-eclere-ness': {
+      id: 60,
+      name: 'Mini eclere cu ness',
+      price: 9,
+      originalPrice: 9,
+      category: 'mini-prajituri',
+      description: 'Mini eclere cu cremă de ness.',
+      longDescription: 'Mini eclerele noastre cu ness sunt preparate cu făină, unt, ouă, zahăr, ness și cremă. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Ness', 'Cremă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Fursecuri fragede cu nucă
+    'fursecuri-fragede-nuca': {
+      id: 61,
+      name: 'Fursecuri fragede cu nucă',
+      price: 5,
+      originalPrice: 5,
+      category: 'dulciuri',
+      description: 'Fursecuri fragede cu nucă și vanilie.',
+      longDescription: 'Fursecurii noștri fragede sunt preparați cu făină, unt, zahăr, nucă și vanilie. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Nucă', 'Vanilie'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 
@@ -1465,11 +1620,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
               {/* Variants */}
               {(product as any).variants && (product as any).variants.length > 0 && (
-                <div>
+              <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege greutatea</h3>
                   <div className="flex flex-wrap gap-3">
                     {(product as any).variants.map((variant: any) => (
-                      <button
+                  <button
                         key={variant.weight}
                         onClick={() => {
                           setSelectedVariant(variant)
@@ -1513,25 +1668,25 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               {/* Quantity */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Cantitate</h3>
-                <div className="flex items-center space-x-4">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  <div className="flex items-center space-x-4">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
-                  >
+                    >
                     -
-                  </button>
+                    </button>
                   <span className="text-xl font-semibold w-12 text-center">{quantity}</span>
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
                     className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-primary transition-colors"
-                  >
+                    >
                     +
-                  </button>
-                </div>
+                    </button>
+                  </div>
               </div>
 
               {/* Date Selection */}
-              <div>
+                <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege data livrării</h3>
                 <div className="relative">
                   <button
@@ -1569,8 +1724,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                           </div>
                         ))}
                         {getDaysInMonth(currentMonth).map((day, index) => (
-                          <button
-                            key={index}
+                      <button
+                        key={index}
                             onClick={() => !isDateDisabled(day.date) && handleDateSelect(day.date)}
                             disabled={isDateDisabled(day.date)}
                             className={`
@@ -1581,11 +1736,11 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                             `}
                           >
                             {day.date.getDate()}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
                 </div>
               </div>
 
@@ -1618,8 +1773,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         >
           {/* Ingredients */}
           <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <button
-              onClick={() => toggleSection('ingredients')}
+              <button
+                onClick={() => toggleSection('ingredients')}
               className="w-full px-6 py-4 bg-gray-50 flex items-center justify-between hover:bg-gray-100 transition-colors"
             >
               <h3 className="text-lg font-semibold text-gray-900">Ingrediente</h3>
@@ -1628,22 +1783,22 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
-            </button>
+              </button>
             {expandedSections.ingredients && (
               <div className="px-6 py-4">
                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                   {product.ingredients.map((ingredient: string, index: number) => (
                     <li key={index}>{ingredient}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+                    ))}
+                  </ul>
+            </div>
+          )}
           </div>
 
           {/* Features */}
           <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <button
-              onClick={() => toggleSection('features')}
+              <button
+                onClick={() => toggleSection('features')}
               className="w-full px-6 py-4 bg-gray-50 flex items-center justify-between hover:bg-gray-100 transition-colors"
             >
               <h3 className="text-lg font-semibold text-gray-900">Caracteristici</h3>
@@ -1652,15 +1807,15 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
-            </button>
+              </button>
             {expandedSections.features && (
               <div className="px-6 py-4 space-y-4">
                 {product.features && product.features.map((feature: any, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
                     <feature.icon className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                     <span className="text-gray-700">{feature.text}</span>
-                  </div>
-                ))}
+                      </div>
+                    ))}
                 <div className="pt-4 border-t border-gray-200">
                   <h4 className="font-semibold text-gray-900 mb-2">Livrare</h4>
                   <div className="space-y-2 text-gray-700">
@@ -1669,8 +1824,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                     <p><strong>Ridicare:</strong> {product.delivery.pickup}</p>
                   </div>
                 </div>
-              </div>
-            )}
+            </div>
+          )}
           </div>
         </motion.div>
       </div>

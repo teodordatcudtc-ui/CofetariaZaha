@@ -975,6 +975,119 @@ const ProductsPage = () => {
       icon: Cookie,
       slug: 'platou-mix-mini-prajituri',
       description: 'Selecție variată de mini prăjituri'
+    },
+
+    // Produse lipsă din carusel
+    // Găluști cu prune
+    {
+      id: 55,
+      name: 'Găluști cu prune',
+      price: '19 RON',
+      priceValue: 19,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 12,
+      preparationTime: 'Zilnic',
+      servings: '250g',
+      icon: Heart,
+      slug: 'galusti-cu-prune',
+      ingredients: ['Cartofi', 'Ou', 'Pesmet', 'Unt', 'Prune fără sâmbure', 'Scorțișoară']
+    },
+
+    // Caserolă mini prăjituri
+    {
+      id: 56,
+      name: 'Caserolă mini prăjituri',
+      price: '88 RON',
+      priceValue: 88,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '1kg',
+      icon: Cookie,
+      slug: 'caserola-mini-prajituri',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată']
+    },
+
+    // Mini tarte
+    {
+      id: 57,
+      name: 'Mini tarte',
+      price: '8 RON',
+      priceValue: 8,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '1 bucată',
+      icon: Cookie,
+      slug: 'mini-tarte',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe']
+    },
+
+    // Mini amandine
+    {
+      id: 58,
+      name: 'Mini amandine',
+      price: '11 RON',
+      priceValue: 11,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 18,
+      preparationTime: 'Zilnic',
+      servings: '1 bucată',
+      icon: Cookie,
+      slug: 'mini-amandine',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cacao', 'Cremă']
+    },
+
+    // Mini eclere cu vanilie și ciocolată
+    {
+      id: 59,
+      name: 'Mini eclere cu vanilie și ciocolată',
+      price: '9 RON',
+      priceValue: 9,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '1 bucată',
+      icon: Cookie,
+      slug: 'mini-eclere-vanilie-ciocolata',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Vanilie', 'Ciocolată', 'Cremă']
+    },
+
+    // Mini eclere cu ness
+    {
+      id: 60,
+      name: 'Mini eclere cu ness',
+      price: '9 RON',
+      priceValue: 9,
+      category: 'mini-prajituri',
+      rating: 5,
+      reviews: 19,
+      preparationTime: 'Zilnic',
+      servings: '1 bucată',
+      icon: Cookie,
+      slug: 'mini-eclere-ness',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Ness', 'Cremă']
+    },
+
+    // Fursecuri fragede cu nucă
+    {
+      id: 61,
+      name: 'Fursecuri fragede cu nucă',
+      price: '5 RON',
+      priceValue: 5,
+      category: 'dulciuri',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '1 bucată',
+      icon: Heart,
+      slug: 'fursecuri-fragede-nuca',
+      ingredients: ['Făină', 'Unt', 'Zahăr', 'Nucă', 'Vanilie']
     }
   ]
 
@@ -1187,7 +1300,7 @@ const ProductsPage = () => {
                     {(categoryProducts as any[]).map((product: any, index: number) => (
                       <Link key={`${product.id}-${categoryKey}`} href={`/produse/${product.slug}`}>
                         <div className="group overflow-hidden cursor-pointer rounded-lg bg-white shadow-lg h-full flex flex-col">
-                          <div className="relative overflow-hidden rounded-t-lg h-80">
+                          <div className="relative overflow-hidden rounded-t-lg h-48 sm:h-64 md:h-80">
                             <Image
                               src={`/images/products/${product.slug}.jpg`}
                               alt={product.name}

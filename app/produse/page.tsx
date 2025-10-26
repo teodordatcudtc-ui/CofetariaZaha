@@ -450,7 +450,7 @@ const ProductsPage = () => {
     // Cozonac
     {
       id: 17,
-      name: 'Cozonac - 950g',
+      name: 'Cozonac - nucă și cacao',
       price: '153 RON/kg',
       priceValue: 153,
       category: 'cozonac-chec',
@@ -1776,6 +1776,50 @@ const ProductsPage = () => {
           servings: '2kg'
         }
       ]
+    },
+
+    // Tort Revelion
+    {
+      id: 77,
+      name: 'Tort Revelion',
+      price: '206 RON/kg',
+      priceValue: 206,
+      category: 'torturi',
+      rating: 5,
+      reviews: 20,
+      preparationTime: '2-3 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-revelion',
+      image: '/images/products/tort-revelion-1.jpg',
+      description: 'Tort special de Revelion cu decor personalizat.',
+      images: [
+        '/images/products/tort-revelion-1.jpg',
+        '/images/products/tort-revelion-2.jpg',
+        '/images/products/tort-revelion-3.jpg',
+        '/images/products/tort-revelion-4.jpg'
+      ],
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată', 'Decor personalizat'],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Revelion 1kg',
+          price: 206,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Revelion 2kg',
+          price: 412,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Revelion 2.5kg',
+          price: 515,
+          servings: '2.5kg'
+        }
+      ]
     }
   ]
 
@@ -2028,7 +2072,7 @@ const ProductsPage = () => {
                             )}
                           <div className="relative overflow-hidden rounded-t-lg h-48 sm:h-64 md:h-80">
                             <Image
-                              src={`/images/products/${product.slug}.jpg`}
+                              src={product.image || (product as any).images?.[0] || `/images/products/${product.slug}.jpg`}
                               alt={product.name}
                               fill
                               className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

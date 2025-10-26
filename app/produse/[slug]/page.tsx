@@ -24,7 +24,8 @@ import {
   Plus,
   Calendar,
   ShoppingCart,
-  Phone
+  Phone,
+  Sparkles
 } from 'lucide-react'
 
 const ProductPage = ({ params }: { params: { slug: string } }) => {
@@ -54,6 +55,14 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
 
   // Funcții pentru galeria de imagini
   const getProductImages = (slug: string) => {
+    const productData = products[slug as keyof typeof products]
+    
+    // Verifică dacă produsul are imagini definite în câmpul images
+    if (productData && (productData as any).images && Array.isArray((productData as any).images)) {
+      return (productData as any).images
+    }
+    
+    // Dacă nu, folosește logica default
     const galleryProducts = ['tort-trois-chocolat', 'tort-maria']
     if (galleryProducts.includes(slug)) {
       return [
@@ -2352,6 +2361,58 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata în 3-4 zile',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Tort Revelion
+    'tort-revelion': {
+      id: 77,
+      name: 'Tort Revelion',
+      price: 206,
+      originalPrice: 206,
+      category: 'torturi',
+      description: 'Tort special de Revelion cu decor personalizat.',
+      longDescription: 'Tortul nostru de Revelion este un tort special cu decor personalizat, perfect pentru a începe anul nou cu dulceață. Realizat cu ingrediente de calitate superioară și decorat special pentru momentul de revelion.',
+      ingredients: ['Făină', 'Unt', 'Ouă', 'Zahăr', 'Cremă', 'Fructe', 'Ciocolată', 'Decor personalizat'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' },
+        { icon: Sparkles, text: 'Decor Revelion personalizat' }
+      ],
+      images: [
+        '/images/products/tort-revelion-1.jpg',
+        '/images/products/tort-revelion-2.jpg',
+        '/images/products/tort-revelion-3.jpg',
+        '/images/products/tort-revelion-4.jpg'
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Revelion 1kg',
+          price: 206,
+          originalPrice: 206,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Revelion 2kg',
+          price: 412,
+          originalPrice: 412,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Revelion 2.5kg',
+          price: 515,
+          originalPrice: 515,
+          servings: '2.5kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 
@@ -2459,7 +2520,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                     {/* Indicatori de pagină */}
                     {hasMultipleImages && (
                       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        {images.map((_, index) => (
+                        {images.map((_: any, index: number) => (
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
@@ -2493,9 +2554,9 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 </span>
                 {selectedVariant 
                   ? (selectedVariant.originalPrice && selectedVariant.originalPrice > selectedVariant.price && (
-                      <span className="text-xl text-gray-500 line-through">
+                  <span className="text-xl text-gray-500 line-through">
                         {selectedVariant.originalPrice} RON{selectedVariant.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
-                      </span>
+                  </span>
                     ))
                   : (product.originalPrice && product.originalPrice > currentPrice && (
                       <span className="text-xl text-gray-500 line-through">
@@ -2512,6 +2573,18 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Descriere</h3>
                 <p className="text-gray-700">{product.description}</p>
               </div>
+
+              {/* Mesaj Revelion pentru torturi */}
+              {product.category === 'torturi' && (
+                <div className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-orange-500 rounded-lg">
+                  <p className="text-gray-800 font-semibold">
+                    ✨ Toate torturile din magazinul nostru pot deveni torturi de Revelion! ✨
+                  </p>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Contactează-ne pentru detalii despre decor personalizat de Revelion.
+                  </p>
+                </div>
+              )}
 
               {/* Variants */}
               {(product as any).variants && (product as any).variants.length > 0 && (

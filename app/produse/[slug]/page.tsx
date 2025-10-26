@@ -1889,7 +1889,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 alt={product.name}
                 width={500}
                 height={400}
-                      className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+                      className="w-full object-contain rounded-lg shadow-lg"
                     />
                     
                     {/* Săgeți de navigare */}

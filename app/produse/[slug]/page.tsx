@@ -182,7 +182,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         name: product.name,
         price: product.price,
         originalPrice: product.originalPrice,
-        category: product.category,
+        category: Array.isArray(product.category) ? product.category[0] : product.category,
         selectedDate: selectedDate
       })
       }
@@ -203,7 +203,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         name: product.name,
         price: product.price,
         originalPrice: product.originalPrice,
-        category: product.category,
+        category: Array.isArray(product.category) ? product.category[0] : product.category,
         selectedDate: selectedDate
       })
       }
@@ -249,7 +249,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Saleuri',
       price: 206,
       originalPrice: 206,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Saleuri tradiționale cu semințe și condimente.',
       longDescription: 'Saleurile noastre tradiționale sunt preparate cu făină, unt, telemea, semințe, chimen, susan, mac, susan negru, in și ou. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Telemea', 'Semințe', 'Chimen', 'Susan', 'Mac', 'Susan negru', 'In', 'Ou'],
@@ -257,6 +257,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '250g',
+          name: 'Saleuri 250g',
+          price: 51,
+          servings: '250g'
+        },
+        {
+          id: '500g',
+          name: 'Saleuri 500g',
+          price: 103,
+          servings: '500g'
+        },
+        {
+          id: '750g',
+          name: 'Saleuri 750g',
+          price: 154,
+          servings: '750g'
+        },
+        {
+          id: '1kg',
+          name: 'Saleuri 1kg',
+          price: 206,
+          servings: '1kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -271,7 +297,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Poale\'n Brau',
       price: 19,
       originalPrice: 19,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Poale\'n Brau tradiționale cu brânză și stafide.',
       longDescription: 'Poale\'n Brau-urile noastre tradiționale sunt preparate cu făină, zahăr, ouă, brânză, lapte, stafide, drojdie, rom, sare, coajă de lămâie și portocală. Gustul autentic românesc.',
       ingredients: ['Făină', 'Zahăr', 'Ouă', 'Brânză', 'Lapte', 'Stafide', 'Drojdie', 'Rom', 'Sare', 'Coajă de lămâie', 'Portocală'],
@@ -293,7 +319,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Rulouri',
       price: 25,
       originalPrice: 25,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Rulouri delicate cu fistic, arahide și alune.',
       longDescription: 'Rulourile noastre delicate sunt preparate cu făină, unt, gălbenuș, sare, zahăr, lapte, vanilie păstaie, amidon, fistic, arahide și alune. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Gălbenuș', 'Sare', 'Zahăr', 'Lapte', 'Vanilie păstaie', 'Amidon', 'Fistic', 'Arahide', 'Alune'],
@@ -315,7 +341,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Strudel',
       price: 24,
       originalPrice: 24,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Strudel cu mere și arahide.',
       longDescription: 'Strudelul nostru cu mere și arahide este preparat cu făină, unt, sare, mere, arahide, ou și scorțișoară. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Sare', 'Mere', 'Arahide', 'Ou', 'Scorțișoară'],
@@ -359,7 +385,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Cornulețe',
       price: 196,
       originalPrice: 196,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Cornulețe cu nucă și gem de fructe de pădure.',
       longDescription: 'Cornulețele noastre cu nucă și gem de fructe de pădure sunt preparate cu făină, unt, zahăr, gălbenuș, gem de fructe de pădure (magiun) și nucă. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Zahăr', 'Gălbenuș', 'Gem de fructe de pădure (magiun)', 'Nucă'],
@@ -367,6 +393,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '250g',
+          name: 'Cornulețe 250g',
+          price: 49,
+          servings: '250g'
+        },
+        {
+          id: '500g',
+          name: 'Cornulețe 500g',
+          price: 98,
+          servings: '500g'
+        },
+        {
+          id: '750g',
+          name: 'Cornulețe 750g',
+          price: 147,
+          servings: '750g'
+        },
+        {
+          id: '1kg',
+          name: 'Cornulețe 1kg',
+          price: 196,
+          servings: '1kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -381,7 +433,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Fursecuri',
       price: 196,
       originalPrice: 196,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Fursecuri cu gem de fructe de pădure.',
       longDescription: 'Fursecurii noștri cu gem de fructe de pădure sunt preparați cu făină, unt, zahăr, ouă și gem de fructe de pădure (magiun). O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Zahăr', 'Ouă', 'Gem de fructe de pădure (magiun)'],
@@ -389,6 +441,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '250g',
+          name: 'Fursecuri 250g',
+          price: 49,
+          servings: '250g'
+        },
+        {
+          id: '500g',
+          name: 'Fursecuri 500g',
+          price: 98,
+          servings: '500g'
+        },
+        {
+          id: '750g',
+          name: 'Fursecuri 750g',
+          price: 147,
+          servings: '750g'
+        },
+        {
+          id: '1kg',
+          name: 'Fursecuri 1kg',
+          price: 196,
+          servings: '1kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -500,6 +578,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Carrot Cake 1kg',
+          price: 189,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Carrot Cake 2kg',
+          price: 378,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Carrot Cake 2.5kg',
+          price: 472,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -557,7 +655,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Cozonac - 950g',
       price: 153,
       originalPrice: 153,
-      category: 'dulciuri',
+      category: 'cozonac-chec',
       description: 'Cozonac traditional cu nucă și cacao - 950g.',
       longDescription: 'Cozonacul nostru traditional cu nucă și cacao este preparat cu făină, ouă, zahăr, lapte, nucă, unt, drojdie, coajă de lămâie și portocală, mac, stafide, rahat și rom. Gustul autentic românesc în porție de 950g.',
       ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Unt', 'Drojdie', 'Coajă de lămâie și portocală', 'Mac', 'Stafide', 'Rahat', 'Rom'],
@@ -579,7 +677,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Chec cu nucă și scorțișoară',
       price: 120,
       originalPrice: 120,
-      category: 'dulciuri',
+      category: 'cozonac-chec',
       description: 'Chec cu nucă, făină de grâu, zahăr, ouă, ulei și scorțișoară - 700g.',
       longDescription: 'Checul nostru cu nucă, făină de grâu, zahăr, ouă, ulei și scorțișoară este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
       ingredients: ['Nucă', 'Făină de grâu', 'Zahăr', 'Ouă', 'Ulei', 'Scorțișoară'],
@@ -601,7 +699,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Pricomigdale',
       price: 228,
       originalPrice: 228,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Pricomigdale cu nucă, migdale și ciocolată.',
       longDescription: 'Pricomigdalele noastre cu nucă, migdale și ciocolată sunt preparate cu nucă, migdale, zahăr, ouă, ciocolată, vanilie păstaie, unt, cafea, rom și amidon de porumb. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Nucă', 'Migdale', 'Zahăr', 'Ouă', 'Ciocolată', 'Vanilie păstaie', 'Unt', 'Cafea', 'Rom', 'Amidon de porumb'],
@@ -698,6 +796,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Mousse 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Mousse 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Mousse 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -711,7 +829,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Negresă de Post',
       price: 13,
       originalPrice: 13,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Negresă de Post cu nucă de cocos.',
       longDescription: 'Negresa noastră de Post cu nucă de cocos este preparată cu făină, nucă de cocos, zahăr, ulei, cacao și bicarbonat. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Nucă de cocos', 'Zahăr', 'Ulei', 'Cacao', 'Bicarbonat'],
@@ -742,6 +860,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Brownie 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Brownie 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Brownie 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -755,7 +893,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Ciocolată de Casă',
       price: 14,
       originalPrice: 14,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Ciocolată de casă cu lapte praf și cacao.',
       longDescription: 'Ciocolata noastră de casă cu lapte praf și cacao este preparată cu lapte praf, zahăr, unt, cacao și rom. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Lapte praf', 'Zahăr', 'Unt', 'Cacao', 'Rom'],
@@ -777,7 +915,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Bezele',
       price: 159,
       originalPrice: 159,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Bezele cu albuș și zahăr.',
       longDescription: 'Bezelele noastre cu albuș și zahăr sunt preparate cu albuș, zahăr și amidon. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Albuș', 'Zahăr', 'Amidon'],
@@ -799,7 +937,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Colivă',
       price: 19,
       originalPrice: 19,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Colivă cu arpacaș și nucă.',
       longDescription: 'Coliva noastră cu arpacaș și nucă este preparată cu arpacaș, nucă, zahăr, coajă de citrice, rom și biscuiți. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Arpacaș', 'Nucă', 'Zahăr', 'Coajă de citrice', 'Rom', 'Biscuiți'],
@@ -847,7 +985,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Pișcoturi',
       price: 196,
       originalPrice: 196,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Pișcoturi cu făină și ouă.',
       longDescription: 'Pișcoturile noastre cu făină și ouă sunt preparate cu făină, ouă și zahăr. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Ouă', 'Zahăr'],
@@ -913,7 +1051,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Trufe',
       price: 277,
       originalPrice: 277,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Trufe cu ciocolată și tonka.',
       longDescription: 'Trufele noastre cu ciocolată și tonka sunt preparate cu ciocolată, frișcă și tonka. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Ciocolată', 'Frișcă', 'Tonka'],
@@ -957,7 +1095,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Fourstafidă',
       price: 196,
       originalPrice: 196,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Fourstafidă cu stafide și rom.',
       longDescription: 'Fourstafida noastră cu stafide și rom este preparată cu unt, făină, ouă, zahăr, stafide, rom, esență și vanilie păstaie. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Unt', 'Făină', 'Ouă', 'Zahăr', 'Stafide', 'Rom', 'Esență', 'Vanilie păstaie'],
@@ -987,6 +1125,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Maria 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Maria 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Maria 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1054,6 +1212,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Red Velvet 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Red Velvet 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Red Velvet 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -1075,6 +1253,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Snickers 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Snickers 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Snickers 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1098,6 +1296,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Tiramisu 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Tiramisu 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Tiramisu 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -1119,6 +1337,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Duo Chocolat 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Duo Chocolat 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Duo Chocolat 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1142,6 +1380,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Pavlova 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Pavlova 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Pavlova 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -1163,6 +1421,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Trois Chocolat 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Trois Chocolat 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Trois Chocolat 2.5kg',
+          price: 512,
+          servings: '2.5kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1186,6 +1464,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Boema 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Boema 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Boema 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -1208,6 +1506,26 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
       ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Alba ca Zăpada 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Alba ca Zăpada 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Alba ca Zăpada 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 3-4 zile',
@@ -1221,7 +1539,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Cookies',
       price: 17,
       originalPrice: 17,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Cookies cu migdale și ciocolată.',
       longDescription: 'Cookies-urile noastre cu migdale și ciocolată sunt preparate cu făină, unt, migdale, ouă, ciocolată și praf de copt. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Migdale', 'Ouă', 'Ciocolată', 'Praf de copt'],
@@ -1243,7 +1561,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Brownie',
       price: 15,
       originalPrice: 15,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Brownie cu ciocolată și merișoare.',
       longDescription: 'Brownie-ul nostru cu ciocolată și merișoare este preparat cu ciocolată, ouă, zahăr, făină integrală, unt, merișoare și nucă. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Ciocolată', 'Ouă', 'Zahăr', 'Făină integrală', 'Unt', 'Merișoare', 'Nucă'],
@@ -1265,7 +1583,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Limbi de Pisică',
       price: 196,
       originalPrice: 196,
-      category: 'dulciuri',
+      category: 'fursecuri',
       description: 'Limbi de pisică cu unt și albuș.',
       longDescription: 'Limbii noștri de pisică cu unt și albuș sunt preparați cu unt, zahăr, albuș și făină. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Unt', 'Zahăr', 'Albuș', 'Făină'],
@@ -1287,7 +1605,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Plăcintă cu Mere',
       price: 19,
       originalPrice: 19,
-      category: 'dulciuri',
+      category: 'post',
       description: 'Plăcintă cu mere și griș.',
       longDescription: 'Plăcinta noastră cu mere și griș este preparată cu făină, ulei de cocos, griș, zahăr și mere. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Mere'],
@@ -1309,7 +1627,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Plăcintă de Dovleac',
       price: 19,
       originalPrice: 19,
-      category: 'dulciuri',
+      category: 'post',
       description: 'Plăcintă de dovleac cu scorțișoară.',
       longDescription: 'Plăcinta noastră de dovleac cu scorțișoară este preparată cu făină, ulei de cocos, griș, zahăr, dovleac și scorțișoară. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Ulei de cocos', 'Griș', 'Zahăr', 'Dovleac', 'Scorțișoară'],
@@ -1389,12 +1707,14 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
           id: '1kg',
           name: 'Platou 1kg',
           price: 228,
+          originalPrice: 228,
           servings: '1kg'
         },
         {
           id: '700g',
           name: 'Platou 700g',
           price: 150,
+          originalPrice: 150,
           servings: '700g'
         }
       ],
@@ -1412,7 +1732,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Găluști cu prune',
       price: 12,
       originalPrice: 12,
-      category: 'dulciuri',
+      category: 'prajituri',
       description: 'Găluști tradiționali cu prune fără sâmbure și scorțișoară. Gustul autentic românesc.',
       longDescription: 'Găluștii noștri tradiționali sunt preparați cu cartofi, ou, pesmet, unt și prune fără sâmbure, condimentați cu scorțișoară. Gustul autentic românesc care îți va aminti de copilărie. 100g per bucată.',
       ingredients: ['Cartofi', 'Ou', 'Pesmet', 'Unt', 'Prune fără sâmbure', 'Scorțișoară'],
@@ -1431,7 +1751,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     // Caserolă mini prăjituri
     'caserola-mini-prajituri': {
       id: 56,
-      name: 'Caserolă mini prăjituri',
+      name: 'Caserolă mini prăjituri - 350g',
       price: 75,
       originalPrice: 75,
       category: 'mini-prajituri',
@@ -1542,9 +1862,9 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'fursecuri-fragede-nuca': {
       id: 61,
       name: 'Fursecuri fragede cu nucă',
-      price: 5,
-      originalPrice: 5,
-      category: 'dulciuri',
+      price: 196,
+      originalPrice: 196,
+      category: 'fursecuri',
       description: 'Fursecuri fragede cu nucă și vanilie.',
       longDescription: 'Fursecurii noștri fragede sunt preparați cu făină, unt, zahăr, nucă și vanilie. O combinație perfectă de texturi și gusturi.',
       ingredients: ['Făină', 'Unt', 'Zahăr', 'Nucă', 'Vanilie'],
@@ -1552,6 +1872,32 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
         { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '250g',
+          name: 'Fursecuri fragede 250g',
+          price: 49,
+          servings: '250g'
+        },
+        {
+          id: '500g',
+          name: 'Fursecuri fragede 500g',
+          price: 98,
+          servings: '500g'
+        },
+        {
+          id: '750g',
+          name: 'Fursecuri fragede 750g',
+          price: 147,
+          servings: '750g'
+        },
+        {
+          id: '1kg',
+          name: 'Fursecuri fragede 1kg',
+          price: 196,
+          servings: '1kg'
+        }
       ],
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
@@ -1720,7 +2066,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Cozonac cu nucă, cacao, stafide și rahat - 1kg',
       price: 153,
       originalPrice: 153,
-      category: 'dulciuri',
+      category: 'cozonac-chec',
       description: 'Cozonac cu nucă, cacao, stafide și rahat - 1kg.',
       longDescription: 'Cozonacul nostru cu nucă, cacao, stafide și rahat este preparat cu ingrediente de calitate și gustul autentic românesc. Perfect pentru sărbători în porție de 1kg.',
       ingredients: ['Făină', 'Ouă', 'Zahăr', 'Lapte', 'Nucă', 'Cacao', 'Stafide', 'Rahat', 'Unt', 'Drojdie'],
@@ -1786,7 +2132,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Chec cu morcov',
       price: 120,
       originalPrice: 120,
-      category: 'dulciuri',
+      category: 'cozonac-chec',
       description: 'Chec cu morcov, nucă, ouă, ulei și scorțișoară - 700g.',
       longDescription: 'Checul nostru cu morcov, nucă, ouă, ulei și scorțișoară este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
       ingredients: ['Morcov', 'Nucă', 'Ouă', 'Ulei', 'Scorțișoară', 'Făină', 'Zahăr'],
@@ -1808,7 +2154,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Chec simplu',
       price: 120,
       originalPrice: 120,
-      category: 'dulciuri',
+      category: 'cozonac-chec',
       description: 'Chec simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt - 700g.',
       longDescription: 'Checul nostru simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
       ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
@@ -1898,6 +2244,112 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       delivery: {
         area: 'Luni - Duminică București și Ilfov',
         time: 'Gata în 2-3 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Tort fără lactoză cu cremă de vanilie
+    'tort-fara-lactoza-vanilie': {
+      id: 76,
+      name: 'Tort fără lactoză cu cremă de vanilie',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort fără lactoză cu cremă de vanilie din lapte de cocos.',
+      longDescription: 'Tortul nostru fără lactoză cu cremă de vanilie este preparat cu lapte de cocos, gălbenuș, zahăr, vanilie păstaie și fructe în compot. Decorul variază. Perfect pentru cei cu intoleranță la lactoză.',
+      ingredients: ['Lapte de cocos', 'Gălbenuș', 'Zahăr', 'Vanilie păstaie', 'Fructe în compot'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort fără lactoză 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort fără lactoză 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort fără lactoză 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Plăcintă de magiun cu nucă
+    'placinta-magiun-nuca': {
+      id: 77,
+      name: 'Plăcintă de magiun cu nucă',
+      price: 22,
+      originalPrice: 22,
+      category: 'post',
+      description: 'Plăcintă de magiun cu nucă.',
+      longDescription: 'Plăcinta noastră de magiun cu nucă este preparată cu făină, ulei de cocos, magiun, nucă, zahăr și scorțișoară. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Ulei de cocos', 'Magiun', 'Nucă', 'Zahăr', 'Scorțișoară'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Tort de post
+    'tort-de-post': {
+      id: 78,
+      name: 'Tort de post',
+      price: 228,
+      originalPrice: 228,
+      category: ['torturi', 'post'],
+      description: 'Tort de post cu blat din ciocolată neagră și nucă.',
+      longDescription: 'Tortul nostru de post cu blat din ciocolată neagră și nucă, fructe de pădure congelate și cremă din ciocolată neagră și lapte de cocos concentrat. Decorul variază.',
+      ingredients: ['Blat din ciocolată neagră și nucă', 'Fructe de pădure congelate', 'Cremă din ciocolată neagră', 'Lapte de cocos concentrat'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort de post 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort de post 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort de post 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
     }
@@ -2039,11 +2491,18 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 <span className="text-2xl sm:text-3xl font-bold text-primary">
                   {selectedVariant ? selectedVariant.price : Math.round(currentPrice * quantity)} RON{currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
                 </span>
-                {product.originalPrice && product.originalPrice > currentPrice && (
-                  <span className="text-xl text-gray-500 line-through">
-                    {selectedVariant ? selectedVariant.price : Math.round(product.originalPrice * quantity)} RON{product.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
-                  </span>
-                )}
+                {selectedVariant 
+                  ? (selectedVariant.originalPrice && selectedVariant.originalPrice > selectedVariant.price && (
+                      <span className="text-xl text-gray-500 line-through">
+                        {selectedVariant.originalPrice} RON{selectedVariant.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                      </span>
+                    ))
+                  : (product.originalPrice && product.originalPrice > currentPrice && (
+                      <span className="text-xl text-gray-500 line-through">
+                        {Math.round(product.originalPrice * quantity)} RON{product.originalPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                      </span>
+                    ))
+                }
               </div>
             </div>
 

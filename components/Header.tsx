@@ -76,10 +76,22 @@ const Header = () => {
       description: 'Produse fără zahăr cu Green Sugar'
     },
     {
-      name: 'Dulciuri de Casă',
-      href: '/produse?category=dulciuri',
+      name: 'Fursecuri',
+      href: '/produse?category=fursecuri',
+      icon: Heart,
+      description: 'Saleuri, cornulețe, fursecuri'
+    },
+    {
+      name: 'Cozonac și Chec',
+      href: '/produse?category=cozonac-chec',
+      icon: Heart,
+      description: 'Cozonac și chec tradițional'
+    },
+    {
+      name: 'Prăjituri și torturi de post',
+      href: '/produse?category=post',
       icon: Star,
-      description: 'Clătite, gogoși, cozonac'
+      description: 'Produse de post fără lactate'
     },
     {
       name: 'Catering Evenimente',

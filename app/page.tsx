@@ -71,7 +71,7 @@ const HomePage = () => {
     },
     {
       id: 2,
-      name: "Caserolă mini prăjituri",
+      name: "Caserolă mini prăjituri - 350g",
       price: "75 RON",
       category: "mini-prajituri",
       icon: Cookie,

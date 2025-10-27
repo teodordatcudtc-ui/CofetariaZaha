@@ -2574,8 +2574,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                 <p className="text-gray-700">{product.description}</p>
               </div>
 
-              {/* Mesaj Revelion pentru torturi */}
-              {product.category === 'torturi' && (
+              {/* Mesaj Revelion pentru Tort Revelion */}
+              {(product as any).slug === 'tort-revelion' && (
                 <div className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-orange-500 rounded-lg">
                   <p className="text-gray-800 font-semibold">
                     ✨ Toate torturile din magazinul nostru pot deveni torturi de Revelion! ✨

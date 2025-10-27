@@ -204,6 +204,12 @@ const Footer = () => {
               >
                 Politica de Cookie-uri
               </Link>
+              <Link
+                href="/politica-gdpr"
+                className="text-gray-400 hover:text-primary transition-colors duration-200"
+              >
+                Politica GDPR
+              </Link>
             </div>
           </div>
         </motion.div>

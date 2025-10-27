@@ -173,7 +173,7 @@ const ProductsPage = () => {
       name: 'Poale\'n Brau',
       price: '19 RON',
       priceValue: 19,
-      category: 'prajituri',
+      category: 'cozonac-chec',
       rating: 5,
       reviews: 18,
       preparationTime: 'Zilnic',
@@ -1247,6 +1247,22 @@ const ProductsPage = () => {
       ingredients: ['Făină', 'Ulei de cocos', 'Magiun', 'Nucă', 'Zahăr', 'Scorțișoară']
     },
 
+    // Plăcintă cu ciuperci de post
+    {
+      id: 81,
+      name: 'Plăcintă cu ciuperci de post',
+      price: '22 RON',
+      priceValue: 22,
+      category: 'post',
+      rating: 5,
+      reviews: 16,
+      preparationTime: 'Zilnic',
+      servings: '120g',
+      icon: Heart,
+      slug: 'placinta-ciuperci-post',
+      ingredients: ['Foi de plăcintă', 'Umplutură de ciuperci']
+    },
+
     // Tort de post
     {
       id: 78,
@@ -1746,6 +1762,54 @@ const ProductsPage = () => {
       icon: Heart,
       slug: 'chec-simplu',
       ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt']
+    },
+
+    // Mucenici
+    {
+      id: 79,
+      name: 'Mucenici',
+      price: '15 RON',
+      priceValue: 15,
+      category: 'cozonac-chec',
+      rating: 5,
+      reviews: 22,
+      preparationTime: 'Zilnic',
+      servings: '700g',
+      icon: Heart,
+      slug: 'mucenici',
+      ingredients: ['Aluat de cozonac', 'Miere', 'Nucă']
+    },
+
+    // Melci
+    {
+      id: 80,
+      name: 'Melci',
+      price: '15 RON',
+      priceValue: 15,
+      category: 'cozonac-chec',
+      rating: 5,
+      reviews: 20,
+      preparationTime: 'Zilnic',
+      servings: '700g',
+      icon: Heart,
+      slug: 'melci',
+      ingredients: ['Aluat de cozonac cu scorțișoară'],
+      variants: [
+        {
+          id: 'vanilie',
+          name: 'Melci cu cremă de vanilie',
+          price: 15,
+          servings: '700g',
+          description: 'Melci tradiționali cu cremă de vanilie'
+        },
+        {
+          id: 'simplu',
+          name: 'Melci simpli',
+          price: 15,
+          servings: '700g',
+          description: 'Melci tradiționali simpli'
+        }
+      ]
     },
 
     // Tort Diplomat

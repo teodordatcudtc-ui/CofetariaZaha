@@ -306,7 +306,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       name: 'Poale\'n Brau',
       price: 19,
       originalPrice: 19,
-      category: 'prajituri',
+      category: 'cozonac-chec',
       description: 'Poale\'n Brau tradiționale cu brânză și stafide.',
       longDescription: 'Poale\'n Brau-urile noastre tradiționale sunt preparate cu făină, zahăr, ouă, brânză, lapte, stafide, drojdie, rom, sare, coajă de lămâie și portocală. Gustul autentic românesc.',
       ingredients: ['Făină', 'Zahăr', 'Ouă', 'Brânză', 'Lapte', 'Stafide', 'Drojdie', 'Rom', 'Sare', 'Coajă de lămâie', 'Portocală'],
@@ -2167,6 +2167,88 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       description: 'Chec simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt - 700g.',
       longDescription: 'Checul nostru simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
       ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Mucenici
+    'mucenici': {
+      id: 79,
+      name: 'Mucenici',
+      price: 15,
+      originalPrice: 15,
+      category: 'cozonac-chec',
+      description: 'Mucenici tradiționali cu aluat de cozonac, miere și nucă - 700g.',
+      longDescription: 'Mucenicii noștri tradiționali sunt preparați cu aluat de cozonac, miere și nucă. O specialitate românească pentru momentele festive, disponibilă în porție de 700g.',
+      ingredients: ['Aluat de cozonac', 'Miere', 'Nucă'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Melci
+    'melci': {
+      id: 80,
+      name: 'Melci',
+      price: 15,
+      originalPrice: 15,
+      category: 'cozonac-chec',
+      description: 'Melci tradiționali cu aluat de cozonac cu scorțișoară - 700g.',
+      longDescription: 'Melcii noștri tradiționali sunt preparați cu aluat de cozonac cu scorțișoară. Disponibili în două variante: cu cremă de vanilie sau simpli. O specialitate românească pentru momentele festive.',
+      ingredients: ['Aluat de cozonac cu scorțișoară'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: 'vanilie',
+          name: 'Melci cu cremă de vanilie',
+          price: 15,
+          servings: '700g',
+          description: 'Melci tradiționali cu cremă de vanilie'
+        },
+        {
+          id: 'simplu',
+          name: 'Melci simpli',
+          price: 15,
+          servings: '700g',
+          description: 'Melci tradiționali simpli'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Plăcintă cu ciuperci de post
+    'placinta-ciuperci-post': {
+      id: 81,
+      name: 'Plăcintă cu ciuperci de post',
+      price: 22,
+      originalPrice: 22,
+      category: 'post',
+      description: 'Plăcintă cu ciuperci de post preparată cu foi de plăcintă și umplutură de ciuperci - 120g.',
+      longDescription: 'Plăcinta noastră cu ciuperci de post este preparată cu foi de plăcintă cu umplutură de ciuperci. O specialitate pentru perioadele de post, disponibilă în porție de 120g.',
+      ingredients: ['Foi de plăcintă', 'Umplutură de ciuperci'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },

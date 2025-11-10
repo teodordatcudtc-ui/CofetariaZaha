@@ -585,7 +585,7 @@ const ProductsPage = () => {
       name: 'Negresă de Post',
       price: '13 RON',
       priceValue: 13,
-      category: 'prajituri',
+      category: 'post',
       rating: 5,
       reviews: 12,
       preparationTime: 'Zilnic',
@@ -1881,6 +1881,42 @@ const ProductsPage = () => {
           id: '2.5kg',
           name: 'Tort Revelion 2.5kg',
           price: 515,
+          servings: '2.5kg'
+        }
+      ]
+    },
+
+    // Tort Trandafir
+    {
+      id: 82,
+      name: 'Tort Trandafir',
+      price: '205 RON/kg',
+      priceValue: 205,
+      category: 'torturi',
+      rating: 5,
+      reviews: 18,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-trandafir',
+      ingredients: ['Făină', 'Miere', 'Zahăr', 'Unt', 'Drojdie', 'Ouă', 'Ciocolată albă', 'Frișcă', 'Gelatină', 'Kalamansi', 'Rom'],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Trandafir 1kg',
+          price: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Trandafir 2kg',
+          price: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Trandafir 2.5kg',
+          price: 512,
           servings: '2.5kg'
         }
       ]

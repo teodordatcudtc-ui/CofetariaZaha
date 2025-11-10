@@ -2495,6 +2495,51 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata în 2-3 zile',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Tort Trandafir
+    'tort-trandafir': {
+      id: 82,
+      name: 'Tort Trandafir',
+      price: 205,
+      originalPrice: 205,
+      category: 'torturi',
+      description: 'Tort Trandafir cu miere și ciocolată albă.',
+      longDescription: 'Tortul nostru Trandafir cu miere și ciocolată albă este preparat cu făină, miere, zahăr, unt, drojdie, ouă, ciocolată albă, frișcă, gelatină, kalamansi și rom. O combinație perfectă de texturi și gusturi, perfect pentru orice ocazie specială.',
+      ingredients: ['Făină', 'Miere', 'Zahăr', 'Unt', 'Drojdie', 'Ouă', 'Ciocolată albă', 'Frișcă', 'Gelatină', 'Kalamansi', 'Rom'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort Trandafir 1kg',
+          price: 205,
+          originalPrice: 205,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort Trandafir 2kg',
+          price: 410,
+          originalPrice: 410,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort Trandafir 2.5kg',
+          price: 512,
+          originalPrice: 512,
+          servings: '2.5kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 

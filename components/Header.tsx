@@ -33,6 +33,12 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+    setIsMobileProductsOpen(false)
+  }, [pathname])
+
   // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

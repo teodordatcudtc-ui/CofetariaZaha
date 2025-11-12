@@ -2540,6 +2540,73 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
         time: 'Gata în 3-4 zile',
         pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
       }
+    },
+
+    // Eclere cu vanilie și frișcă naturală
+    'eclere-vanilie-frisca-naturala': {
+      id: 83,
+      name: 'Eclere cu vanilie și frișcă naturală',
+      price: 0,
+      originalPrice: 0,
+      category: 'prajituri',
+      description: 'Eclere cu vanilie și frișcă naturală.',
+      longDescription: 'Eclerele noastre cu vanilie și frișcă naturală sunt preparate cu făină, unt, ulei, ouă, vanilie păstaie, frișcă naturală, rom și amidon. O combinație perfectă de texturi și gusturi, cu frișcă naturală de cea mai bună calitate.',
+      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Frișcă naturală', 'Rom', 'Amidon'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata zilnic',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
+    },
+
+    // Tort cu fistic, vanilie și jeleu fructe de pădure
+    'tort-fistic-vanilie-jeleu-fructe-padure': {
+      id: 84,
+      name: 'Tort cu fistic, vanilie și jeleu fructe de pădure',
+      price: 228,
+      originalPrice: 228,
+      category: 'torturi',
+      description: 'Tort cu fistic, vanilie și jeleu fructe de pădure.',
+      longDescription: 'Tortul nostru cu fistic, vanilie și jeleu fructe de pădure este preparat cu făină, pastă pură de fistic, vanilie păstaie, jeleu fructe de pădure, frișcă naturală, gelatină, zahăr, ouă și unt. O combinație perfectă de texturi și gusturi, perfect pentru orice ocazie specială.',
+      ingredients: ['Făină', 'Pastă pură de fistic', 'Vanilie păstaie', 'Jeleu fructe de pădure', 'Frișcă naturală', 'Gelatină', 'Zahăr', 'Ouă', 'Unt'],
+      features: [
+        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
+        { icon: Leaf, text: 'Produs artizanal' },
+        { icon: Lock, text: 'Plăți securizate' }
+      ],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort cu fistic 1kg',
+          price: 228,
+          originalPrice: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort cu fistic 2kg',
+          price: 456,
+          originalPrice: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort cu fistic 2.5kg',
+          price: 570,
+          originalPrice: 570,
+          servings: '2.5kg'
+        }
+      ],
+      delivery: {
+        area: 'Luni - Duminică București și Ilfov',
+        time: 'Gata în 3-4 zile',
+        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
+      }
     }
   }
 
@@ -2677,7 +2744,10 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
               <div className="flex items-center space-x-4 mb-6">
                 <span className="text-2xl sm:text-3xl font-bold text-primary">
-                  {selectedVariant ? selectedVariant.price : Math.round(currentPrice * quantity)} RON{currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}
+                  {(() => {
+                    const displayPrice = selectedVariant ? selectedVariant.price : Math.round(currentPrice * quantity)
+                    return `${displayPrice} RON${currentPrice === 228 && !product.name.includes('Platou') ? '/kg' : ''}`
+                  })()}
                 </span>
                 {selectedVariant 
                   ? (selectedVariant.originalPrice && selectedVariant.originalPrice > selectedVariant.price && (
@@ -2719,7 +2789,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Alege greutatea</h3>
                   <div className="flex flex-wrap gap-3">
                     {(product as any).variants.map((variant: any) => (
-                  <button
+                      <button
                         key={variant.id}
                         onClick={() => {
                           setSelectedVariant(variant)

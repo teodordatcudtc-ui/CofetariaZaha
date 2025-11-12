@@ -1920,6 +1920,58 @@ const ProductsPage = () => {
           servings: '2.5kg'
         }
       ]
+    },
+
+    // Eclere cu vanilie și frișcă naturală
+    {
+      id: 83,
+      name: 'Eclere cu vanilie și frișcă naturală',
+      price: '0 RON',
+      priceValue: 0,
+      category: 'prajituri',
+      rating: 5,
+      reviews: 15,
+      preparationTime: 'Zilnic',
+      servings: '120g',
+      icon: Cookie,
+      slug: 'eclere-vanilie-frisca-naturala',
+      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Frișcă naturală', 'Rom', 'Amidon']
+    },
+
+    // Tort cu fistic, vanilie și jeleu fructe de pădure
+    {
+      id: 84,
+      name: 'Tort cu fistic, vanilie și jeleu fructe de pădure',
+      price: '228 RON/kg',
+      priceValue: 228,
+      category: 'torturi',
+      rating: 5,
+      reviews: 20,
+      preparationTime: '3-4 zile',
+      servings: '1kg',
+      icon: Cake,
+      slug: 'tort-fistic-vanilie-jeleu-fructe-padure',
+      ingredients: ['Făină', 'Pastă pură de fistic', 'Vanilie păstaie', 'Jeleu fructe de pădure', 'Frișcă naturală', 'Gelatină', 'Zahăr', 'Ouă', 'Unt'],
+      variants: [
+        {
+          id: '1kg',
+          name: 'Tort cu fistic 1kg',
+          price: 228,
+          servings: '1kg'
+        },
+        {
+          id: '2kg',
+          name: 'Tort cu fistic 2kg',
+          price: 456,
+          servings: '2kg'
+        },
+        {
+          id: '2.5kg',
+          name: 'Tort cu fistic 2.5kg',
+          price: 570,
+          servings: '2.5kg'
+        }
+      ]
     }
   ]
 

@@ -514,7 +514,7 @@ const ProductsPage = () => {
     // Ecler
     {
       id: 21,
-      name: 'Ecler',
+      name: 'Ecler cu fistic',
       price: '35 RON',
       priceValue: 35,
       category: 'prajituri',
@@ -523,7 +523,7 @@ const ProductsPage = () => {
       preparationTime: 'Zilnic',
       servings: '120g',
       icon: Cookie,
-      slug: 'ecler',
+      slug: 'ecler-cu-fistic',
       ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Ciocolată', 'Rom', 'Amidon']
     },
     
@@ -1751,7 +1751,7 @@ const ProductsPage = () => {
     // Chec simplu
     {
       id: 74,
-      name: 'Chec simplu',
+      name: 'Chec marmorat',
       price: '120 RON',
       priceValue: 120,
       category: 'cozonac-chec',
@@ -1926,8 +1926,8 @@ const ProductsPage = () => {
     {
       id: 83,
       name: 'Eclere cu vanilie și frișcă naturală',
-      price: '0 RON',
-      priceValue: 0,
+      price: '35 RON',
+      priceValue: 35,
       category: 'prajituri',
       rating: 5,
       reviews: 15,

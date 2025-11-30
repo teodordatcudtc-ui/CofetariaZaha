@@ -747,15 +747,15 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     },
     
     // Ecler
-    'ecler': {
+    'ecler-cu-fistic': {
       id: 21,
-      name: 'Ecler',
+      name: 'Ecler cu fistic',
       price: 35,
       originalPrice: 35,
       category: 'prajituri',
-      description: 'Ecler cu vanilie și ciocolată.',
-      longDescription: 'Eclerul nostru cu vanilie și ciocolată este preparat cu făină, unt, ulei, ouă, vanilie păstaie, ciocolată, rom și amidon. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Ciocolată', 'Rom', 'Amidon'],
+      description: 'Ecler cu fistic, vanilie și ciocolată.',
+      longDescription: 'Eclerul nostru cu fistic, vanilie și ciocolată este preparat cu făină, unt, ulei, ouă, vanilie păstaie, fistic, ciocolată, rom și amidon. O combinație perfectă de texturi și gusturi.',
+      ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Fistic', 'Ciocolată', 'Rom', 'Amidon'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
         { icon: Leaf, text: 'Produs artizanal' },
@@ -2157,15 +2157,15 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       }
     },
 
-    // Chec simplu
+    // Chec marmorat
     'chec-simplu': {
       id: 73,
-      name: 'Chec simplu',
+      name: 'Chec marmorat',
       price: 120,
       originalPrice: 120,
       category: 'cozonac-chec',
-      description: 'Chec simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt - 700g.',
-      longDescription: 'Checul nostru simplu cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
+      description: 'Chec marmorat cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt - 700g.',
+      longDescription: 'Checul nostru marmorat cu unt, zahăr, ouă, lapte, amidon de cartofi, coajă de lămâie și praf de copt este preparat cu ingrediente de calitate. O combinație perfectă de texturi și gusturi în porție de 700g.',
       ingredients: ['Unt', 'Zahăr', 'Ouă', 'Lapte', 'Amidon de cartofi', 'Coajă de lămâie', 'Praf de copt'],
       features: [
         { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
@@ -2546,8 +2546,8 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
     'eclere-vanilie-frisca-naturala': {
       id: 83,
       name: 'Eclere cu vanilie și frișcă naturală',
-      price: 0,
-      originalPrice: 0,
+      price: 35,
+      originalPrice: 35,
       category: 'prajituri',
       description: 'Eclere cu vanilie și frișcă naturală.',
       longDescription: 'Eclerele noastre cu vanilie și frișcă naturală sunt preparate cu făină, unt, ulei, ouă, vanilie păstaie, frișcă naturală, rom și amidon. O combinație perfectă de texturi și gusturi, cu frișcă naturală de cea mai bună calitate.',

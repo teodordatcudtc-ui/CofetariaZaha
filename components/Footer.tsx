@@ -182,9 +182,22 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-gray-800"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Cofetăria Zaha. Toate drepturile rezervate.
-            </p>
+            <div className="flex flex-col items-center md:items-start space-y-2">
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Cofetăria Zaha. Toate drepturile rezervate.
+              </p>
+              <p className="text-gray-500 text-xs">
+                Made by{' '}
+                <a
+                  href="https://clickfixit.ro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 font-medium"
+                >
+                  ClickFixIT
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4 md:gap-6 text-sm">
               <Link
                 href="/politica-confidentialitate"

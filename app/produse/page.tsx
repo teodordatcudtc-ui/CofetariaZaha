@@ -527,22 +527,6 @@ const ProductsPage = () => {
       ingredients: ['Făină', 'Unt', 'Ulei', 'Ouă', 'Vanilie păstaie', 'Ciocolată', 'Rom', 'Amidon']
     },
     
-    // Profiterol
-    {
-      id: 22,
-      name: 'Profiterol',
-      price: '39 RON',
-      priceValue: 39,
-      category: 'prajituri',
-      rating: 5,
-      reviews: 22,
-      preparationTime: 'Zilnic',
-      servings: '200g',
-      icon: Cookie,
-      slug: 'profiterol',
-      ingredients: ['Făină', 'Ulei', 'Unt', 'Ouă', 'Pastă de fistic', 'Ciocolată', 'Frișcă naturală', 'Gelatină']
-    },
-    
     // Tort Mousse de Ciocolată și Fructe de Pădure
     {
       id: 23,

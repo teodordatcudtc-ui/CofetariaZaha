@@ -768,28 +768,6 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
       }
     },
     
-    // Profiterol
-    'profiterol': {
-      id: 22,
-      name: 'Profiterol',
-      price: 39,
-      originalPrice: 39,
-      category: 'prajituri',
-      description: 'Profiterol cu pastă de fistic și ciocolată.',
-      longDescription: 'Profiterolul nostru cu pastă de fistic și ciocolată este preparat cu făină, ulei, unt, ouă, pastă de fistic, ciocolată, frișcă naturală și gelatină. O combinație perfectă de texturi și gusturi.',
-      ingredients: ['Făină', 'Ulei', 'Unt', 'Ouă', 'Pastă de fistic', 'Ciocolată', 'Frișcă naturală', 'Gelatină'],
-      features: [
-        { icon: MessageCircle, text: 'Mesajul personalizat se adaugă înainte de Checkout' },
-        { icon: Leaf, text: 'Produs artizanal' },
-        { icon: Lock, text: 'Plăți securizate' }
-      ],
-      delivery: {
-        area: 'Luni - Duminică București și Ilfov',
-        time: 'Gata zilnic',
-        pickup: 'Ridicare disponibilă la Sos. Alexandriei București'
-      }
-    },
-    
     // Tort Mousse de Ciocolată și Fructe de Pădure
     'tort-mousse-ciocolata-fructe-padure': {
       id: 23,
